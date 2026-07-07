@@ -1,26 +1,39 @@
 @import "tailwindcss";
+@source "../app/**/*.{ts,tsx}";
+@source "../components/**/*.{ts,tsx}";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fbf7ef;
+  --foreground: #2d2a26;
+  --primary: #0f1d2e;
+  --accent: #b89b5e;
+  --muted: #746d63;
+  --border: #e5dccb;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --font-sans: Arial, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+@media (min-width: 768px) {
+  body {
+    background: var(--primary);
+  }
+
+  .bg-white\/55 .md\:text-background\/70,
+  .bg-background\/60 .md\:text-background\/70 {
+    color: var(--muted);
+  }
 }
