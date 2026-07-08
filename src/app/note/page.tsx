@@ -58,7 +58,7 @@ const noteCards = [
     label: "형사 초기대응",
     title: "경찰서 연락을 받았을 때 바로 출석해도 될까",
     description: "출석 전 확인할 자료, 사건명, 조사 일정, 진술 전 정리할 내용을 먼저 살펴봅니다.",
-    href: blogUrl,
+    href: "https://blog.naver.com/lawoffice_mh/224312825362",
   },
   {
     label: "민사소송",

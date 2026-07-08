@@ -102,13 +102,13 @@ const noteCards = [
     label: "형사 초기대응",
     title: "경찰서 연락을 받았을 때 바로 출석해도 될까",
     description: "조사 전 확인할 자료와 출석 전 정리해야 할 내용을 먼저 살펴봅니다.",
-    href: blogUrl,
+    href: "https://blog.naver.com/lawoffice_mh/224312825362",
   },
   {
     label: "경찰조사",
     title: "경찰 조사 전에 진술 내용을 정리해야 하는 이유",
     description: "사건 경위, 기억나는 내용, 객관 자료를 나누어 확인하는 기준을 정리합니다.",
-    href: blogUrl,
+    href: "https://blog.naver.com/lawoffice_mh/224312956655",
   },
   {
     label: "고소 준비",
