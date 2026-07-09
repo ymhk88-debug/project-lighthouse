@@ -1,4 +1,13 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "처음 오신 분께 | 상담 전 준비자료 안내 | 유민환 변호사의 법률 실무 노트",
+  },
+  description:
+    "형사, 민사, 상속·가사, 행정 상담 전 준비하면 좋은 자료와 상담 전에 정리할 항목을 안내합니다.",
+};
 
 const heroChecklist = [
   "받은 연락 또는 서류",
@@ -8,62 +17,74 @@ const heroChecklist = [
 ];
 
 const prepItems = [
-  "언제부터 문제가 시작되었는지",
-  "상대방은 누구인지",
-  "현재 어떤 절차가 진행 중인지",
-  "받은 서류나 연락이 있는지",
-  "문자, 카카오톡, 녹음, 계약서, 계좌이체 내역 등 자료가 있는지",
-  "가장 걱정되는 부분이 무엇인지",
+  "문제가 시작된 시점",
+  "상대방과의 관계",
+  "현재 받은 서류나 연락",
+  "정해진 기한",
+  "가지고 있는 자료",
+  "원하는 방향",
 ];
 
 const preparationCards = [
   {
-    label: "형사 사건",
-    title: "경찰 연락이나 고소 관련 자료",
+    title: "형사 상담",
+    description:
+      "경찰 연락, 고소, 조사 일정이 있는 경우에는 연락 경위와 사건 발생 과정을 시간순으로 정리하는 것이 중요합니다.",
     items: [
-      "경찰 연락 내용 또는 출석요구 일정",
-      "고소장, 진정서, 사건 관련 통지",
-      "문자, 카카오톡, 통화녹음",
-      "사건 발생 일시와 장소",
-      "상대방과의 관계",
-      "합의 또는 연락 내역",
+      "경찰·검찰 연락 내용",
+      "출석요구 일시",
+      "고소장 또는 사건 관련 문자",
+      "상대방과의 카카오톡·문자·통화내역",
+      "사건 당시 시간순 정리",
+      "CCTV, 사진, 목격자 등 증거 가능성",
     ],
+    note:
+      "상대방에게 먼저 연락하기 전에는 그 내용이 사건에 어떤 영향을 줄 수 있는지 검토가 필요할 수 있습니다.",
   },
   {
-    label: "민사 사건",
-    title: "계약, 돈, 소송 관련 자료",
+    title: "민사 상담",
+    description:
+      "돈, 계약, 손해배상, 임대차 분쟁은 계약관계와 돈이 오간 자료를 먼저 확인하는 경우가 많습니다.",
     items: [
-      "소장 또는 지급명령",
-      "계약서, 견적서, 거래명세서",
+      "계약서 또는 합의서",
       "계좌이체 내역",
-      "문자, 카카오톡, 이메일",
-      "내용증명 또는 답변서류",
-      "상대방 인적사항",
+      "문자·카카오톡·이메일",
+      "내용증명",
+      "소장·지급명령·판결문",
+      "거래명세서·세금계산서·견적서",
     ],
+    note:
+      "차용증이나 계약서가 없더라도 송금 경위와 대화 내용이 중요한 자료가 될 수 있습니다.",
   },
   {
-    label: "상속·가사",
-    title: "가족관계와 재산 관련 자료",
+    title: "상속·가사 상담",
+    description:
+      "가족관계, 재산 내역, 생전 증여나 유언 여부를 나누어 정리하면 쟁점을 확인하는 데 도움이 됩니다.",
     items: [
       "가족관계증명서",
       "기본증명서",
-      "재산 목록 또는 등기부등본",
-      "예금, 보험, 부동산 관련 자료",
-      "기존 협의 내용",
-      "가족 간 대화 내역",
+      "혼인관계증명서",
+      "등기부등본",
+      "금융자료 또는 재산 내역",
+      "유언장, 증여 관련 자료",
     ],
+    note:
+      "상속 문제는 감정적인 갈등과 별도로 가족관계와 재산자료를 구분해 확인하는 과정이 필요합니다.",
   },
   {
-    label: "행정 사건",
-    title: "처분서와 기한이 표시된 자료",
+    title: "행정 상담",
+    description:
+      "행정처분은 처분서에 적힌 수령일, 불복 기간, 처분 사유를 먼저 확인해야 합니다.",
     items: [
       "처분서 또는 통지서",
+      "수령일을 확인할 수 있는 자료",
       "의견제출서 또는 이의신청 관련 문서",
-      "행정기관과 주고받은 문서",
-      "기한이 표시된 안내문",
-      "사실관계를 확인할 수 있는 자료",
-      "기존 제출자료",
+      "관련 공문",
+      "사진·문자·녹취 등 경위 자료",
+      "기존 민원 또는 행정기관과의 연락 내용",
     ],
+    note:
+      "기한이 있는 행정처분은 먼저 수령일과 불복 기간을 확인하는 것이 중요합니다.",
   },
 ];
 
@@ -177,13 +198,51 @@ export default function FirstVisitPage() {
         </div>
       </section>
 
+      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
+        <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+          <SectionHeading
+            title="상담 전 준비하면 좋은 자료"
+            description={
+              "상담 전에 모든 자료를 빠짐없이 준비해야 하는 것은 아닙니다.\n다만 현재 가지고 있는 자료와 사건의 흐름을 미리 정리해 오시면 상담에서 사실관계와 쟁점을 더 차분히 확인할 수 있습니다."
+            }
+          />
+          <div className="mt-8 grid gap-4 md:grid-cols-2">
+            {preparationCards.map((card) => (
+              <article
+                key={card.title}
+                className="flex flex-col rounded-lg border border-[#e8ddcb] bg-background p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+              >
+                <h3 className="text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
+                  {card.title}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-primary/70 md:text-[15px] md:leading-7">
+                  {card.description}
+                </p>
+                <ul className="mt-5 space-y-3">
+                  {card.items.map((item) => (
+                    <li key={item} className="flex gap-3 text-sm leading-7 text-primary/70 md:text-[15px]">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-auto pt-6 text-sm leading-7 text-primary/70 md:text-[15px] md:leading-7">
+                  {card.note}
+                </p>
+              </article>
+            ))}
+          </div>
+          <p className="mt-6 max-w-3xl text-sm leading-7 text-muted md:text-[15px] md:font-medium md:leading-8 md:text-background/75">
+            자료가 전부 준비되지 않았더라도 상담은 가능합니다. 다만 현재 가지고 있는 자료를 기준으로 먼저 사실관계와 기한을 확인하고, 추가로 필요한 자료를 정리하는 방식으로 진행합니다.
+          </p>
+        </div>
+      </section>
+
       <section className="mx-auto max-w-7xl px-6 py-16 md:py-12">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <SectionHeading
-            title="상담 전 먼저 정리하면 좋은 것"
-            description={
-              "자료가 완벽하지 않아도 괜찮습니다.\n상담은 부족한 자료를 함께 확인하고,\n앞으로 무엇을 보완해야 하는지 정리하는 과정이기도 합니다."
-            }
+            title="분야와 관계없이 함께 정리하면 좋은 것"
+            description="상담에서는 결론을 먼저 단정하기보다, 사실관계와 자료를 나누어 확인하는 과정이 필요합니다."
           />
           <div className="grid gap-3 sm:grid-cols-2">
             {prepItems.map((item, index) => (
@@ -200,41 +259,6 @@ export default function FirstVisitPage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
-        <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
-          <SectionHeading
-            title="상담 전 준비하면 좋은 자료"
-            description={
-              "자료를 모두 갖추지 못해도 상담은 가능합니다.\n다만 가지고 있는 자료를 미리 정리해 오시면 사실관계와 쟁점을 더 차분히 확인할 수 있습니다."
-            }
-          />
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
-            {preparationCards.map((card) => (
-              <article
-                key={card.title}
-                className="rounded-lg border border-[#e8ddcb] bg-background p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
-              >
-                <p className="text-xs font-semibold tracking-[0.16em] text-accent md:text-sm">{card.label}</p>
-                <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
-                  {card.title}
-                </h3>
-                <ul className="mt-5 space-y-3">
-                  {card.items.map((item) => (
-                    <li key={item} className="flex gap-3 text-sm leading-7 text-primary/70 md:text-[15px]">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </div>
-          <p className="mt-6 max-w-3xl text-sm leading-7 text-muted md:text-[15px] md:font-medium md:leading-8 md:text-background/75">
-            자료가 부족하더라도 상담을 미룰 필요는 없습니다. 현재 가지고 있는 자료와 기억나는 사실관계부터 함께 정리하면 됩니다.
-          </p>
         </div>
       </section>
 
@@ -287,12 +311,24 @@ export default function FirstVisitPage() {
               "받은 서류, 연락 내용, 가지고 있는 자료를 바탕으로\n지금 무엇을 확인해야 하는지부터 차분히 살펴보겠습니다."
             }
           </p>
-          <div className="mt-8">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row md:gap-4">
             <Link
-              href="/consultation"
+              href="/issues"
               className="inline-flex h-11 items-center justify-center rounded-md bg-background px-5 text-sm font-semibold text-primary transition-colors hover:bg-background/90 md:h-12 md:px-7 md:text-base"
             >
+              상황별 쟁점 보기
+            </Link>
+            <Link
+              href="/consultation"
+              className="inline-flex h-11 items-center justify-center rounded-md border border-background/35 px-5 text-sm font-semibold text-background transition-colors hover:border-accent hover:text-accent md:h-12 md:px-7 md:text-base"
+            >
               상담 안내 보기
+            </Link>
+            <Link
+              href="/practice"
+              className="inline-flex h-11 items-center justify-center rounded-md border border-background/35 px-5 text-sm font-semibold text-background transition-colors hover:border-accent hover:text-accent md:h-12 md:px-7 md:text-base"
+            >
+              업무 분야 보기
             </Link>
           </div>
         </div>
