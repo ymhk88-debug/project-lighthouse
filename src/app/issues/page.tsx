@@ -317,14 +317,16 @@ export default function IssuesPage() {
             {preparationItems.map((item, index) => (
               <div
                 key={item}
-                className="rounded-lg border border-[#e8ddcb] bg-white/60 p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+                className="rounded-lg border border-[#e8ddcb] bg-white/60 px-5 py-4 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
               >
-                <p className="text-xs font-semibold text-accent md:text-sm">
-                  {String(index + 1).padStart(2, "0")}
-                </p>
-                <p className="mt-3 text-base font-semibold leading-7 text-primary md:text-lg md:leading-8">
-                  {item}
-                </p>
+                <div className="flex items-start gap-4">
+                  <p className="shrink-0 text-sm font-semibold leading-7 text-accent">
+                    {String(index + 1).padStart(2, "0")}
+                  </p>
+                  <p className="text-base font-semibold leading-7 text-primary md:text-[17px]">
+                    {item}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
