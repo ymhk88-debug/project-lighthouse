@@ -127,7 +127,7 @@ const preparationItems = [
   "상대방과 어떤 관계인지",
   "받은 서류나 연락이 있는지",
   "정해진 기한이 있는지",
-  "현재 가지고 있는 자료가 무엇인지",
+  "현재 가진 자료가 무엇인지",
   "원하는 방향이 무엇인지",
 ];
 
@@ -317,13 +317,13 @@ export default function IssuesPage() {
             {preparationItems.map((item, index) => (
               <div
                 key={item}
-                className="rounded-lg border border-[#e8ddcb] bg-white/60 px-5 py-4 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+                className="min-h-[76px] rounded-lg border border-[#e8ddcb] bg-white/60 px-5 py-4 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:px-6 md:py-5 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
               >
-                <div className="flex items-start gap-4">
-                  <p className="shrink-0 text-sm font-semibold leading-7 text-accent">
+                <div className="flex h-full items-center gap-4">
+                  <p className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-accent/40 bg-accent/10 text-xs font-semibold text-accent">
                     {String(index + 1).padStart(2, "0")}
                   </p>
-                  <p className="text-base font-semibold leading-7 text-primary md:text-[17px]">
+                  <p className="text-base font-semibold leading-snug text-primary">
                     {item}
                   </p>
                 </div>
