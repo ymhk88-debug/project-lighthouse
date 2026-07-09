@@ -310,7 +310,7 @@ export default function IssuesPage() {
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <SectionHeading
             eyebrow="상담 전 정리"
-            title="상담 전에는 이렇게 정리해 보세요"
+            title="상담 전에 정리해 두면 좋은 것"
             description="상담에서는 결론을 먼저 단정하기보다, 사실관계와 자료를 나누어 확인하는 과정이 필요합니다."
           />
           <div className="grid gap-3 sm:grid-cols-2">
