@@ -247,6 +247,11 @@ export default function Home() {
               </article>
             ))}
           </div>
+          <div className="mt-8">
+            <TextLink href="/issues" variant="secondary">
+              상황별 쟁점 보기
+            </TextLink>
+          </div>
         </div>
       </section>
 
