@@ -97,6 +97,65 @@ const preparationCards = [
   },
 ];
 
+const criminalProcessSteps = [
+  {
+    title: "경찰 연락 또는 고소 사실 확인",
+    description:
+      "어떤 기관에서 연락이 왔는지, 고소 사실을 어떻게 알게 되었는지 먼저 확인합니다. 사건명과 연락 경위, 출석 요구 여부를 함께 정리합니다.",
+    articleTitle: "경찰서 연락을 받았을 때 바로 출석해도 될까",
+    href: "https://blog.naver.com/lawoffice_mh/224312825362",
+  },
+  {
+    title: "사건 지위 확인",
+    description:
+      "피의자, 피해자, 참고인 중 어떤 지위인지에 따라 준비할 자료와 진술 방향이 달라질 수 있습니다. 조사 전에는 고소장 내용과 현재 단계를 나누어 봅니다.",
+    articleTitle: "경찰조사 전 고소장 내용을 확인해야 하는 이유",
+    href: "https://blog.naver.com/lawoffice_mh/224312902434",
+  },
+  {
+    title: "사실관계 시간순 정리",
+    description:
+      "사건 발생 전후의 대화, 송금, 이동, 연락 내용을 시간순으로 정리합니다. 기억에 의존한 설명과 객관 자료를 구분해 살펴봅니다.",
+    articleTitle: "형사사건에서 변호사 상담 전 준비하면 좋은 자료",
+    href: "https://blog.naver.com/lawoffice_mh/224315791138",
+  },
+  {
+    title: "경찰조사 준비",
+    description:
+      "조사에서 설명할 부분과 다툴 부분을 미리 나누어 봅니다. 진술 전에 사건 경위와 자료를 함께 확인하는 과정이 필요합니다.",
+    articleTitle: "피의자신문에서 가장 조심해야 할 진술",
+    href: "https://blog.naver.com/lawoffice_mh/224312956655",
+  },
+  {
+    title: "조서 확인과 진술 정리",
+    description:
+      "조사가 끝난 뒤 조서 내용이 실제 진술 취지와 맞는지 확인합니다. 서명 전에는 표현과 누락된 내용을 차분히 살펴봅니다.",
+    articleTitle: "경찰조사에서 조서 서명 전 확인할 것",
+    href: "https://blog.naver.com/lawoffice_mh/224313003869",
+  },
+  {
+    title: "검찰 송치 여부 확인",
+    description:
+      "경찰 단계 이후 사건이 검찰로 넘어가는지, 불송치로 정리되는지 확인합니다. 단계가 바뀌면 제출할 자료와 의견 정리 방식도 달라질 수 있습니다.",
+    articleTitle: "경찰에서 검찰로 송치되면 무엇이 달라질까",
+    href: "https://blog.naver.com/lawoffice_mh/224315771981",
+  },
+  {
+    title: "재판 또는 불송치 이후 절차 확인",
+    description:
+      "재판이 시작되는 경우 공판기일과 준비자료를 확인하고, 불송치 이후에는 이의신청 가능성과 필요한 자료를 검토합니다.",
+    articleTitle: "형사재판 첫 공판기일 전 준비해야 할 것",
+    href: "https://blog.naver.com/lawoffice_mh/224315786088",
+  },
+];
+
+const relatedPages = [
+  { title: "처음 오신 분께", href: "/first-visit" },
+  { title: "상담 안내 보기", href: "/consultation" },
+  { title: "상황별 쟁점 보기", href: "/issues" },
+  { title: "법률 실무 노트", href: "/note" },
+];
+
 const noteCards = [
   {
     label: "형사 초기대응",
@@ -271,6 +330,51 @@ export default function CriminalPracticePage() {
             description="피해자로 고소를 준비하거나 조사를 앞둔 경우에는 피해 사실을 시간순으로 정리하고, 이를 뒷받침할 자료를 함께 확인하는 과정이 필요합니다."
             items={victimChecklist}
           />
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+        <SectionHeading
+          title="형사사건은 보통 이렇게 흐릅니다"
+          description={
+            "형사사건은 경찰 연락이나 고소 사실을 확인하는 단계부터 조사, 송치, 재판 또는 불송치 이후 절차까지 이어질 수 있습니다.\n현재 어느 단계에 있는지와 가지고 있는 자료를 먼저 나누어 보면 대응 방향을 더 차분히 검토할 수 있습니다."
+          }
+        />
+        <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {criminalProcessSteps.map((step, index) => (
+            <article
+              key={step.title}
+              className="flex flex-col rounded-lg border border-[#e8ddcb] bg-white/60 p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+            >
+              <p className="text-xs font-semibold text-accent md:text-sm">
+                {String(index + 1).padStart(2, "0")}
+              </p>
+              <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
+                {step.title}
+              </h3>
+              <p className="mt-3 text-sm leading-7 text-primary/70 md:text-[15px] md:leading-7">
+                {step.description}
+              </p>
+              <div className="mt-auto pt-6">
+                <p className="text-xs font-semibold tracking-[0.14em] text-accent">함께 볼 글</p>
+                <a
+                  href={step.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 inline-flex text-sm font-semibold leading-6 text-primary underline decoration-accent/45 underline-offset-4 transition-colors hover:text-accent md:text-[15px]"
+                >
+                  {step.articleTitle}
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap md:gap-4">
+          {relatedPages.map((page) => (
+            <TextLink key={page.href} href={page.href} variant="secondary">
+              {page.title}
+            </TextLink>
+          ))}
         </div>
       </section>
 
