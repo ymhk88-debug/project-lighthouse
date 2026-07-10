@@ -2,102 +2,237 @@ import Link from "next/link";
 
 const faqSections = [
   {
-    title: "상담 관련 질문",
+    title: "형사",
     items: [
       {
-        question: "상담 전에 자료를 모두 준비하지 못해도 되나요?",
+        question: "경찰에서 전화가 왔는데 바로 출석해야 하나요?",
         answer:
-          "자료를 모두 갖추지 못해도 상담은 가능합니다. 다만 가지고 있는 자료를 미리 정리해 오시면 사실관계와 쟁점을 더 차분히 확인할 수 있습니다.",
+          "출석 일정을 정하기 전에 연락 내용, 사건 지위, 출석 요구의 성격을 먼저 확인합니다. 조사 전에는 고소장 내용, 사실관계, 관련 자료를 정리해 두는 것이 좋습니다.",
+        links: [
+          { label: "상황별 쟁점", href: "/issues" },
+          { label: "형사 사건", href: "/practice/criminal" },
+          { label: "처음 오신 분께", href: "/first-visit" },
+        ],
       },
       {
-        question: "상담만 받고 사건을 맡기지 않아도 되나요?",
+        question: "고소장을 볼 수 있나요?",
         answer:
-          "상담을 받은 뒤 사건을 맡길지 여부는 충분히 고민해 결정하셔도 됩니다. 상담에서는 먼저 사건의 흐름, 필요한 자료, 예상되는 절차를 함께 확인합니다.",
+          "사건 단계와 절차에 따라 확인 가능한 범위가 달라질 수 있습니다. 조사 전에는 어떤 혐의와 사실관계가 문제되는지 파악하는 것이 중요합니다.",
+        links: [
+          { label: "형사 사건", href: "/practice/criminal" },
+          { label: "법률 실무 노트", href: "/note" },
+        ],
       },
       {
-        question: "가족이 대신 상담을 받아도 되나요?",
+        question: "피의자신문에서 기억나는 대로 말하면 되나요?",
         answer:
-          "가족이 상담을 요청할 수는 있습니다. 다만 사건의 구체적인 사실관계는 당사자의 설명이 필요한 경우가 많으므로, 가능하면 당사자와 함께 상담하는 것이 좋습니다.",
+          "기억나는 내용을 말하는 것보다 사실관계를 시간순으로 정리하고, 모르는 부분과 기억나는 부분을 구분하는 것이 중요합니다. 단정적인 표현이나 추측 진술은 조심해서 살펴볼 필요가 있습니다.",
+        links: [
+          { label: "형사 사건", href: "/practice/criminal" },
+          { label: "상담 안내", href: "/consultation" },
+        ],
       },
       {
-        question: "전화로 먼저 문의해도 되나요?",
+        question: "조서에 서명하기 전에 무엇을 확인해야 하나요?",
         answer:
-          "가능합니다. 방문 상담은 일정 조율 후 진행되므로, 먼저 사무실 또는 휴대폰 번호로 문의해 주시면 상담 가능 일정을 확인할 수 있습니다.",
+          "조서에는 본인이 진술한 내용이 기재됩니다. 표현이 정확한지, 빠진 내용이나 다르게 적힌 부분이 없는지 확인해야 합니다.",
+        links: [
+          { label: "형사 사건", href: "/practice/criminal" },
+          { label: "법률 실무 노트", href: "/note" },
+        ],
+      },
+      {
+        question: "경찰에서 검찰로 송치되면 무엇이 달라지나요?",
+        answer:
+          "수사 단계가 바뀌면서 사건을 검찰에서 검토하게 됩니다. 송치 이후에는 처분 가능성, 추가 자료 제출 필요성, 향후 절차를 확인해야 합니다.",
+        links: [
+          { label: "형사 사건", href: "/practice/criminal" },
+          { label: "상담 안내", href: "/consultation" },
+        ],
+      },
+      {
+        question: "형사사건 상담 전에는 어떤 자료를 준비하면 좋나요?",
+        answer:
+          "수사기관 연락 내용, 출석요구, 고소장 관련 자료, 문자·카카오톡·통화내역, 사건 발생 경위, 상대방과의 관계를 정리하면 도움이 됩니다. 자료가 전부 없어도 상담은 가능합니다.",
+        links: [
+          { label: "처음 오신 분께", href: "/first-visit" },
+          { label: "형사 사건", href: "/practice/criminal" },
+        ],
       },
     ],
   },
   {
-    title: "형사 사건 관련 질문",
+    title: "민사",
     items: [
       {
-        question: "경찰에서 연락이 오면 바로 출석해야 하나요?",
+        question: "소장을 받았는데 답변서를 안 내면 어떻게 되나요?",
         answer:
-          "바로 출석하기보다 먼저 사건명, 출석 요구 일정, 본인이 어떤 지위에서 조사를 받는지 확인하는 것이 좋습니다. 조사 전에는 관련 자료와 진술할 내용을 정리할 필요가 있습니다.",
+          "소장을 받은 날과 답변서 제출기한을 먼저 확인합니다. 답변서를 제출하지 않으면 상대방 주장에 대한 반박이 충분히 정리되지 못할 수 있어, 청구취지와 청구원인을 먼저 살펴보는 과정이 필요합니다.",
+        links: [
+          { label: "상황별 쟁점", href: "/issues" },
+          { label: "민사 사건", href: "/practice/civil" },
+          { label: "처음 오신 분께", href: "/first-visit" },
+        ],
       },
       {
-        question: "고소장을 제출하기 전에 무엇을 준비해야 하나요?",
+        question: "지급명령을 받았는데 이의신청을 해야 하나요?",
         answer:
-          "사건 발생 일시와 장소, 상대방과의 관계, 문자·카카오톡·통화녹음 등 관련 자료를 정리해 두는 것이 좋습니다. 고소장에는 사실관계가 시간순으로 정리되어야 합니다.",
+          "지급명령은 정해진 기간 안에 대응 여부를 결정해야 합니다. 청구금액, 청구 원인, 실제 채무 존재 여부, 증거자료를 먼저 확인합니다.",
+        links: [
+          { label: "상황별 쟁점", href: "/issues" },
+          { label: "민사 사건", href: "/practice/civil" },
+          { label: "법률 실무 노트", href: "/note" },
+        ],
       },
       {
-        question: "피해자도 변호사의 도움을 받을 수 있나요?",
+        question: "차용증이 없는데 돈을 받을 수 있나요?",
         answer:
-          "피해자도 고소장 작성, 조사 준비, 합의 과정, 의견서 제출 등에서 변호사의 도움을 받을 수 있습니다. 사건 진행 단계에 따라 필요한 조치가 달라질 수 있습니다.",
+          "차용증이 없더라도 계좌이체 내역, 문자, 카카오톡, 일부 변제, 상환 약속 등 다른 자료를 함께 검토할 수 있습니다. 돈의 성격이 대여금인지, 투자금인지, 증여인지가 쟁점이 될 수 있습니다.",
+        links: [
+          { label: "민사 사건", href: "/practice/civil" },
+          { label: "법률 실무 노트", href: "/note" },
+        ],
       },
       {
-        question: "조사 전에 진술 내용을 정리해야 하나요?",
+        question: "계좌이체 내역만 있어도 대여금 청구가 가능한가요?",
         answer:
-          "네. 조사에서는 사실관계가 시간순으로 확인되는 경우가 많습니다. 기억나는 내용, 주고받은 연락, 관련 자료를 미리 정리하면 불필요한 혼선을 줄일 수 있습니다.",
+          "계좌이체 내역은 중요한 자료가 될 수 있지만, 송금 경위와 반환 약속, 돈의 성격을 함께 봐야 합니다. 상대방이 다른 주장을 할 가능성도 함께 검토합니다.",
+        links: [
+          { label: "민사 사건", href: "/practice/civil" },
+          { label: "법률 실무 노트", href: "/note" },
+        ],
+      },
+      {
+        question: "내용증명은 먼저 보내는 게 좋나요?",
+        answer:
+          "내용증명은 상대방에게 입장을 전달하고 추후 분쟁에서 자료로 남길 수 있습니다. 다만 표현을 신중하게 정리해야 하며, 감정적인 표현이나 단정적인 표현은 피하는 것이 좋습니다.",
+        links: [
+          { label: "상황별 쟁점", href: "/issues" },
+          { label: "민사 사건", href: "/practice/civil" },
+          { label: "법률 실무 노트", href: "/note" },
+        ],
+      },
+      {
+        question: "보증금을 못 돌려받으면 바로 소송해야 하나요?",
+        answer:
+          "계약서, 임대차 기간, 퇴거 여부, 보증금 반환 약속, 내용증명 발송 여부, 임차권등기명령 필요성을 먼저 확인합니다. 바로 소송만 검토하기보다 현재 단계에서 가능한 조치를 나누어 봅니다.",
+        links: [
+          { label: "상황별 쟁점", href: "/issues" },
+          { label: "민사 사건", href: "/practice/civil" },
+          { label: "처음 오신 분께", href: "/first-visit" },
+        ],
       },
     ],
   },
   {
-    title: "민사 사건 관련 질문",
+    title: "상속·가사",
     items: [
       {
-        question: "차용증이 없어도 돈을 받을 수 있나요?",
+        question: "상속재산을 정확히 몰라도 상담이 가능한가요?",
         answer:
-          "차용증이 없더라도 계좌이체 내역, 문자·카카오톡, 일부 변제 내역, 반환 약속 등 다른 자료가 있다면 돈의 성격을 확인해 볼 수 있습니다.",
+          "상속재산이 전부 정리되지 않았더라도 상담은 가능합니다. 가족관계, 사망일, 알고 있는 재산과 채무, 상속인 범위, 받은 서류를 기준으로 먼저 확인할 수 있습니다.",
+        links: [
+          { label: "처음 오신 분께", href: "/first-visit" },
+          { label: "상속·가사", href: "/practice/inheritance-family" },
+        ],
       },
       {
-        question: "소장을 받으면 바로 답변서를 내야 하나요?",
+        question: "가족 간 돈 문제도 소송으로 정리할 수 있나요?",
         answer:
-          "소장을 받으면 먼저 송달일과 답변서 제출기한을 확인해야 합니다. 그다음 청구취지와 청구원인을 살펴보고, 인정할 부분과 다툴 부분을 나누어 정리합니다.",
+          "가족 간 돈 문제도 대여금, 증여, 생활비, 상속재산 분배 등 법률관계가 문제될 수 있습니다. 돈이 오간 경위와 반환 약속, 가족관계, 관련 자료를 함께 살펴봅니다.",
+        links: [
+          { label: "상속·가사", href: "/practice/inheritance-family" },
+          { label: "상담 안내", href: "/consultation" },
+        ],
       },
       {
-        question: "지급명령을 받았을 때는 어떻게 해야 하나요?",
+        question: "상속 관련 상담 전에는 어떤 자료가 필요한가요?",
         answer:
-          "지급명령을 받은 경우 이의신청 기간을 먼저 확인해야 합니다. 기간을 놓치면 그대로 확정될 수 있으므로, 청구금액과 청구원인을 빠르게 검토하는 것이 필요합니다.",
+          "가족관계증명서, 기본증명서, 사망일, 상속인 관계, 알고 있는 재산과 채무, 금융자료, 부동산 자료, 기존 합의 내용을 준비하면 상담에 도움이 됩니다.",
+        links: [
+          { label: "처음 오신 분께", href: "/first-visit" },
+          { label: "상속·가사", href: "/practice/inheritance-family" },
+        ],
       },
       {
-        question: "내용증명을 먼저 보내야 하나요?",
+        question: "이혼이나 양육 문제 상담 전에는 무엇을 정리해야 하나요?",
         answer:
-          "사건에 따라 내용증명이 도움이 될 수 있지만, 항상 먼저 보내야 하는 것은 아닙니다. 표현, 청구 내용, 기한, 추후 소송 가능성을 함께 고려해 결정하는 것이 좋습니다.",
+          "혼인 기간, 자녀 여부, 별거 여부, 재산 형성 경위, 양육 상황, 상대방과의 대화 내용, 이미 받은 서류를 정리하면 상담에 도움이 됩니다.",
+        links: [
+          { label: "처음 오신 분께", href: "/first-visit" },
+          { label: "상속·가사", href: "/practice/inheritance-family" },
+        ],
       },
     ],
   },
   {
-    title: "방문·연락 관련 질문",
+    title: "행정",
     items: [
       {
-        question: "방문 상담은 예약이 필요한가요?",
+        question: "행정처분서를 받으면 가장 먼저 무엇을 확인해야 하나요?",
         answer:
-          "방문 상담은 일정 조율 후 진행됩니다. 사무실 또는 휴대폰 번호로 먼저 연락해 주시면 상담 가능 일정을 확인할 수 있습니다.",
+          "처분서의 처분일, 송달일, 불복 기간, 처분 사유, 담당 기관을 먼저 확인합니다. 기한이 지나면 대응 방식이 제한될 수 있으므로 날짜 확인이 중요합니다.",
+        links: [
+          { label: "상황별 쟁점", href: "/issues" },
+          { label: "행정 사건", href: "/practice/administrative" },
+          { label: "처음 오신 분께", href: "/first-visit" },
+        ],
       },
       {
-        question: "상담료는 어떻게 확인하나요?",
+        question: "이의신청이나 행정심판 기한은 어떻게 확인하나요?",
         answer:
-          "상담 방식과 사건 내용에 따라 달라질 수 있으므로, 문의 과정에서 상담 방식과 비용 안내를 함께 확인하시면 됩니다.",
+          "처분서에 기재된 불복 절차와 기한을 먼저 확인하고, 실제 송달일과 처분일을 구분해서 보아야 합니다.",
+        links: [
+          { label: "행정 사건", href: "/practice/administrative" },
+          { label: "상담 안내", href: "/consultation" },
+        ],
       },
       {
-        question: "주차는 가능한가요?",
+        question: "음주운전 처분 상담 전에는 어떤 자료가 필요한가요?",
         answer:
-          "방문 전 주차 가능 여부와 출입 방법은 상담 일정 조율 과정에서 함께 안내드립니다.",
+          "처분서, 단속 경위, 혈중알코올농도, 운전 경위, 생계 관련 자료, 기존 전력 여부, 경찰 조사 자료를 준비하면 도움이 됩니다.",
+        links: [
+          { label: "처음 오신 분께", href: "/first-visit" },
+          { label: "행정 사건", href: "/practice/administrative" },
+        ],
+      },
+    ],
+  },
+  {
+    title: "상담 준비",
+    items: [
+      {
+        question: "자료가 전부 준비되지 않아도 상담이 가능한가요?",
+        answer:
+          "자료가 전부 준비되지 않아도 상담은 가능합니다. 현재 가지고 있는 자료를 기준으로 먼저 사실관계와 쟁점을 정리하고, 추가로 필요한 자료는 상담 과정에서 확인할 수 있습니다.",
+        links: [
+          { label: "처음 오신 분께", href: "/first-visit" },
+          { label: "상담 안내", href: "/consultation" },
+        ],
       },
       {
-        question: "상담 후 바로 사건을 맡겨야 하나요?",
+        question: "상담 전에 사건을 시간순으로 정리해야 하나요?",
         answer:
-          "상담 후 바로 사건을 맡기지 않아도 됩니다. 사건의 방향, 필요한 자료, 예상 절차를 확인한 뒤 충분히 고민해 결정하셔도 됩니다.",
+          "시간순 정리는 상담에 도움이 됩니다. 정확한 문서 형식보다 언제, 누구와, 어떤 일이 있었는지를 간단히 정리하는 것이 중요합니다.",
+        links: [
+          { label: "처음 오신 분께", href: "/first-visit" },
+          { label: "상담 안내", href: "/consultation" },
+        ],
+      },
+      {
+        question: "상담에서는 어떤 방식으로 사건을 확인하나요?",
+        answer:
+          "상담에서는 현재 상황, 받은 서류와 기한, 사실관계, 자료, 쟁점, 대응 방향을 순서대로 확인합니다.",
+        links: [{ label: "상담 안내", href: "/consultation" }],
+      },
+      {
+        question: "상담 전에 블로그 글을 읽고 가면 도움이 되나요?",
+        answer:
+          "관련 글을 미리 읽으면 절차와 쟁점을 이해하는 데 도움이 될 수 있습니다. 다만 글은 일반적인 안내이므로 실제 사건에서는 자료와 구체적인 사실관계를 함께 확인해야 합니다.",
+        links: [
+          { label: "법률 실무 노트", href: "/note" },
+          { label: "처음 오신 분께", href: "/first-visit" },
+        ],
       },
     ],
   },
@@ -133,7 +268,11 @@ function FaqSection({
   index,
 }: {
   title: string;
-  items: { question: string; answer: string }[];
+  items: {
+    question: string;
+    answer: string;
+    links: { label: string; href: string }[];
+  }[];
   index: number;
 }) {
   const sectionClass =
@@ -162,6 +301,17 @@ function FaqSection({
                 </span>
               </summary>
               <p className="mt-4 text-sm leading-7 text-muted md:text-[15px] md:leading-7 md:text-primary/70">{item.answer}</p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {item.links.map((link) => (
+                  <Link
+                    key={`${item.question}-${link.href}`}
+                    href={link.href}
+                    className="inline-flex rounded-md border border-border bg-background px-3 py-1.5 text-xs font-semibold text-primary transition-colors hover:border-accent md:border-accent/30 md:text-sm"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
             </details>
           ))}
         </div>
