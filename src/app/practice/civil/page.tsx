@@ -97,24 +97,84 @@ const preparationCards = [
   },
 ];
 
-const noteCards = [
+const civilProcessSteps = [
   {
-    label: "민사소송",
-    title: "소장을 받았을 때 바로 답변서를 준비해야 하는 이유",
-    description: "답변서 제출기한, 청구취지, 인정할 부분과 다툴 부분을 나누어 정리합니다.",
+    title: "상대방과의 관계 확인",
+    description:
+      "가족, 지인, 거래처, 임대인·임차인, 계약 상대방 등 관계에 따라 쟁점과 자료가 달라질 수 있습니다. 먼저 어떤 관계에서 분쟁이 시작되었는지 살펴봅니다.",
+    articleTitle: "민사소송 전 내용증명부터 보내야 할까",
+    href: "https://blog.naver.com/lawoffice_mh/224317565769",
+  },
+  {
+    title: "계약·거래 내용 확인",
+    description:
+      "계약서가 있는지, 구두 약정인지, 견적서·발주서·거래명세서·세금계산서 같은 자료가 남아 있는지 확인합니다.",
+    articleTitle: "계약서를 쓰지 않았을 때도 돈을 받을 수 있을까",
+    href: "https://blog.naver.com/lawoffice_mh/224319904966",
+  },
+  {
+    title: "분쟁이 발생한 시점 확인",
+    description:
+      "돈을 지급한 시점, 물건이나 용역을 제공한 시점, 반환을 요구한 시점, 상대방이 거절한 시점을 시간순으로 정리합니다.",
+    articleTitle: "민사소송 소장 받았을 때, 답변서 제출기한과 피고 대응 방법",
     href: "https://blog.naver.com/lawoffice_mh/224324287188",
   },
   {
-    label: "대여금·미수금",
-    title: "차용증이 없을 때 돈을 받을 수 있을까",
-    description: "계좌이체 내역, 문자, 카카오톡, 일부 변제 내역을 중심으로 입증 방향을 확인합니다.",
+    title: "문자·카카오톡·계좌내역 등 자료 정리",
+    description:
+      "계좌이체 내역, 문자, 카카오톡, 이메일, 녹취, 사진, 거래자료를 함께 살펴봅니다. 자료의 순서와 의미를 나누어 보는 과정이 필요합니다.",
+    articleTitle: "대여금 소송 차용증이 없을 때, 계좌이체·문자·카카오톡 증거 확인 방법",
     href: "https://blog.naver.com/lawoffice_mh/224325644574",
   },
   {
-    label: "내용증명",
-    title: "내용증명을 보내기 전 조심해야 할 표현",
-    description: "청구 내용, 기한, 표현 방식, 추후 소송 가능성을 함께 고려합니다.",
-    href: "https://blog.naver.com/lawoffice_mh/224320043867",
+    title: "청구금액 또는 방어 범위 검토",
+    description:
+      "얼마를 청구할 수 있는지, 상대방 청구 중 다툴 부분은 무엇인지 확인합니다. 일부 인정할 부분과 다툴 부분을 나누어 봅니다.",
+    articleTitle: "대여금 소송 계좌이체 내역만 있을 때, 빌려준 돈 입증 방법",
+    href: "https://blog.naver.com/lawoffice_mh/224325696409",
+  },
+  {
+    title: "내용증명·지급명령·소송 가능성 검토",
+    description:
+      "소송을 진행할지, 내용증명이나 지급명령 등 다른 절차를 먼저 검토할지 사건의 자료와 상대방 대응 가능성을 기준으로 나누어 봅니다.",
+    articleTitle: "지급명령과 민사소송 중 무엇을 선택해야 할까",
+    href: "https://blog.naver.com/lawoffice_mh/224320267710",
+  },
+  {
+    title: "보전처분 또는 강제집행 가능성 확인",
+    description:
+      "가압류, 가처분, 판결 이후 집행 가능성은 상대방 재산, 자료, 긴급성에 따라 검토가 달라질 수 있습니다.",
+    articleTitle: "가압류를 신청하기 전 준비해야 할 자료",
+    href: "https://blog.naver.com/lawoffice_mh/224319977367",
+  },
+];
+
+const relatedPages = [
+  { title: "처음 오신 분께", href: "/first-visit" },
+  { title: "상담 안내 보기", href: "/consultation" },
+  { title: "상황별 쟁점 보기", href: "/issues" },
+  { title: "자주 묻는 질문", href: "/faq" },
+  { title: "법률 실무 노트", href: "/note" },
+];
+
+const noteCards = [
+  {
+    label: "임대차 보증금",
+    title: "임대차 보증금 반환 청구, 보증금을 돌려받지 못했을 때",
+    description: "계약 종료 시점, 보증금 반환 요구, 임대차 자료를 함께 확인합니다.",
+    href: "https://blog.naver.com/lawoffice_mh/224330645725",
+  },
+  {
+    label: "계약금 반환",
+    title: "계약금 반환 청구, 계약이 깨졌을 때 돌려받을 수 있을까",
+    description: "계약 체결 경위와 해제·해지 사유, 이미 오간 금액을 나누어 살펴봅니다.",
+    href: "https://blog.naver.com/lawoffice_mh/224330670027",
+  },
+  {
+    label: "부당이득",
+    title: "부당이득 반환청구, 받은 돈을 돌려주지 않을 때",
+    description: "돈을 받은 경위, 반환을 요구한 과정, 상대방의 답변을 함께 정리합니다.",
+    href: "https://blog.naver.com/lawoffice_mh/224331955118",
   },
 ];
 
@@ -271,6 +331,51 @@ export default function CivilPracticePage() {
             description="소장이나 지급명령을 받은 경우에는 먼저 기한을 확인하고, 상대방 주장에서 인정할 부분과 다툴 부분을 나누어 정리해야 합니다."
             items={respondentChecklist}
           />
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+        <SectionHeading
+          title="민사분쟁은 보통 이렇게 정리합니다"
+          description={
+            "민사분쟁은 상대방과의 관계, 계약이나 거래 내용, 분쟁이 발생한 시점, 남아 있는 자료를 함께 살펴보는 것에서 시작합니다.\n상담에서는 현재 가지고 있는 자료를 기준으로 청구 가능성, 방어 방향, 필요한 절차를 나누어 확인합니다."
+          }
+        />
+        <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {civilProcessSteps.map((step, index) => (
+            <article
+              key={step.title}
+              className="flex flex-col rounded-lg border border-[#e8ddcb] bg-white/60 p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+            >
+              <p className="text-xs font-semibold text-accent md:text-sm">
+                {String(index + 1).padStart(2, "0")}
+              </p>
+              <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
+                {step.title}
+              </h3>
+              <p className="mt-3 text-sm leading-7 text-primary/70 md:text-[15px] md:leading-7">
+                {step.description}
+              </p>
+              <div className="mt-auto pt-6">
+                <p className="text-xs font-semibold tracking-[0.14em] text-accent">함께 볼 글</p>
+                <a
+                  href={step.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 inline-flex text-sm font-semibold leading-6 text-primary underline decoration-accent/45 underline-offset-4 transition-colors hover:text-accent md:text-[15px]"
+                >
+                  {step.articleTitle}
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap md:gap-4">
+          {relatedPages.map((page) => (
+            <TextLink key={page.href} href={page.href} variant="secondary">
+              {page.title}
+            </TextLink>
+          ))}
         </div>
       </section>
 
