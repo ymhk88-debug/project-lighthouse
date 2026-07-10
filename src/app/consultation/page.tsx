@@ -1,11 +1,51 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 
 const consultationSteps = [
-  "현재 상황 확인",
-  "자료 검토",
-  "쟁점 정리",
-  "가능한 대응 방향 설명",
+  {
+    title: "현재 상황 확인",
+    description:
+      "어떤 문제로 상담을 요청하게 되었는지, 사건이 언제부터 시작되었는지 먼저 확인합니다.",
+  },
+  {
+    title: "받은 서류와 기한 확인",
+    description:
+      "소장, 지급명령, 출석요구, 처분서처럼 기한이 있는 자료가 있는지 확인합니다.",
+  },
+  {
+    title: "사실관계 시간순 정리",
+    description:
+      "상대방과의 관계, 대화 내용, 돈이 오간 내역, 사건 발생 경위를 시간순으로 나누어 봅니다.",
+  },
+  {
+    title: "자료와 증거 확인",
+    description:
+      "계약서, 문자, 카카오톡, 송금 내역, 사진, 녹취 등 현재 가지고 있는 자료를 살펴봅니다.",
+  },
+  {
+    title: "쟁점 구분",
+    description:
+      "인정할 부분과 다툴 부분, 먼저 확인해야 할 부분을 나누어 정리합니다.",
+  },
+  {
+    title: "대응 방향 검토",
+    description:
+      "소송, 합의, 고소, 이의신청, 내용증명 등 가능한 대응 방향을 사안에 맞게 검토합니다.",
+  },
+  {
+    title: "진행 방식 확인",
+    description:
+      "상담 이후 추가 자료가 필요한지, 사건으로 진행할지, 진행한다면 어떤 방식이 적절한지 확인합니다.",
+  },
 ];
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "상담 안내 | 상담 진행 흐름 | 유민환 변호사의 법률 실무 노트",
+  },
+  description:
+    "상담에서 현재 상황, 받은 서류, 기한, 사실관계, 자료와 쟁점을 확인하는 흐름을 안내합니다.",
+};
 
 const consultationPrepItems = [
   {
@@ -54,6 +94,32 @@ const faqItems = [
 const afterSteps = ["상담", "자료 보완", "사건 검토", "위임 여부 결정", "사건 진행"];
 const officePhone = "055-263-5882";
 const mobilePhone = "050-5948-5158";
+
+const relatedPages = [
+  {
+    title: "상황별 쟁점 보기",
+    description:
+      "경찰 연락, 소장 수령, 지급명령, 대여금, 보증금 반환 등 자주 상담하는 상황을 먼저 확인할 수 있습니다.",
+    href: "/issues",
+  },
+  {
+    title: "처음 오신 분께",
+    description:
+      "형사, 민사, 상속·가사, 행정 상담 전에 준비하면 좋은 자료를 확인할 수 있습니다.",
+    href: "/first-visit",
+  },
+  {
+    title: "업무 분야 보기",
+    description:
+      "형사, 민사, 상속·가사, 행정 분야별로 상담에서 확인하는 쟁점을 살펴볼 수 있습니다.",
+    href: "/practice",
+  },
+  {
+    title: "오시는 길",
+    description: "방문 상담 전 사무실 위치와 연락처를 확인할 수 있습니다.",
+    href: "/location",
+  },
+];
 
 function TextLink({
   href,
@@ -123,22 +189,48 @@ export default function ConsultationPage() {
 
       <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
         <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
-          <SectionHeading title="상담은 이런 과정으로 진행됩니다" />
-          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <SectionHeading
+            title="상담은 보통 이렇게 진행됩니다"
+            description="상담에서는 결론을 먼저 단정하기보다, 현재 상황과 자료를 나누어 확인하면서 필요한 대응 방향을 검토합니다."
+          />
+          <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {consultationSteps.map((item, index) => (
-              <div
-                key={item}
+              <article
+                key={item.title}
                 className="rounded-lg border border-[#e8ddcb] bg-white/60 p-6 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
               >
                 <p className="text-xs font-semibold text-accent md:text-sm">
                   {String(index + 1).padStart(2, "0")}
                 </p>
-                <p className="mt-4 text-base font-semibold leading-7 text-primary md:text-xl md:leading-8">
-                  {item}
+                <h3 className="mt-4 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-primary/70 md:text-[15px] md:leading-7">
+                  {item.description}
                 </p>
-              </div>
+              </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+        <SectionHeading title="상담 전에 함께 확인하면 좋은 페이지" />
+        <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          {relatedPages.map((page) => (
+            <Link
+              key={page.href}
+              href={page.href}
+              className="rounded-lg border border-[#e8ddcb] bg-white/60 p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] transition-colors hover:border-accent md:border-accent/25 md:bg-background/95 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+            >
+              <h3 className="text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
+                {page.title}
+              </h3>
+              <p className="mt-3 text-sm leading-7 text-primary/70 md:text-[15px] md:leading-7">
+                {page.description}
+              </p>
+            </Link>
+          ))}
         </div>
       </section>
 
@@ -218,7 +310,7 @@ export default function ConsultationPage() {
           </h2>
           <p className="mt-5 max-w-2xl whitespace-pre-line leading-7 text-background/75 md:text-[17px] md:font-medium md:leading-8">
             {
-              "상담은 사전에 일정을 조율한 뒤 진행됩니다.\n전화로 사건의 종류, 받은 서류, 급한 기한이 있는지를 먼저 알려주시면 상담 준비에 도움이 됩니다."
+              "상담은 현재 상황을 정리하고, 자료와 기한을 함께 확인한 뒤 가능한 대응 방향을 검토하는 과정입니다.\n사건마다 필요한 대응은 달라질 수 있으므로, 상담 전에는 가지고 있는 자료와 주요 경위를 정리해 오시면 도움이 됩니다."
             }
           </p>
           <div className="mt-6 max-w-sm rounded-md border border-background/20 bg-background/10 p-4">
