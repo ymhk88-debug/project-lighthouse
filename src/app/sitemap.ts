@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { siteUrl } from "@/lib/site";
+import { allowSearchIndexing, siteUrl } from "@/lib/site";
 
 const lastModified = new Date("2026-07-07");
 
@@ -20,6 +20,10 @@ const routes = [
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  if (!allowSearchIndexing) {
+    return [];
+  }
+
   return routes.map(({ path, priority }) => ({
     url: `${siteUrl}${path}`,
     lastModified,
