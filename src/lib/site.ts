@@ -16,6 +16,12 @@ const rawSiteUrl =
 
 export const siteUrl = normalizeSiteUrl(rawSiteUrl);
 
+/**
+ * Search indexing stays off until launch.
+ * Set this to true to restore index/follow metadata, robots.txt Allow, and the sitemap.
+ */
+export const allowSearchIndexing: boolean = false;
+
 export const siteName = "유민환 변호사";
 
 export const siteDescription =
