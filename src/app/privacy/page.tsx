@@ -1,5 +1,4 @@
-const officePhone = "055-263-5882";
-const mobilePhone = "050-5948-5158";
+import { email, mobilePhone, officePhone } from "@/lib/contact";
 
 const policySections = [
   {
@@ -105,6 +104,15 @@ export default function PrivacyPage() {
                       className="font-semibold text-primary transition-colors hover:text-accent"
                     >
                       {mobilePhone}
+                    </a>
+                  </p>
+                  <p className="text-sm leading-7 text-primary/75 md:text-[15px]">
+                    이메일{" "}
+                    <a
+                      href={`mailto:${email}`}
+                      className="font-semibold text-primary transition-colors hover:text-accent"
+                    >
+                      {email}
                     </a>
                   </p>
                 </div>

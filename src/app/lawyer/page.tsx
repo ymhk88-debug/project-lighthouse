@@ -1,13 +1,10 @@
 import Image from "next/image";
 import type { Metadata } from "next";
+import { address, email, mobilePhone, officePhone } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "변호사 소개",
 };
-
-const officePhone = "055-263-5882";
-const mobilePhone = "050-5948-5158";
-const address = "창원시 성산구 용지로169번길 7, 12층";
 
 const qualifications = ["제9회 변호사시험 합격", "경남지방변호사회 소속"];
 
@@ -19,8 +16,8 @@ const career = [
 ];
 
 const publicService = [
-  "(현) 창원지방검찰청 진주지청 피해자 국선변호사",
-  "(현) 창원지방검찰청 피해자 국선변호사",
+  "(현) 창원지방공소청 진주지청 피해자 국선변호사",
+  "(현) 창원지방공소청 피해자 국선변호사",
   "(현) 창원지방법원 논스톱국선변호인",
   "(전) 창원지방법원 국선변호인",
 ];
@@ -108,6 +105,14 @@ export default function LawyerPage() {
                     <dd>
                       <a href={`tel:${mobilePhone}`} className="transition-colors hover:text-accent">
                         {mobilePhone}
+                      </a>
+                    </dd>
+                  </div>
+                  <div className="grid grid-cols-[5.5rem_1fr] gap-3 py-3 text-sm leading-6 text-primary md:text-[15px] md:leading-7">
+                    <dt>이메일</dt>
+                    <dd>
+                      <a href={`mailto:${email}`} className="transition-colors hover:text-accent">
+                        {email}
                       </a>
                     </dd>
                   </div>

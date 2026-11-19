@@ -1,8 +1,5 @@
 import Link from "next/link";
-
-const address = "창원시 성산구 용지로169번길 7, 12층";
-const officePhone = "055-263-5882";
-const mobilePhone = "050-5948-5158";
+import { address, email, mobilePhone, officePhone } from "@/lib/contact";
 const naverMapUrl =
   "https://map.naver.com/p/search/%EB%B3%80%ED%98%B8%EC%82%AC%20%EC%9C%A0%EB%AF%BC%ED%99%98%20%EB%B2%95%EB%A5%A0%EC%82%AC%EB%AC%B4%EC%86%8C/place/2076772014?c=15.00,0,0,0,dh&isCorrectAnswer=true&placePath=%2Fhome%3Ffrom%3Dmap%26fromPanelNum%3D1%26additionalHeight%3D76%26timestamp%3D202607011737%26locale%3Dko%26svcName%3Dmap_pcv5%26searchText%3D%EB%B3%80%ED%98%B8%EC%82%AC%20%EC%9C%A0%EB%AF%BC%ED%99%98%20%EB%B2%95%EB%A5%A0%EC%82%AC%EB%AC%B4%EC%86%8C";
 const naverMapEmbedUrl = "";
@@ -31,16 +28,14 @@ const transitItems = [
     description: "방문 전 주소와 주차 가능 여부를 함께 확인해 주세요.",
   },
   {
-    title: "대중교통",
-    description:
-      "가까운 정류장 또는 역에서의 이동 경로는 지도 앱을 통해 확인하실 수 있습니다.",
-  },
-  {
     title: "주차",
     description:
       "주차 가능 여부와 이용 방법은 상담 일정 조율 과정에서 함께 안내드립니다.",
   },
 ];
+
+const seongsanLotteRoutes = "100, 152, 156, 212, 222, 223, 3000, 3004, 9000";
+const seongsanEmartRoutes = "100, 152, 156, 212, 222, 223, 3000, 3004";
 
 function TextLink({
   href,
@@ -145,6 +140,12 @@ export default function LocationPage() {
                   {mobilePhone}
                 </a>
               </p>
+              <p className="text-sm leading-7 text-muted md:text-[15px] md:leading-7 md:text-primary/70">
+                이메일{" "}
+                <a href={`mailto:${email}`} className="transition-colors hover:text-accent">
+                  {email}
+                </a>
+              </p>
               <p className="mt-3 text-sm leading-7 text-primary/70 md:text-[15px]">
                 방문 전 전화로 상담 일정과 준비자료를 함께 확인해 주세요.
               </p>
@@ -221,15 +222,48 @@ export default function LocationPage() {
 
       <section className="mx-auto max-w-7xl px-6 py-16 md:py-12">
         <SectionHeading title="교통 및 주차 안내" />
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
+        <article className="mt-8 rounded-lg border border-[#e8ddcb] bg-white/60 p-6 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-7 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]">
+          <h3 className="text-lg font-semibold text-primary md:text-2xl">대중교통</h3>
+          <p className="mt-4 text-sm leading-7 text-muted md:text-[15px] md:leading-7 md:text-primary/70">
+            유민환법률사무소는 용지호수, 성산아트홀, 정우상가 인근 한성빌딩 12층에 있습니다.
+          </p>
+          <h4 className="mt-6 text-base font-semibold text-primary md:text-lg">성산아트홀 정류소</h4>
+          <ul className="mt-3 space-y-2 text-sm leading-7 text-muted md:text-[15px] md:leading-7 md:text-primary/70">
+            <li>성산아트홀(롯데아파트 방면): {seongsanLotteRoutes}</li>
+            <li>성산아트홀(이마트 방면): {seongsanEmartRoutes}</li>
+          </ul>
+          <p className="mt-3 text-sm leading-7 text-muted md:text-[15px] md:leading-7 md:text-primary/70">
+            성산아트홀 정류소에서 한성빌딩까지는 직선거리 약 100m입니다.
+          </p>
+          <h4 className="mt-6 text-base font-semibold text-primary md:text-lg">정우상가·창원시청 정류소</h4>
+          <ul className="mt-3 space-y-2 text-sm leading-7 text-muted md:text-[15px] md:leading-7 md:text-primary/70">
+            <li>
+              창원시청(정우상가), 창원시청 정류소에 시청 방면 다수 노선이 정차합니다. 한성빌딩까지
+              직선거리 약 300m입니다.
+            </li>
+          </ul>
+          <h4 className="mt-6 text-base font-semibold text-primary md:text-lg">용지호수</h4>
+          <ul className="mt-3 space-y-2 text-sm leading-7 text-muted md:text-[15px] md:leading-7 md:text-primary/70">
+            <li>사무소는 용지호수 바로 인근에 있습니다.</li>
+          </ul>
+          <p className="mt-6 text-sm leading-7 text-muted md:text-[15px] md:leading-7 md:text-primary/70">
+            버스 노선은 바뀔 수 있으니 출발 전에{" "}
+            <a
+              href="https://bus.changwon.go.kr"
+              className="font-semibold text-primary underline decoration-accent/45 underline-offset-4 transition-colors hover:text-accent"
+            >
+              창원버스정보시스템
+            </a>
+            에서 확인해 주세요.
+          </p>
+        </article>
+        <div className="mt-4 grid gap-4 md:grid-cols-2">
           {transitItems.map((item) => (
             <article
               key={item.title}
               className="rounded-lg border border-[#e8ddcb] bg-white/60 p-6 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
             >
-              <h3 className="text-lg font-semibold text-primary md:text-2xl">
-                {item.title}
-              </h3>
+              <h3 className="text-lg font-semibold text-primary md:text-2xl">{item.title}</h3>
               <p className="mt-4 text-sm leading-7 text-muted md:text-[15px] md:leading-7 md:text-primary/70">
                 {item.description}
               </p>

@@ -2,9 +2,9 @@
 
 ## Completed For Release Prep 2
 
-- Actual office address reflected: 창원시 성산구 용지로169번길 7, 12층
+- Actual office address reflected: 경남 창원시 성산구 용지로169번길 7 한성빌딩 12층(용호동)
 - Final Naver Map link reflected on `/location`.
-- Public phone numbers reflected: 사무실 055-263-5882, 휴대폰 050-5948-5158
+- Public phone numbers reflected: 사무실 055-263-5882, 휴대폰 010-5948-5158
 - Footer office information, lawyer information, address, and phone numbers reflected.
 - Consultation page CTA includes the public phone numbers.
 

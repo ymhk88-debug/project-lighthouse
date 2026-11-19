@@ -147,7 +147,9 @@ export default function Home() {
           <h1 className="mt-5 max-w-2xl text-3xl font-semibold leading-tight text-primary sm:text-4xl md:text-background md:text-6xl">
             법률 문제는
             <br />
-            결과만큼 과정도 중요합니다.
+            결과만큼
+            <br />
+            과정도 중요합니다.
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-9 text-muted md:text-xl md:font-medium md:leading-9 md:text-background/75">
             지금 무엇을 해야 하는지부터

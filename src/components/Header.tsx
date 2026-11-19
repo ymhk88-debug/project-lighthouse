@@ -22,9 +22,19 @@ export function Header() {
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-6">
         <Link
           href="/"
-          className="text-base font-bold text-primary md:text-lg md:text-background"
+          aria-label="유민환법률사무소"
+          className="inline-flex shrink-0 items-center"
         >
-          유민환 변호사
+          <img
+            src="/logo-wordmark.svg"
+            alt="유민환법률사무소"
+            className="h-[23px] w-auto md:hidden"
+          />
+          <img
+            src="/logo-wordmark-light.svg"
+            alt=""
+            className="hidden h-[30px] w-auto md:block"
+          />
         </Link>
         <nav className="hidden items-center gap-7 text-sm font-medium text-primary md:flex md:text-base md:text-background/85">
           {navigation.map((item) => (

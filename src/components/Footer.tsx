@@ -1,7 +1,5 @@
 import Link from "next/link";
-
-const officePhone = "055-263-5882";
-const mobilePhone = "050-5948-5158";
+import { address, email, mobilePhone, officePhone } from "@/lib/contact";
 
 export function Footer() {
   return (
@@ -9,11 +7,13 @@ export function Footer() {
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-8 px-6 py-10 md:flex-row md:items-start md:justify-between md:py-11">
         <div>
           <p className="text-base font-semibold md:text-xl">유민환 변호사</p>
-          <p className="mt-2 text-sm text-background/70 md:text-base md:text-background/75">
-            법률사무소 해결 변호사 유민환 법률사무소
-          </p>
+          <img
+            src="/logo-wordmark-light.svg"
+            alt="유민환법률사무소"
+            className="mt-3 h-6 w-auto"
+          />
           <p className="mt-5 text-sm text-background/70 md:text-base md:text-background/80">
-            주소: 창원시 성산구 용지로169번길 7, 12층
+            주소: {address}
           </p>
           <p className="mt-1.5 text-sm text-background/70 md:text-base md:text-background/80">
             사무실{" "}
@@ -31,6 +31,12 @@ export function Footer() {
               className="transition-colors hover:text-accent"
             >
               {mobilePhone}
+            </a>
+          </p>
+          <p className="mt-1.5 text-sm text-background/70 md:text-base md:text-background/80">
+            이메일{" "}
+            <a href={`mailto:${email}`} className="transition-colors hover:text-accent">
+              {email}
             </a>
           </p>
         </div>

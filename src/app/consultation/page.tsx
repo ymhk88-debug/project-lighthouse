@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { email, mobilePhone, officePhone } from "@/lib/contact";
 
 const consultationSteps = [
   {
@@ -92,8 +93,6 @@ const faqItems = [
 ];
 
 const afterSteps = ["상담", "자료 보완", "사건 검토", "위임 여부 결정", "사건 진행"];
-const officePhone = "055-263-5882";
-const mobilePhone = "050-5948-5158";
 
 const relatedPages = [
   {
@@ -335,6 +334,12 @@ export default function ConsultationPage() {
                 className="transition-colors hover:text-accent"
               >
                 {mobilePhone}
+              </a>
+            </p>
+            <p className="mt-1 text-sm text-background/75 md:text-[15px]">
+              이메일{" "}
+              <a href={`mailto:${email}`} className="transition-colors hover:text-accent">
+                {email}
               </a>
             </p>
             <p className="mt-3 text-sm leading-6 text-background/75 md:text-[15px]">
