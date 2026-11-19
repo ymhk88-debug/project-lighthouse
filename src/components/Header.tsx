@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 const navigation = [
+  { label: "변호사 소개", href: "/lawyer" },
   { label: "처음 오셨나요", href: "/first-visit" },
   { label: "일하는 방식", href: "/working-style" },
   { label: "업무분야", href: "/practice" },

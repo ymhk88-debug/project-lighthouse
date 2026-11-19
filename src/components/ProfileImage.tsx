@@ -12,7 +12,7 @@ export function ProfileImage() {
         <p className="text-sm leading-6 text-muted">
           프로필 사진 영역
           <br />
-          public/profile-yuminhwan.png
+          public/profile-arms-crossed.jpg
         </p>
       </div>
     );
@@ -20,12 +20,13 @@ export function ProfileImage() {
 
   return (
     <Image
-      src="/profile-yuminhwan.png"
+      src="/profile-arms-crossed.jpg"
       alt="유민환 변호사 프로필 사진"
       fill
-      sizes="(min-width: 1024px) 378px, 100vw"
-      className="scale-[1.015] object-cover"
-      priority
+      quality={90}
+      sizes="(min-width: 1024px) 360px, 320px"
+      className="object-cover [object-position:50%_10%]"
+      preload
       onError={() => setHasError(true)}
     />
   );
