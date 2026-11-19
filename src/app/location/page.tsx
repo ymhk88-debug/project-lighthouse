@@ -1,8 +1,8 @@
 import Link from "next/link";
+import { KakaoRoughMap } from "@/components/KakaoRoughMap";
 import { address, email, mobilePhone, officePhone } from "@/lib/contact";
-const naverMapUrl =
-  "https://map.naver.com/p/search/%EB%B3%80%ED%98%B8%EC%82%AC%20%EC%9C%A0%EB%AF%BC%ED%99%98%20%EB%B2%95%EB%A5%A0%EC%82%AC%EB%AC%B4%EC%86%8C/place/2076772014?c=15.00,0,0,0,dh&isCorrectAnswer=true&placePath=%2Fhome%3Ffrom%3Dmap%26fromPanelNum%3D1%26additionalHeight%3D76%26timestamp%3D202607011737%26locale%3Dko%26svcName%3Dmap_pcv5%26searchText%3D%EB%B3%80%ED%98%B8%EC%82%AC%20%EC%9C%A0%EB%AF%BC%ED%99%98%20%EB%B2%95%EB%A5%A0%EC%82%AC%EB%AC%B4%EC%86%8C";
-const naverMapEmbedUrl = "";
+
+const kakaoMapUrl = "https://place.map.kakao.com/132675957";
 
 const visitChecklist = [
   {
@@ -159,37 +159,22 @@ export default function LocationPage() {
           <SectionHeading
             title="지도 확인"
             description={
-              "네이버지도를 통해 사무실 위치를 확인하실 수 있습니다.\n방문 상담은 사전 일정 조율 후 진행되므로, 방문 전 전화로 일정을 확인해 주세요."
+              "카카오맵을 통해 사무실 위치를 확인하실 수 있습니다.\n방문 상담은 사전 일정 조율 후 진행되므로, 방문 전 전화로 일정을 확인해 주세요."
             }
           />
-          <div className="rounded-lg border border-[#e8ddcb] bg-white/60 p-6 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-7 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]">
-            {naverMapEmbedUrl ? (
-              <div className="overflow-hidden rounded-md border border-border bg-background/60">
-                <iframe
-                  title="유민환 변호사 사무실 위치"
-                  src={naverMapEmbedUrl}
-                  className="h-[320px] w-full md:h-[420px]"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
-              </div>
-            ) : (
-              <div className="flex min-h-52 flex-col items-center justify-center rounded-md border border-dashed border-border bg-background/60 px-6 text-center">
-                <p className="text-sm leading-7 text-primary/70 md:text-[15px] md:leading-7">
-                  사무실 위치는 네이버지도에서 확인하실 수 있습니다.
-                  <br />
-                  정확한 길 안내는 네이버지도에서 크게 보기를 이용해 주세요.
-                </p>
-              </div>
-            )}
+          <div className="min-w-0 rounded-lg border border-[#e8ddcb] bg-white/60 p-6 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-7 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]">
+            <p className="text-sm font-semibold leading-7 text-primary md:text-[15px]">{address}</p>
+            <div className="mt-4 overflow-hidden rounded-md border border-border bg-background/60">
+              <KakaoRoughMap />
+            </div>
             <div className="mt-6 flex justify-center">
               <a
-                href={naverMapUrl}
+                href={kakaoMapUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex h-11 items-center justify-center rounded-md bg-primary px-5 text-sm font-semibold text-background transition-colors hover:bg-primary/90 md:h-12 md:px-7 md:bg-accent md:text-primary md:shadow-[0_10px_24px_rgba(184,155,94,0.16)]"
               >
-                네이버지도에서 크게 보기
+                카카오맵에서 크게 보기
               </a>
             </div>
           </div>
