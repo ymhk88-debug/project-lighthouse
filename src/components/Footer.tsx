@@ -53,6 +53,9 @@ export function Footer() {
           <Link href="/consultation" className="transition-colors hover:text-accent">
             상담 안내
           </Link>
+          <Link href="/cases" className="transition-colors hover:text-accent">
+            해결사례
+          </Link>
           <Link href="/note" className="transition-colors hover:text-accent">
             법률 실무 노트
           </Link>

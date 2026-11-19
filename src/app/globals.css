@@ -29,6 +29,69 @@ body {
   overflow-wrap: break-word;
 }
 
+@media (max-width: 767px) {
+  body {
+    padding-bottom: 4.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-line {
+    animation: rise 520ms ease-out both;
+  }
+
+  .hero-line:nth-child(2) {
+    animation-delay: 90ms;
+  }
+
+  .hero-line:nth-child(3) {
+    animation-delay: 170ms;
+  }
+
+  .hero-line:nth-child(4) {
+    animation-delay: 250ms;
+  }
+
+  @supports (animation-timeline: view()) {
+    main section:not(.hero) {
+      animation: rise 520ms ease-out both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 24%;
+    }
+  }
+
+  main article,
+  main a[class*="rounded"] {
+    transition:
+      border-color 220ms ease-out,
+      background-color 220ms ease-out,
+      color 220ms ease-out;
+  }
+
+  main article:hover {
+    border-color: var(--accent);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-line,
+  main section:not(.hero) {
+    animation: none;
+  }
+}
+
 @media (min-width: 768px) {
   body {
     background: var(--primary);

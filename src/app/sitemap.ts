@@ -13,6 +13,7 @@ const routes = [
   { path: "/practice/inheritance-family", priority: 0.8 },
   { path: "/practice/administrative", priority: 0.8 },
   { path: "/consultation", priority: 0.9 },
+  { path: "/cases", priority: 0.6 },
   { path: "/faq", priority: 0.7 },
   { path: "/note", priority: 0.8 },
   { path: "/location", priority: 0.8 },

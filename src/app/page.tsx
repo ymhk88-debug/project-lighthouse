@@ -62,7 +62,7 @@ const faqItems = [
   "상담 전에 어떤 자료를 준비해야 하나요?",
   "전화나 메시지로 먼저 문의할 수 있나요?",
   "사건 진행 방향은 언제 알 수 있나요?",
-  "비용은 상담 후에 안내받을 수 있나요?",
+  "상담 비용과 예약은 어디서 확인하나요?",
 ];
 
 const noteCards = [
@@ -139,32 +139,28 @@ function TextLink({
 export default function Home() {
   return (
     <div className="bg-background md:bg-primary">
-      <section className="mx-auto grid w-full max-w-7xl gap-12 px-6 py-18 md:py-24 lg:grid-cols-[1fr_0.72fr] lg:items-center">
+      <section className="hero mx-auto grid w-full max-w-7xl gap-12 px-6 py-18 md:py-24 lg:grid-cols-[1fr_0.72fr] lg:items-center">
         <div>
-          <p className="text-sm font-semibold tracking-[0.18em] text-accent md:text-[15px]">
-            유민환 변호사 법률 플랫폼
+          <p className="hero-line text-sm font-semibold tracking-[0.18em] text-accent md:text-[15px]">
+            유민환법률사무소
           </p>
-          <h1 className="mt-5 max-w-2xl text-3xl font-semibold leading-tight text-primary sm:text-4xl md:text-background md:text-6xl">
-            법률 문제는
-            <br />
-            결과만큼
-            <br />
-            과정도 중요합니다.
+          <h1 className="hero-line mt-4 text-5xl font-semibold leading-tight text-primary sm:text-6xl md:text-background md:text-7xl">
+            유민환
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-9 text-muted md:text-xl md:font-medium md:leading-9 md:text-background/75">
-            지금 무엇을 해야 하는지부터
+          <p className="hero-line mt-6 max-w-xl text-2xl font-semibold leading-snug text-primary md:text-3xl md:text-background">
+            이야기를 먼저 듣고,
             <br />
-            차분히 함께 정리해보겠습니다.
+            사실부터 정리합니다.
           </p>
-          <p className="mt-5 max-w-xl leading-7 text-foreground/75 md:text-[17px] md:font-medium md:leading-8 md:text-background/78">
-            의뢰인의 이야기를 충분히 듣고,
-            <br />
-            가능한 해결 방향을 함께 찾겠습니다.
-          </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row md:gap-4">
-            <TextLink href="/consultation">상담 안내 보기</TextLink>
-            <TextLink href="/first-visit" variant="secondary">
-              처음 오셨나요?
+          <div className="hero-line mt-8 flex flex-col gap-3 sm:flex-row md:gap-4">
+            <a
+              href="tel:055-263-5882"
+              className="inline-flex h-11 items-center justify-center rounded-md bg-primary px-5 text-sm font-semibold text-background transition-colors hover:bg-primary/90 md:h-12 md:bg-accent md:px-7 md:text-base md:text-primary md:shadow-[0_10px_24px_rgba(184,155,94,0.16)] md:hover:bg-accent/90"
+            >
+              전화 상담 055-263-5882
+            </a>
+            <TextLink href="/consultation" variant="secondary">
+              상담 안내
             </TextLink>
           </div>
         </div>

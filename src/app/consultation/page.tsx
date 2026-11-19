@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { email, mobilePhone, officePhone } from "@/lib/contact";
+import { address, email, mobilePhone, officePhone } from "@/lib/contact";
 
 const consultationSteps = [
   {
@@ -179,11 +179,74 @@ export default function ConsultationPage() {
           }
         </p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row md:gap-4">
-          <TextLink href="/consultation">상담 문의하기</TextLink>
-          <TextLink href="/first-visit" variant="secondary">
-            처음 오셨나요?
+          <a
+            href={`tel:${officePhone}`}
+            className="inline-flex h-11 items-center justify-center rounded-md bg-primary px-5 text-sm font-semibold text-background md:h-12 md:bg-accent md:px-7 md:text-base md:text-primary"
+          >
+            전화 상담 {officePhone}
+          </a>
+          <TextLink href="/location" variant="secondary">
+            오시는 길
           </TextLink>
         </div>
+      </section>
+
+      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
+        <div className="mx-auto grid max-w-7xl gap-8 px-6 py-16 md:py-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+          <SectionHeading title="상담 전에 정한 내용" description="예약 후 방문 또는 전화로 진행합니다." />
+          <div className="rounded-lg border border-[#e8ddcb] bg-white/60 p-6 md:border-accent/25 md:bg-background/95 md:p-7">
+            <dl className="divide-y divide-border">
+              {[
+                ["상담료", "10만원 (상담 시간과 관계없이 같습니다)"],
+                ["방법", "방문 또는 전화"],
+                ["예약", "예약제로 진행합니다"],
+                ["시간", "평일 9시–18시"],
+                ["사무실", officePhone],
+                ["휴대폰", mobilePhone],
+                ["이메일", email],
+                ["주소", address],
+                ["주차", "주차 가능 여부와 이용 방법은 상담 일정 조율 과정에서 함께 안내드립니다."],
+              ].map(([label, value]) => (
+                <div key={label} className="grid gap-1 py-3 sm:grid-cols-[6rem_1fr] sm:gap-4">
+                  <dt className="text-sm font-semibold text-accent">{label}</dt>
+                  <dd className="text-sm leading-7 text-primary md:text-[15px]">
+                    {label === "사무실" || label === "휴대폰" ? (
+                      <a href={`tel:${value}`} className="hover:text-accent">
+                        {value}
+                      </a>
+                    ) : label === "이메일" ? (
+                      <a href={`mailto:${value}`} className="hover:text-accent">
+                        {value}
+                      </a>
+                    ) : (
+                      value
+                    )}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+        <SectionHeading title="상담까지 세 단계" />
+        <ol className="mt-8 grid gap-4 md:grid-cols-3">
+          {[
+            ["01", "문의", "전화, 문자, 이메일로 현재 상황을 간단히 알려 주세요."],
+            ["02", "일정 조율", "평일 9시–18시 안에서 방문 또는 전화 시간을 정합니다."],
+            ["03", "상담", "사실과 자료를 나누어 보고, 지금 확인할 일을 정리합니다."],
+          ].map(([index, title, description]) => (
+            <li
+              key={index}
+              className="rounded-lg border border-[#e8ddcb] bg-white/60 p-6 md:border-accent/25 md:bg-background/95"
+            >
+              <p className="text-sm font-semibold text-accent">{index}</p>
+              <h3 className="mt-3 text-xl font-semibold text-primary">{title}</h3>
+              <p className="mt-3 text-sm leading-7 text-muted md:text-primary/70">{description}</p>
+            </li>
+          ))}
+        </ol>
       </section>
 
       <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">

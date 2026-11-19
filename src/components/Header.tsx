@@ -8,6 +8,7 @@ const navigation = [
   { label: "처음 오셨나요", href: "/first-visit" },
   { label: "일하는 방식", href: "/working-style" },
   { label: "업무분야", href: "/practice" },
+  { label: "해결사례", href: "/cases" },
   { label: "법률 실무 노트", href: "/note" },
   { label: "FAQ", href: "/faq" },
   { label: "상담 안내", href: "/consultation" },
@@ -36,7 +37,7 @@ export function Header() {
             className="hidden h-[30px] w-auto md:block"
           />
         </Link>
-        <nav className="hidden items-center gap-7 text-sm font-medium text-primary md:flex md:text-base md:text-background/85">
+        <nav className="hidden items-center gap-4 text-sm font-medium text-primary lg:flex lg:gap-5 lg:text-[15px] lg:text-background/85">
           {navigation.map((item) => (
             <Link
               key={item.href}
@@ -49,7 +50,7 @@ export function Header() {
         </nav>
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border text-primary md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border text-primary md:border-background/30 md:text-background lg:hidden"
           aria-label="메뉴 열기"
           aria-expanded={isOpen}
           onClick={() => setIsOpen((current) => !current)}
@@ -62,7 +63,7 @@ export function Header() {
         </button>
       </div>
       {isOpen ? (
-        <nav className="border-t border-border px-6 py-4 md:hidden">
+        <nav className="border-t border-border px-6 py-4 lg:hidden">
           <div className="mx-auto flex max-w-7xl flex-col gap-3 text-sm font-medium text-primary">
             {navigation.map((item) => (
               <Link

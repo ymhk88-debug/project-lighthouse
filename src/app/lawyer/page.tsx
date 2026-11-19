@@ -56,6 +56,14 @@ export default function LawyerPage() {
             창원에서 민사·형사 사건을 직접 상담하고 처리합니다. 의뢰인의 사정을 먼저 듣고, 가능한 방법과 한계를
             있는 그대로 설명드립니다.
           </p>
+          {/* [확인 필요: 변호사님 문구 검토] */}
+          <div className="mt-8 max-w-2xl border-l-2 border-accent pl-5">
+            <h2 className="text-sm font-semibold text-accent md:text-[15px]">일을 대하는 태도</h2>
+            <p className="mt-3 text-base leading-8 text-primary md:text-[17px] md:leading-8 md:text-background/80">
+              사건을 처음 마주하면 무엇부터 확인해야 할지 알기 어렵습니다. 저는 이야기를 먼저 듣고, 사실과 자료를
+              나누어 본 뒤, 지금 할 수 있는 일과 그 한계를 그대로 설명하려고 합니다.
+            </p>
+          </div>
         </div>
 
         <div className="w-full max-w-[380px] lg:col-start-1 lg:row-start-1 lg:row-span-2 lg:max-w-none">

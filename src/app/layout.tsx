@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { QuickContact } from "@/components/QuickContact";
 import { allowSearchIndexing, siteDescription, siteName, siteUrl } from "@/lib/site";
 import "./globals.css";
 
@@ -23,6 +24,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", type: "image/png", sizes: "32x32" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+  },
   openGraph: {
     type: "website",
     locale: "ko_KR",
@@ -30,6 +38,7 @@ export const metadata: Metadata = {
     siteName,
     title: siteName,
     description: siteDescription,
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "유민환법률사무소" }],
   },
   robots: allowSearchIndexing
     ? {
@@ -64,6 +73,7 @@ export default function RootLayout({
         <Header />
         <main className="min-h-[calc(100vh-320px)]">{children}</main>
         <Footer />
+        <QuickContact />
       </body>
     </html>
   );
