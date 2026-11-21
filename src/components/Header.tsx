@@ -26,16 +26,16 @@ const navigation: NavItem[] = [
   { label: "오시는 길", href: "/location" },
 ];
 
-const linkClass = "transition-colors hover:text-accent";
+const linkClass = "text-background/90 transition-colors hover:text-[#d4bc84]";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-20 border-b border-accent/50 bg-white/95 text-primary backdrop-blur">
+    <header className="sticky top-0 z-20 border-b border-accent/40 bg-primary text-background">
       <div className="mx-auto flex h-16 w-full max-w-[1160px] items-center justify-between px-6">
         <Link href="/" aria-label="유민환법률사무소" className="inline-flex shrink-0 items-center">
-          <img src="/logo-wordmark.svg" alt="유민환법률사무소" className="h-[26px] w-auto" />
+          <img src="/logo-wordmark-light.svg" alt="유민환법률사무소" className="h-[26px] w-auto" />
         </Link>
         <nav className="hidden items-center gap-5 text-[15px] font-medium lg:flex">
           {navigation.map((item) =>
@@ -43,7 +43,7 @@ export function Header() {
               <div key={item.href} className="group relative">
                 <Link href={item.href} className={`${linkClass} inline-flex items-center gap-1`}>
                   {item.label}
-                  <span aria-hidden="true" className="text-[10px] text-accent">
+                  <span aria-hidden="true" className="text-[10px] text-[#d4bc84]">
                     ▾
                   </span>
                 </Link>
@@ -70,7 +70,7 @@ export function Header() {
         </nav>
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-primary text-primary lg:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-background/40 text-background lg:hidden"
           aria-label={isOpen ? "메뉴 닫기" : "메뉴 열기"}
           aria-expanded={isOpen}
           onClick={() => setIsOpen((current) => !current)}
@@ -83,11 +83,11 @@ export function Header() {
         </button>
       </div>
       {isOpen ? (
-        <nav className="border-t border-accent/40 bg-white px-6 py-4 lg:hidden">
+        <nav className="border-t border-accent/40 bg-primary px-6 py-4 text-background lg:hidden">
           <div className="mx-auto flex max-w-[1160px] flex-col gap-1 text-sm font-medium">
             {navigation.map((item) => (
               <div key={item.href}>
-                <Link href={item.href} className="block py-2 hover:text-accent" onClick={() => setIsOpen(false)}>
+                <Link href={item.href} className="block py-2 text-background/90 hover:text-[#d4bc84]" onClick={() => setIsOpen(false)}>
                   {item.label}
                 </Link>
                 {item.children ? (
@@ -96,7 +96,7 @@ export function Header() {
                       <Link
                         key={child.href}
                         href={child.href}
-                        className="py-1.5 text-primary/80 hover:text-accent"
+                        className="py-1.5 text-background/75 hover:text-[#d4bc84]"
                         onClick={() => setIsOpen(false)}
                       >
                         {child.label}

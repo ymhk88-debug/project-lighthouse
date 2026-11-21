@@ -99,7 +99,8 @@ function CardTitle({ icon, children }: { icon?: ReactNode; children: string }) {
 export default function LocationPage() {
   return (
     <div className="bg-background">
-      <section className="mx-auto w-full max-w-[1160px] px-6 py-16 md:py-24">
+      <section className="band-navy">
+        <div className="mx-auto w-full max-w-[1160px] px-6 py-16 md:py-24">
         <p className="text-sm font-semibold tracking-[0.18em] text-accent md:text-[15px]">LOCATION</p>
         <h1 className="mt-5 max-w-3xl text-4xl font-semibold leading-tight text-primary md:text-[42px]">
           오시는 길
@@ -114,6 +115,7 @@ export default function LocationPage() {
           <a href="#visit-prep" className={secondaryButtonClass}>
             방문 전 안내
           </a>
+        </div>
         </div>
       </section>
 

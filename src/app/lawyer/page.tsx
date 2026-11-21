@@ -134,6 +134,69 @@ export default function LawyerPage() {
           </div>
         </div>
       </section>
+
+      <section className="border-t border-accent/40 bg-background">
+        <div className="mx-auto grid max-w-[1160px] gap-8 px-6 py-16 md:grid-cols-2 md:py-24">
+          <div>
+            <h2 className="text-sm font-semibold tracking-[0.16em] text-accent">
+              <span className="gold-rule" />
+              주요 경력
+            </h2>
+            <ul className="mt-6 space-y-3">
+              {[...career, ...publicService].map((item) => (
+                <li key={item} className="border-b border-accent/30 pb-3 text-base leading-7 text-primary">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h2 className="text-sm font-semibold tracking-[0.16em] text-accent">
+              <span className="gold-rule" />
+              학력
+            </h2>
+            <ul className="mt-6 space-y-3">
+              {education.map((item) => (
+                <li key={item} className="border-b border-accent/30 pb-3 text-base leading-7 text-primary">
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <h2 className="mt-10 text-sm font-semibold tracking-[0.16em] text-accent">
+              <span className="gold-rule" />
+              자격·소속
+            </h2>
+            <ul className="mt-6 space-y-3">
+              {qualifications.map((item) => (
+                <li key={item} className="border-b border-accent/30 pb-3 text-base leading-7 text-primary">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="band-navy">
+        <div className="mx-auto max-w-[1160px] px-6 py-16 md:py-24">
+          <h2 className="text-[28px] font-semibold text-primary md:text-4xl">
+            <span className="gold-rule" />
+            사건을 대하는 기준
+          </h2>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {[
+              ["듣기", "의뢰인의 이야기를 충분히 듣겠습니다."],
+              ["과정", "사건을 방치하지 않겠습니다."],
+              ["설명", "결과를 장담하기보다, 과정에 충실하겠습니다."],
+            ].map(([label, text]) => (
+              <article key={label} className="rounded-lg border border-accent/40 bg-white p-6">
+                <p className="text-sm font-semibold text-accent">{label}</p>
+                <p className="mt-3 text-base leading-7 text-primary">{text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

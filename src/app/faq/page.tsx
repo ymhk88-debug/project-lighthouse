@@ -281,7 +281,7 @@ function FaqSection({
       : "bg-background";
 
   return (
-    <section className={sectionClass}>
+    <section id={title} className={sectionClass}>
       <div className="mx-auto grid max-w-[1160px] gap-8 px-6 py-16 md:py-24 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
         <div>
           <p className="text-xs font-semibold text-accent md:text-sm">
@@ -333,6 +333,17 @@ export default function FaqPage() {
             "상담 전 자주 궁금해하시는 내용을 모았습니다.\n상황마다 답은 달라질 수 있지만,\n먼저 확인하면 도움이 되는 기준을 정리했습니다."
           }
         </p>
+        <div className="mt-8 flex flex-wrap gap-2">
+          {faqSections.map((section) => (
+            <a
+              key={section.title}
+              href={`#${section.title}`}
+              className="inline-flex h-10 items-center rounded-full border border-primary/30 bg-white px-4 text-sm font-semibold text-primary hover:border-accent"
+            >
+              {section.title}
+            </a>
+          ))}
+        </div>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row md:gap-4">
           <TextLink href="/consultation">상담 안내 보기</TextLink>
           <TextLink href="/first-visit" variant="secondary">

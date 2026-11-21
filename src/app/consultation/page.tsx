@@ -231,17 +231,14 @@ export default function ConsultationPage() {
 
       <section className="mx-auto max-w-[1160px] px-6 py-16 md:py-24">
         <SectionHeading title="상담까지 세 단계" />
-        <ol className="mt-8 grid gap-4 md:grid-cols-3">
+        <ol className="mt-10 grid gap-8 md:grid-cols-3">
           {[
             ["01", "문의", "전화, 문자, 이메일로 현재 상황을 간단히 알려 주세요."],
             ["02", "일정 조율", "평일 9시–18시 안에서 방문 또는 전화 시간을 정합니다."],
             ["03", "상담", "사실과 자료를 나누어 보고, 지금 확인할 일을 정리합니다."],
           ].map(([index, title, description]) => (
-            <li
-              key={index}
-              className="rounded-lg border border-accent bg-white p-6"
-            >
-              <p className="text-sm font-semibold text-accent">{index}</p>
+            <li key={index} className="text-center">
+              <p className="gold-num mx-auto">{index}</p>
               <h3 className="mt-3 text-xl font-semibold text-primary">{title}</h3>
               <p className="mt-3 text-base leading-7 text-muted md:text-[17px] md:text-primary/70">{description}</p>
             </li>

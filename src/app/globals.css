@@ -29,6 +29,75 @@ body {
   overflow-wrap: break-word;
 }
 
+h1,
+h2,
+h3 {
+  font-family: var(--font-serif), "Apple SD Gothic Neo", "Malgun Gothic", serif;
+}
+
+.band-navy {
+  background: #111f32;
+  color: #f4f0e8;
+}
+
+.band-navy .text-primary {
+  color: #f4f0e8;
+}
+
+.band-navy .text-muted,
+.band-navy .text-primary\/75 {
+  color: #d9d3c8;
+}
+
+.band-navy .text-accent {
+  color: #d4bc84;
+}
+
+.band-navy a.bg-accent,
+.band-navy .bg-accent {
+  color: #111f32;
+}
+
+.band-navy .bg-white,
+.band-navy .bg-white .text-primary {
+  color: #111f32;
+}
+
+.band-navy .bg-white .text-muted,
+.band-navy .bg-white .text-accent {
+  color: #56606e;
+}
+
+.band-navy .bg-white .text-accent {
+  color: #7e6941;
+}
+
+.gold-num {
+  display: inline-flex;
+  height: 2.25rem;
+  width: 2.25rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: #b5965d;
+  color: #111f32;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.gold-rule {
+  display: inline-block;
+  width: 1.75rem;
+  height: 1px;
+  margin-right: 0.65rem;
+  vertical-align: middle;
+  background: #7e6941;
+}
+
+.band-navy .gold-rule {
+  background: #d4bc84;
+}
+
 @media (max-width: 767px) {
   body {
     padding-bottom: 4.75rem;

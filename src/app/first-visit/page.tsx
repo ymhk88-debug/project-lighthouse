@@ -175,9 +175,7 @@ export default function FirstVisitPage() {
                 key={item}
                 className="flex gap-4 border-b border-border pb-4 last:border-b-0 last:pb-0"
               >
-                <span className="text-sm font-semibold text-accent md:text-[15px]">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
+                <span className="gold-num shrink-0">{String(index + 1).padStart(2, "0")}</span>
                 <span className="text-sm font-semibold leading-6 text-primary md:text-lg md:leading-7">
                   {item}
                 </span>

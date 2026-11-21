@@ -88,7 +88,10 @@ const cardClass =
 function SectionHeading({ title, description }: { title: string; description?: string }) {
   return (
     <div className="max-w-[800px]">
-      <h2 className="text-[28px] font-semibold leading-tight text-primary md:text-4xl">{title}</h2>
+      <h2 className="text-[28px] font-semibold leading-tight text-primary md:text-4xl">
+        <span className="gold-rule" />
+        {title}
+      </h2>
       {description ? (
         <p className="mt-4 whitespace-pre-line text-base leading-8 text-muted md:text-[17px]">{description}</p>
       ) : null}
@@ -99,7 +102,8 @@ function SectionHeading({ title, description }: { title: string; description?: s
 export default function Home() {
   return (
     <div className="bg-background">
-      <section className="hero mx-auto grid w-full max-w-[1160px] gap-12 px-6 py-16 md:py-24 lg:grid-cols-[1fr_0.72fr] lg:items-center">
+      <section className="band-navy hero">
+        <div className="mx-auto grid w-full max-w-[1160px] gap-12 px-6 py-16 md:py-24 lg:grid-cols-[1fr_0.72fr] lg:items-center">
         <div>
           <p className="hero-line text-sm font-semibold tracking-[0.18em] text-accent">유민환법률사무소</p>
           <h1 className="hero-line mt-4 max-w-[820px] text-[42px] font-semibold leading-tight text-primary md:text-5xl">
@@ -117,7 +121,7 @@ export default function Home() {
             </a>
             <Link
               href="/consultation"
-              className="inline-flex h-11 items-center justify-center rounded-md border border-primary bg-white px-5 text-sm font-semibold text-primary transition-colors hover:bg-primary/5 md:h-12 md:px-7 md:text-base"
+              className="inline-flex h-11 items-center justify-center rounded-md border border-[#d4bc84] bg-transparent px-5 text-sm font-semibold text-background transition-colors hover:bg-white/10 md:h-12 md:px-7 md:text-base"
             >
               상담 안내
             </Link>
@@ -141,6 +145,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+        </div>
       </section>
 
       <section className="mx-auto max-w-[1160px] px-6 py-16 md:py-24">
@@ -159,6 +164,9 @@ export default function Home() {
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {practiceAreas.map((area) => (
             <Link key={area.href} href={area.href} className={`${cardClass} block`}>
+              <span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full border border-accent text-accent" aria-hidden="true">
+                {area.title.slice(0, 1)}
+              </span>
               <h3 className="text-lg font-semibold text-primary md:text-xl">{area.title}</h3>
               <p className="mt-3 text-base leading-7 text-muted md:text-[17px]">{area.description}</p>
             </Link>
@@ -166,15 +174,28 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-accent/40">
-        <div className="mx-auto max-w-[800px] px-6 py-12 md:py-16">
-          <h2 className="text-[28px] font-semibold leading-tight text-primary md:text-4xl">
-            결과를 장담하지 않습니다.
-          </h2>
-          <p className="mt-4 text-base leading-8 text-muted md:text-[17px]">
-            상담에서는 결론을 먼저 단정하기보다, 사실관계와 자료를 나누어 확인하면서 필요한 대응 방향을
-            검토합니다.
-          </p>
+      <section className="band-navy">
+        <div className="mx-auto grid max-w-[1160px] items-center gap-10 px-6 py-16 md:grid-cols-[1.1fr_0.9fr] md:py-24">
+          <div className="max-w-[800px]">
+            <p className="text-sm font-semibold tracking-[0.18em] text-accent">
+              <span className="gold-rule" />
+              우리의 원칙
+            </p>
+            <h2 className="mt-4 text-[28px] font-semibold leading-tight text-primary md:text-4xl">
+              결과를 장담하지 않습니다.
+            </h2>
+            <p className="mt-4 text-base leading-8 text-muted md:text-[17px]">
+              상담에서는 결론을 먼저 단정하기보다, 사실관계와 자료를 나누어 확인하면서 필요한 대응 방향을
+              검토합니다.
+            </p>
+          </div>
+          <div className="overflow-hidden rounded-lg border border-accent/40">
+            <img
+              src="/office/office-meeting-room.jpg"
+              alt="유리벽 안의 상담 테이블과 창밖으로 보이는 산과 도시"
+              className="h-64 w-full object-cover md:h-80"
+            />
+          </div>
         </div>
       </section>
 
@@ -183,9 +204,7 @@ export default function Home() {
         <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {handlingSteps.map((step, index) => (
             <article key={step.title} className={cardClass}>
-              <p className="text-xs font-semibold text-accent md:text-sm">
-                {String(index + 1).padStart(2, "0")}
-              </p>
+              <p className="gold-num">{String(index + 1).padStart(2, "0")}</p>
               <h3 className="mt-3 text-lg font-semibold leading-7 text-primary">{step.title}</h3>
               <p className="mt-3 text-base leading-7 text-muted md:text-[17px]">{step.description}</p>
             </article>

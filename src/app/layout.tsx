@@ -1,9 +1,17 @@
 import type { Metadata } from "next";
+import { Noto_Serif_KR } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { QuickContact } from "@/components/QuickContact";
 import { allowSearchIndexing, siteDescription, siteName, siteUrl } from "@/lib/site";
 import "./globals.css";
+
+const serif = Noto_Serif_KR({
+  weight: ["500", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-serif",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -69,7 +77,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className="min-h-screen bg-background text-foreground antialiased">
+      <body className={`${serif.variable} min-h-screen bg-background text-foreground antialiased`}>
         <Header />
         <main className="min-h-[calc(100vh-320px)]">{children}</main>
         <Footer />

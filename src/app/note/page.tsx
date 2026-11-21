@@ -45,10 +45,10 @@ export default async function NotePage({
                 key={item}
                 href={href}
                 aria-current={selected ? "page" : undefined}
-                className={`inline-flex h-10 items-center rounded-md px-4 text-sm font-semibold ${
+                className={`inline-flex h-10 items-center rounded-full px-4 text-sm font-semibold ${
                   selected
-                    ? "bg-primary text-background"
-                    : "border border-border bg-background text-primary"
+                    ? "bg-accent text-primary"
+                    : "border border-primary/30 bg-white text-primary"
                 }`}
               >
                 {item}
