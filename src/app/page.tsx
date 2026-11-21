@@ -165,7 +165,7 @@ export default function Home() {
           </div>
           <p className="hero-line mt-6">
             <Link
-              href="/office"
+              href="/location"
               className="text-sm font-semibold text-primary underline decoration-accent/50 underline-offset-4 md:text-background"
             >
               사무실 둘러보기

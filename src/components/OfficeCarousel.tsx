@@ -69,7 +69,7 @@ export function OfficeCarousel() {
       className="outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
     >
       <div
-        className="relative aspect-[4/3] w-full overflow-hidden bg-[#e7e1d6] touch-pan-y"
+        className="relative aspect-[4/3] w-full overflow-hidden bg-[#e7e1d6] touch-pan-y md:aspect-auto md:h-[min(70vh,calc(100svh-26rem))]"
         onPointerDown={(event) => {
           if (event.button !== 0) return;
           if (event.target instanceof Element && event.target.closest("button")) return;

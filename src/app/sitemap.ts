@@ -16,7 +16,6 @@ const routes = [
   { path: "/cases", priority: 0.6 },
   { path: "/faq", priority: 0.7 },
   { path: "/note", priority: 0.8 },
-  { path: "/office", priority: 0.7 },
   { path: "/location", priority: 0.8 },
   { path: "/privacy", priority: 0.3 },
 ] as const;
