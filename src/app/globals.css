@@ -90,6 +90,10 @@ body {
   main section:not(.hero) {
     animation: none;
   }
+
+  .office-slide {
+    transition: none !important;
+  }
 }
 
 @media (min-width: 768px) {
