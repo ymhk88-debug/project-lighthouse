@@ -20,17 +20,17 @@ export default async function NotePage({
     category === "전체" ? notePlaceholders : notePlaceholders.filter((note) => note.category === category);
 
   return (
-    <div className="bg-background md:bg-primary">
-      <section className="mx-auto w-full max-w-7xl px-6 py-16 md:py-20">
+    <div className="bg-background">
+      <section className="mx-auto w-full max-w-[1160px] px-6 py-16 md:py-24">
         <p className="text-sm font-semibold tracking-[0.18em] text-accent md:text-[15px]">법률 실무 노트</p>
-        <h1 className="mt-5 max-w-3xl text-3xl font-semibold leading-tight text-primary sm:text-4xl md:text-background md:text-6xl">
+        <h1 className="mt-5 max-w-3xl text-4xl font-semibold leading-tight text-primary md:text-[42px]">
           예시 글 목록입니다
         </h1>
-        <p className="mt-6 max-w-2xl text-base leading-8 text-muted md:text-[17px] md:text-background/75">
+        <p className="mt-6 max-w-[800px] text-base leading-8 text-muted md:text-[17px]">
           이 목록은 화면 구성을 보기 위한 자리입니다. 실제 글이 아닙니다. 이미 발행한 글은{" "}
           <a
             href="https://blog.naver.com/lawoffice_mh"
-            className="font-semibold text-primary underline decoration-accent/50 underline-offset-4 md:text-background"
+            className="font-semibold text-primary underline decoration-accent/50 underline-offset-4"
           >
             네이버 블로그
           </a>
@@ -56,13 +56,13 @@ export default async function NotePage({
             );
           })}
         </div>
-        <ul className="mt-8 divide-y divide-border rounded-lg border border-[#e8ddcb] bg-white/70 md:border-accent/25 md:bg-background/95">
+        <ul className="mt-8 divide-y divide-border rounded-lg border border-accent bg-white/70">
           {notes.map((note) => (
             <li key={note.slug}>
               <Link href={`/note/${note.slug}`} className="block px-6 py-5">
                 <p className="text-xs font-semibold text-accent">예시 글 · {note.category}</p>
                 <h2 className="mt-2 text-lg font-semibold text-primary">{note.title}</h2>
-                <p className="mt-2 text-sm leading-7 text-muted">{note.summary}</p>
+                <p className="mt-2 text-base leading-7 text-muted md:text-[17px]">{note.summary}</p>
                 <time className="mt-2 block text-xs text-muted" dateTime={note.date}>
                   {note.date}
                 </time>

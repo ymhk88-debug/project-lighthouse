@@ -159,7 +159,7 @@ export function KakaoRoughMap() {
   return (
     <div ref={hostRef} className="w-full min-w-0 max-w-full">
       {failed ? (
-        <p className="text-sm leading-7 text-primary/70 md:text-[15px] md:leading-7">
+        <p className="text-base leading-7 text-primary/75 md:text-[17px] md:leading-7">
           지도를 불러오지 못했습니다. 주소와 아래 버튼으로 위치를 확인하실 수 있습니다.
         </p>
       ) : (

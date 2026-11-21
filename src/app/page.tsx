@@ -100,11 +100,11 @@ function SectionHeading({
       {eyebrow ? (
         <p className="text-sm font-semibold tracking-[0.18em] text-accent md:text-[15px]">{eyebrow}</p>
       ) : null}
-      <h2 className="mt-3 whitespace-pre-line text-2xl font-semibold leading-tight text-primary md:text-background md:text-4xl md:leading-tight">
+      <h2 className="mt-3 whitespace-pre-line text-2xl font-semibold leading-tight text-primary md:text-4xl md:leading-tight">
         {title}
       </h2>
       {description ? (
-        <p className="mt-4 whitespace-pre-line leading-7 text-muted md:text-[17px] md:font-medium md:leading-8 md:text-background/75">
+        <p className="mt-4 whitespace-pre-line leading-7 text-muted md:text-[17px] md:font-medium md:leading-8">
           {description}
         </p>
       ) : null}
@@ -123,8 +123,8 @@ function TextLink({
 }) {
   const className =
     variant === "primary"
-      ? "bg-primary text-background hover:bg-primary/90 md:bg-accent md:text-primary md:shadow-[0_10px_24px_rgba(184,155,94,0.16)] md:hover:bg-accent/90"
-      : "border border-border bg-background text-primary hover:border-accent md:border-accent/35 md:bg-background/95";
+      ? "bg-accent text-primary shadow-[0_10px_24px_rgba(181,150,93,0.18)] hover:bg-accent/90"
+      : "border border-primary bg-white text-primary hover:bg-primary/5";
 
   return (
     <Link
@@ -138,24 +138,22 @@ function TextLink({
 
 export default function Home() {
   return (
-    <div className="bg-background md:bg-primary">
-      <section className="hero mx-auto grid w-full max-w-7xl gap-12 px-6 py-18 md:py-24 lg:grid-cols-[1fr_0.72fr] lg:items-center">
+    <div className="bg-background">
+      <section className="hero mx-auto grid w-full max-w-[1160px] gap-12 px-6 py-16 md:py-24 lg:grid-cols-[1fr_0.72fr] lg:items-center">
         <div>
-          <p className="hero-line text-sm font-semibold tracking-[0.18em] text-accent md:text-[15px]">
+          <p className="hero-line text-sm font-semibold tracking-[0.18em] text-accent">
             유민환법률사무소
           </p>
-          <h1 className="hero-line mt-4 text-5xl font-semibold leading-tight text-primary sm:text-6xl md:text-background md:text-7xl">
-            유민환
+          <h1 className="hero-line mt-4 max-w-[820px] text-[42px] font-semibold leading-tight text-primary md:text-5xl">
+            사실관계를 확인하고 대응 방향을 정리합니다.
           </h1>
-          <p className="hero-line mt-6 max-w-xl text-2xl font-semibold leading-snug text-primary md:text-3xl md:text-background">
-            의뢰인의 편에 서서,
-            <br />
-            사건의 처음부터 끝까지 직접 챙깁니다.
+          <p className="hero-line mt-5 max-w-[800px] text-base font-medium leading-8 text-primary md:text-[17px]">
+            처음 상담부터 사건이 끝날 때까지 유민환 변호사가 직접 챙깁니다.
           </p>
           <div className="hero-line mt-8 flex flex-col gap-3 sm:flex-row md:gap-4">
             <a
               href="tel:055-263-5882"
-              className="inline-flex h-11 items-center justify-center rounded-md bg-primary px-5 text-sm font-semibold text-background transition-colors hover:bg-primary/90 md:h-12 md:bg-accent md:px-7 md:text-base md:text-primary md:shadow-[0_10px_24px_rgba(184,155,94,0.16)] md:hover:bg-accent/90"
+              className="inline-flex h-11 items-center justify-center rounded-md bg-accent px-5 text-sm font-semibold text-primary shadow-[0_10px_24px_rgba(181,150,93,0.18)] transition-colors hover:bg-accent/90 md:h-12 md:px-7 md:text-base"
             >
               전화 상담 055-263-5882
             </a>
@@ -166,7 +164,7 @@ export default function Home() {
           <p className="hero-line mt-6">
             <Link
               href="/location"
-              className="text-sm font-semibold text-primary underline decoration-accent/50 underline-offset-4 md:text-background"
+              className="text-sm font-semibold text-primary underline decoration-accent/50 underline-offset-4"
             >
               사무실 둘러보기
             </Link>
@@ -177,7 +175,7 @@ export default function Home() {
           className="w-full max-w-sm lg:justify-self-center"
           style={{ width: "100%", maxWidth: "380px" }}
         >
-          <div className="w-full overflow-hidden rounded-lg border border-[#e8ddcb] bg-white/40 p-3 shadow-[0_12px_30px_rgba(15,29,46,0.08)] md:border-accent/25 md:bg-background/95 md:shadow-[0_22px_50px_rgba(0,0,0,0.16)]">
+          <div className="w-full overflow-hidden rounded-lg border border-accent bg-white/40 p-3 shadow-[0_12px_30px_rgba(15,29,46,0.08)] md:shadow-[0_22px_50px_rgba(0,0,0,0.16)]">
             <div
               className="relative w-full overflow-hidden rounded-md border border-[#e7dcc8] bg-[#f2eadc] md:border-accent/20"
               style={{
@@ -192,7 +190,7 @@ export default function Home() {
             </div>
             <div className="px-1 pt-4 pb-2">
               <p className="text-sm font-semibold text-primary md:text-lg">유민환 변호사</p>
-              <p className="mt-2 text-sm leading-6 text-muted md:text-[15px] md:leading-7">
+              <p className="mt-2 text-base leading-7 text-muted md:text-[17px] md:leading-7">
                 결과를 장담하기보다,
                 <br />
                 과정에 충실하겠습니다.
@@ -202,10 +200,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
-        <div className="mx-auto grid max-w-7xl gap-4 px-6 py-6 md:grid-cols-3">
+      <section className="border-y border-border">
+        <div className="mx-auto grid max-w-[1160px] gap-4 px-6 py-6 md:grid-cols-3">
           {trustItems.map((item) => (
-            <p key={item} className="text-sm font-medium leading-6 text-primary md:text-background/85">
+            <p key={item} className="text-sm font-medium leading-6 text-primary">
               <span className="mr-2 text-accent">✓</span>
               {item}
             </p>
@@ -213,13 +211,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="situations" className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section id="situations" className="mx-auto max-w-[1160px] px-6 py-16 md:py-24">
         <SectionHeading title="지금 어떤 상황이신가요?" />
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {situationCards.map((item) => (
             <div
               key={item}
-              className="min-h-36 rounded-lg border border-[#e8ddcb] bg-white/60 p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+              className="min-h-36 rounded-lg border border-accent bg-white p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
             >
               <p className="text-base font-semibold leading-7 text-primary md:text-lg md:leading-8">
                 {item}
@@ -229,8 +227,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
-        <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="border-y border-border">
+        <div className="mx-auto max-w-[1160px] px-6 py-16 md:py-24">
           <SectionHeading
             title="상담에서 자주 정리하는 쟁점"
             description={
@@ -241,13 +239,13 @@ export default function Home() {
             {issueCards.map((item) => (
               <article
                 key={`${item.label}-${item.title}`}
-                className="rounded-lg border border-[#e8ddcb] bg-background p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+                className="rounded-lg border border-accent bg-background p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
               >
                 <p className="text-xs font-semibold tracking-[0.16em] text-accent md:text-sm">{item.label}</p>
                 <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-sm leading-7 text-muted md:text-[15px] md:leading-7">
+                <p className="mt-3 text-base leading-7 text-muted md:text-[17px] md:leading-7">
                   {item.description}
                 </p>
               </article>
@@ -261,8 +259,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
-        <div className="mx-auto grid max-w-7xl gap-8 px-6 py-16 md:py-12 md:grid-cols-[1fr_auto] md:items-end">
+      <section className="border-y border-border">
+        <div className="mx-auto grid max-w-[1160px] gap-8 px-6 py-16 md:py-24 md:grid-cols-[1fr_auto] md:items-end">
           <SectionHeading
             eyebrow="처음 오신 분께"
             title="막막한 상황을 먼저 정리하는 곳입니다."
@@ -276,7 +274,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-7xl gap-8 px-6 py-16 md:py-12 md:grid-cols-[1fr_auto] md:items-end">
+      <section className="mx-auto grid max-w-[1160px] gap-8 px-6 py-16 md:py-24 md:grid-cols-[1fr_auto] md:items-end">
         <SectionHeading
           eyebrow="일하는 방식"
           title={"결과를 장담하지 않습니다.\n과정을 끝까지 살피겠습니다."}
@@ -289,17 +287,17 @@ export default function Home() {
         </TextLink>
       </section>
 
-      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
-        <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="border-y border-border">
+        <div className="mx-auto max-w-[1160px] px-6 py-16 md:py-24">
           <SectionHeading title="주요 업무분야" />
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {practiceAreas.map((area) => (
               <div
                 key={area}
-                className="rounded-lg border border-[#e8ddcb] bg-background p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+                className="rounded-lg border border-accent bg-background p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
               >
                 <p className="text-lg font-semibold text-primary md:text-xl">{area}</p>
-                <p className="mt-3 text-sm leading-6 text-muted md:text-[15px] md:leading-7">
+                <p className="mt-3 text-base leading-7 text-muted md:text-[17px] md:leading-7">
                   사실관계와 자료를 바탕으로 대응 방향을 함께 정리합니다.
                 </p>
               </div>
@@ -308,12 +306,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="mx-auto max-w-[1160px] px-6 py-16 md:py-24">
         <SectionHeading title="사건 진행 흐름" />
         <div className="mt-8 grid gap-3 md:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr_auto_1fr_auto_1fr] md:items-center">
           {processSteps.map((step, index) => (
             <div key={step} className="contents">
-              <div className="rounded-lg border border-[#e8ddcb] bg-white/60 p-4 text-center shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-5 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]">
+              <div className="rounded-lg border border-accent bg-white p-4 text-center shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:p-5 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]">
                 <p className="text-xs font-semibold text-accent md:text-sm">
                   {String(index + 1).padStart(2, "0")}
                 </p>
@@ -327,8 +325,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
-        <div className="mx-auto grid max-w-7xl gap-8 px-6 py-16 md:py-12 md:grid-cols-[1fr_auto] md:items-end">
+      <section className="border-y border-border">
+        <div className="mx-auto grid max-w-[1160px] gap-8 px-6 py-16 md:py-24 md:grid-cols-[1fr_auto] md:items-end">
           <SectionHeading
             eyebrow="법률 실무 노트"
             title="복잡한 법률 문제를 실무 관점에서 정리합니다."
@@ -340,7 +338,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="mx-auto max-w-[1160px] px-6 py-16 md:py-24">
         <SectionHeading
           title="법률 실무 노트에서 자주 읽는 글"
           description={
@@ -351,13 +349,13 @@ export default function Home() {
           {noteCards.map((item) => (
             <article
               key={item.title}
-              className="rounded-lg border border-[#e8ddcb] bg-white/60 p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+              className="rounded-lg border border-accent bg-white p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
             >
               <p className="text-xs font-semibold tracking-[0.16em] text-accent md:text-sm">{item.label}</p>
               <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
                 {item.title}
               </h3>
-              <p className="mt-3 text-sm leading-7 text-muted md:text-[15px] md:leading-7">
+              <p className="mt-3 text-base leading-7 text-muted md:text-[17px] md:leading-7">
                 {item.description}
               </p>
               <a
@@ -373,9 +371,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="mx-auto max-w-[1160px] px-6 py-16 md:py-24">
         <SectionHeading title="FAQ Preview" />
-        <div className="mt-8 divide-y divide-border rounded-lg border border-[#e8ddcb] bg-white/60 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]">
+        <div className="mt-8 divide-y divide-border rounded-lg border border-accent bg-white shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]">
           {faqItems.map((item) => (
             <div key={item} className="p-5">
               <p className="font-semibold text-primary md:text-lg">{item}</p>
@@ -385,11 +383,11 @@ export default function Home() {
       </section>
 
       <section className="px-6 pb-20">
-        <div className="mx-auto max-w-7xl rounded-lg bg-primary px-6 py-12 text-background md:border md:border-accent/30 md:px-10">
+        <div className="mx-auto max-w-[1160px] rounded-lg bg-primary px-6 py-12 text-background md:border md:border-accent/30 md:px-10">
           <h2 className="text-3xl font-semibold leading-tight md:text-4xl">
             상담은 현재 상황을 정리하는 과정입니다.
           </h2>
-          <p className="mt-5 max-w-2xl leading-7 text-background/75 md:text-[17px] md:font-medium md:leading-8">
+          <p className="mt-5 max-w-[800px] leading-7 text-background/75 md:text-[17px] md:font-medium md:leading-8">
             사건을 바로 맡기기 위한 시간이 아니라,
             <br />
             지금 어떤 문제가 있고 무엇을 먼저 해야 하는지
@@ -399,7 +397,7 @@ export default function Home() {
           <div className="mt-8">
             <Link
               href="/consultation"
-              className="inline-flex h-11 items-center justify-center rounded-md bg-background px-5 text-sm font-semibold text-primary transition-colors hover:bg-background/90 md:h-12 md:px-7 md:text-base"
+              className="inline-flex h-11 items-center justify-center rounded-md bg-accent px-5 text-sm font-semibold text-primary shadow-[0_10px_24px_rgba(181,150,93,0.18)] transition-colors hover:bg-accent/90 md:h-12 md:px-7 md:text-base"
             >
               상담 안내 보기
             </Link>

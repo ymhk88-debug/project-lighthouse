@@ -131,8 +131,8 @@ function TextLink({
 }) {
   const className =
     variant === "primary"
-      ? "bg-primary text-background hover:bg-primary/90 md:bg-accent md:text-primary md:shadow-[0_10px_24px_rgba(184,155,94,0.16)] md:hover:bg-accent/90"
-      : "border border-border bg-background text-primary hover:border-accent md:border-accent/35 md:bg-background/95";
+      ? "bg-accent text-primary shadow-[0_10px_24px_rgba(181,150,93,0.18)] hover:bg-accent/90"
+      : "border border-primary bg-white text-primary hover:bg-primary/5";
 
   return (
     <Link
@@ -153,11 +153,11 @@ function SectionHeading({
 }) {
   return (
     <div className="max-w-2xl">
-      <h2 className="whitespace-pre-line text-2xl font-semibold leading-tight text-primary md:text-background md:text-4xl md:leading-tight">
+      <h2 className="whitespace-pre-line text-2xl font-semibold leading-tight text-primary md:text-4xl md:leading-tight">
         {title}
       </h2>
       {description ? (
-        <p className="mt-6 whitespace-pre-line text-base leading-8 text-muted md:text-[17px] md:font-medium md:leading-8 md:text-background/75">
+        <p className="mt-6 whitespace-pre-line text-base leading-8 text-muted md:text-[17px] md:font-medium md:leading-8">
           {description}
         </p>
       ) : null}
@@ -167,13 +167,13 @@ function SectionHeading({
 
 export default function ConsultationPage() {
   return (
-    <div className="bg-background md:bg-primary">
-      <section className="mx-auto w-full max-w-7xl px-6 py-16 md:py-20">
+    <div className="bg-background">
+      <section className="mx-auto w-full max-w-[1160px] px-6 py-16 md:py-24">
         <p className="text-sm font-semibold tracking-[0.18em] text-accent md:text-[15px]">상담 안내</p>
-        <h1 className="mt-5 max-w-3xl whitespace-pre-line text-3xl font-semibold leading-tight text-primary sm:text-4xl md:text-background md:text-6xl">
+        <h1 className="mt-5 max-w-3xl whitespace-pre-line text-4xl font-semibold leading-tight text-primary md:text-[42px]">
           {"상담은\n현재 상황을 함께 정리하는 시간입니다."}
         </h1>
-        <p className="mt-6 max-w-2xl whitespace-pre-line text-lg leading-9 text-muted md:text-xl md:font-medium md:leading-9 md:text-background/75">
+        <p className="mt-6 max-w-[800px] whitespace-pre-line text-lg leading-9 text-muted md:text-xl md:font-medium md:leading-9">
           {
             "사건을 바로 맡기기 위한 시간이 아니라,\n\n현재 상황을 확인하고,\n\n가능한 해결 방향을 함께 살펴보는 과정입니다."
           }
@@ -181,7 +181,7 @@ export default function ConsultationPage() {
         <div className="mt-8 flex flex-col gap-3 sm:flex-row md:gap-4">
           <a
             href={`tel:${officePhone}`}
-            className="inline-flex h-11 items-center justify-center rounded-md bg-primary px-5 text-sm font-semibold text-background md:h-12 md:bg-accent md:px-7 md:text-base md:text-primary"
+            className="inline-flex h-11 items-center justify-center rounded-md bg-accent px-5 text-sm font-semibold text-primary shadow-[0_10px_24px_rgba(181,150,93,0.18)] hover:bg-accent/90 md:h-12 md:px-7 md:text-base"
           >
             전화 상담 {officePhone}
           </a>
@@ -191,10 +191,10 @@ export default function ConsultationPage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
-        <div className="mx-auto grid max-w-7xl gap-8 px-6 py-16 md:py-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+      <section className="border-y border-border">
+        <div className="mx-auto grid max-w-[1160px] gap-8 px-6 py-16 md:py-24 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           <SectionHeading title="상담 전에 정한 내용" description="예약 후 방문 또는 전화로 진행합니다." />
-          <div className="rounded-lg border border-[#e8ddcb] bg-white/60 p-6 md:border-accent/25 md:bg-background/95 md:p-7">
+          <div className="rounded-lg border border-accent bg-white p-6 md:p-7">
             <dl className="divide-y divide-border">
               {[
                 ["상담료", "10만원 (상담 시간과 관계없이 같습니다)"],
@@ -229,7 +229,7 @@ export default function ConsultationPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="mx-auto max-w-[1160px] px-6 py-16 md:py-24">
         <SectionHeading title="상담까지 세 단계" />
         <ol className="mt-8 grid gap-4 md:grid-cols-3">
           {[
@@ -239,18 +239,18 @@ export default function ConsultationPage() {
           ].map(([index, title, description]) => (
             <li
               key={index}
-              className="rounded-lg border border-[#e8ddcb] bg-white/60 p-6 md:border-accent/25 md:bg-background/95"
+              className="rounded-lg border border-accent bg-white p-6"
             >
               <p className="text-sm font-semibold text-accent">{index}</p>
               <h3 className="mt-3 text-xl font-semibold text-primary">{title}</h3>
-              <p className="mt-3 text-sm leading-7 text-muted md:text-primary/70">{description}</p>
+              <p className="mt-3 text-base leading-7 text-muted md:text-[17px] md:text-primary/70">{description}</p>
             </li>
           ))}
         </ol>
       </section>
 
-      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
-        <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="border-y border-border">
+        <div className="mx-auto max-w-[1160px] px-6 py-16 md:py-24">
           <SectionHeading
             title="상담은 보통 이렇게 진행됩니다"
             description="상담에서는 결론을 먼저 단정하기보다, 현재 상황과 자료를 나누어 확인하면서 필요한 대응 방향을 검토합니다."
@@ -259,7 +259,7 @@ export default function ConsultationPage() {
             {consultationSteps.map((item, index) => (
               <article
                 key={item.title}
-                className="rounded-lg border border-[#e8ddcb] bg-white/60 p-6 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+                className="rounded-lg border border-accent bg-white p-6 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
               >
                 <p className="text-xs font-semibold text-accent md:text-sm">
                   {String(index + 1).padStart(2, "0")}
@@ -267,7 +267,7 @@ export default function ConsultationPage() {
                 <h3 className="mt-4 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-sm leading-7 text-primary/70 md:text-[15px] md:leading-7">
+                <p className="mt-3 text-base leading-7 text-primary/75 md:text-[17px] md:leading-7">
                   {item.description}
                 </p>
               </article>
@@ -276,19 +276,19 @@ export default function ConsultationPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="mx-auto max-w-[1160px] px-6 py-16 md:py-24">
         <SectionHeading title="상담 전에 함께 확인하면 좋은 페이지" />
         <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {relatedPages.map((page) => (
             <Link
               key={page.href}
               href={page.href}
-              className="rounded-lg border border-[#e8ddcb] bg-white/60 p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] transition-colors hover:border-accent md:border-accent/25 md:bg-background/95 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+              className="rounded-lg border border-accent bg-white p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] transition-colors hover:border-accent md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
             >
               <h3 className="text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
                 {page.title}
               </h3>
-              <p className="mt-3 text-sm leading-7 text-primary/70 md:text-[15px] md:leading-7">
+              <p className="mt-3 text-base leading-7 text-primary/75 md:text-[17px] md:leading-7">
                 {page.description}
               </p>
             </Link>
@@ -296,7 +296,7 @@ export default function ConsultationPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="mx-auto max-w-[1160px] px-6 py-16 md:py-24">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <SectionHeading
             title="상담 전에 미리 정리하면 좋은 것"
@@ -308,7 +308,7 @@ export default function ConsultationPage() {
             {consultationPrepItems.map((item, index) => (
               <div
                 key={item.title}
-                className="rounded-lg border border-[#e8ddcb] bg-white/60 p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+                className="rounded-lg border border-accent bg-white p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
               >
                 <p className="text-xs font-semibold text-accent md:text-sm">
                   {String(index + 1).padStart(2, "0")}
@@ -316,7 +316,7 @@ export default function ConsultationPage() {
                 <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-sm leading-7 text-primary/70 md:text-[15px] md:leading-7">
+                <p className="mt-3 text-base leading-7 text-primary/75 md:text-[17px] md:leading-7">
                   {item.description}
                 </p>
               </div>
@@ -325,10 +325,10 @@ export default function ConsultationPage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
-        <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="border-y border-border">
+        <div className="mx-auto max-w-[1160px] px-6 py-16 md:py-24">
           <SectionHeading title="자주 받는 질문" />
-          <div className="mt-8 divide-y divide-border rounded-lg border border-[#e8ddcb] bg-white/60 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]">
+          <div className="mt-8 divide-y divide-border rounded-lg border border-accent bg-white shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]">
             {faqItems.map((item) => (
               <details key={item.question} className="group p-5">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-semibold text-primary md:text-lg">
@@ -337,7 +337,7 @@ export default function ConsultationPage() {
                     +
                   </span>
                 </summary>
-                <p className="mt-4 whitespace-pre-line text-sm leading-7 text-muted md:text-[15px] md:leading-7 md:text-primary/70">
+                <p className="mt-4 whitespace-pre-line text-base leading-7 text-muted md:text-[17px] md:leading-7 md:text-primary/70">
                   {item.answer}
                 </p>
               </details>
@@ -346,12 +346,12 @@ export default function ConsultationPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="mx-auto max-w-[1160px] px-6 py-16 md:py-24">
         <SectionHeading title="상담 후에는 어떻게 진행되나요?" />
         <div className="mt-8 grid gap-3 md:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr_auto_1fr] md:items-center">
           {afterSteps.map((step, index) => (
             <div key={step} className="contents">
-              <div className="rounded-lg border border-[#e8ddcb] bg-white/60 p-4 text-center shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-5 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]">
+              <div className="rounded-lg border border-accent bg-white p-4 text-center shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:p-5 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]">
                 <p className="text-xs font-semibold text-accent md:text-sm">
                   {String(index + 1).padStart(2, "0")}
                 </p>
@@ -365,12 +365,12 @@ export default function ConsultationPage() {
         </div>
       </section>
 
-      <section className="px-6 py-16 md:py-12">
-        <div className="mx-auto max-w-7xl rounded-lg bg-primary px-6 py-12 text-background md:border md:border-accent/30 md:px-10">
+      <section className="px-6 py-16 md:py-24">
+        <div className="mx-auto max-w-[1160px] rounded-lg bg-primary px-6 py-12 text-background md:border md:border-accent/30 md:px-10">
           <h2 className="max-w-2xl whitespace-pre-line text-3xl font-semibold leading-tight md:text-4xl">
             {"현재 상황부터\n함께 정리해보겠습니다."}
           </h2>
-          <p className="mt-5 max-w-2xl whitespace-pre-line leading-7 text-background/75 md:text-[17px] md:font-medium md:leading-8">
+          <p className="mt-5 max-w-[800px] whitespace-pre-line leading-7 text-background/75 md:text-[17px] md:font-medium md:leading-8">
             {
               "상담은 현재 상황을 정리하고, 자료와 기한을 함께 확인한 뒤 가능한 대응 방향을 검토하는 과정입니다.\n사건마다 필요한 대응은 달라질 수 있으므로, 상담 전에는 가지고 있는 자료와 주요 경위를 정리해 오시면 도움이 됩니다."
             }
@@ -412,7 +412,7 @@ export default function ConsultationPage() {
           <div className="mt-8">
             <Link
               href="/location"
-              className="inline-flex h-11 items-center justify-center rounded-md bg-background px-5 text-sm font-semibold text-primary transition-colors hover:bg-background/90 md:h-12 md:px-7 md:text-base"
+              className="inline-flex h-11 items-center justify-center rounded-md bg-accent px-5 text-sm font-semibold text-primary shadow-[0_10px_24px_rgba(181,150,93,0.18)] transition-colors hover:bg-accent/90 md:h-12 md:px-7 md:text-base"
             >
               오시는 길 보기
             </Link>

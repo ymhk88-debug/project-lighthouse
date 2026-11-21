@@ -10,13 +10,13 @@ export function QuickContact() {
         <div className="mx-auto grid max-w-lg grid-cols-2 gap-2">
           <a
             href={`tel:${officePhone}`}
-            className="inline-flex h-11 items-center justify-center rounded-md bg-primary text-sm font-semibold text-background"
+            className="inline-flex h-11 items-center justify-center rounded-md bg-accent text-sm font-semibold text-primary"
           >
             전화 {officePhone}
           </a>
           <Link
             href="/consultation"
-            className="inline-flex h-11 items-center justify-center rounded-md border border-border text-sm font-semibold text-primary"
+            className="inline-flex h-11 items-center justify-center rounded-md border border-primary text-sm font-semibold text-primary"
           >
             상담 안내
           </Link>

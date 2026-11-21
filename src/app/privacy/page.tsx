@@ -40,24 +40,24 @@ const policySections = [
 
 export default function PrivacyPage() {
   return (
-    <div className="bg-background md:bg-primary">
-      <section className="mx-auto w-full max-w-7xl px-6 py-16 md:py-20">
+    <div className="bg-background">
+      <section className="mx-auto w-full max-w-[1160px] px-6 py-16 md:py-24">
         <p className="text-sm font-semibold tracking-[0.18em] text-accent md:text-[15px]">
           Privacy Policy
         </p>
-        <h1 className="mt-5 max-w-3xl text-3xl font-semibold leading-tight text-primary sm:text-4xl md:text-6xl md:text-background">
+        <h1 className="mt-5 max-w-3xl text-4xl font-semibold leading-tight text-primary md:text-[42px]">
           개인정보처리방침
         </h1>
-        <p className="mt-6 max-w-3xl whitespace-pre-line text-lg leading-9 text-muted md:text-xl md:font-medium md:leading-9 md:text-background/75">
+        <p className="mt-6 max-w-3xl whitespace-pre-line text-lg leading-9 text-muted md:text-xl md:font-medium md:leading-9">
           {
             "유민환 변호사 홈페이지는 방문자의 개인정보를 신중하게 다루기 위해 필요한 기준을 정리합니다.\n현재 홈페이지는 전화 문의와 외부 링크 중심의 정적 안내형 홈페이지이며, 온라인 문의폼이나 자료 업로드 기능은 운영하지 않습니다."
           }
         </p>
       </section>
 
-      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
-        <div className="mx-auto max-w-5xl px-6 py-16 md:py-12">
-          <article className="rounded-lg border border-[#e8ddcb] bg-white/70 p-6 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-8 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]">
+      <section className="border-y border-border">
+        <div className="mx-auto max-w-5xl px-6 py-16 md:py-24">
+          <article className="rounded-lg border border-accent bg-white/70 p-6 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:p-8 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]">
             <div className="space-y-8">
               {policySections.map((section, index) => (
                 <section
@@ -70,7 +70,7 @@ export default function PrivacyPage() {
                   <h2 className="mt-3 text-xl font-semibold leading-8 text-primary md:text-2xl">
                     {section.title}
                   </h2>
-                  <p className="mt-3 whitespace-pre-line text-sm leading-7 text-primary/70 md:text-[15px] md:leading-8">
+                  <p className="mt-3 whitespace-pre-line text-base leading-7 text-primary/75 md:text-[17px] md:leading-8">
                     {section.description}
                   </p>
                 </section>
@@ -83,7 +83,7 @@ export default function PrivacyPage() {
                 <h2 className="mt-3 text-xl font-semibold leading-8 text-primary md:text-2xl">
                   문의
                 </h2>
-                <p className="mt-3 text-sm leading-7 text-primary/70 md:text-[15px] md:leading-8">
+                <p className="mt-3 text-base leading-7 text-primary/75 md:text-[17px] md:leading-8">
                   개인정보처리방침과 관련한 문의는 아래 연락처를 통해 확인할 수
                   있습니다.
                 </p>

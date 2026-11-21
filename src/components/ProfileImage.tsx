@@ -9,7 +9,7 @@ export function ProfileImage() {
   if (hasError) {
     return (
       <div className="flex h-full items-center justify-center px-8 text-center">
-        <p className="text-sm leading-6 text-muted">
+        <p className="text-base leading-7 text-muted md:text-[17px]">
           프로필 사진 영역
           <br />
           public/profile-arms-crossed.jpg

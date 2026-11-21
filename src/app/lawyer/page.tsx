@@ -45,21 +45,21 @@ function ProfileList({ title, items }: { title: string; items: string[] }) {
 
 export default function LawyerPage() {
   return (
-    <div className="bg-background md:bg-primary">
-      <section className="mx-auto grid w-full max-w-7xl gap-10 px-6 py-16 md:gap-12 md:py-24 lg:grid-cols-[minmax(0,380px)_minmax(0,1fr)] lg:items-start lg:gap-x-16">
+    <div className="bg-background">
+      <section className="mx-auto grid w-full max-w-[1160px] gap-10 px-6 py-16 md:gap-12 md:py-24 lg:grid-cols-[minmax(0,380px)_minmax(0,1fr)] lg:items-start lg:gap-x-16">
         <div className="lg:col-start-2 lg:row-start-1">
           <p className="text-sm font-semibold tracking-[0.18em] text-accent md:text-[15px]">변호사 소개</p>
-          <h1 className="mt-5 text-3xl font-semibold leading-tight text-primary sm:text-4xl md:text-5xl md:text-background">
+          <h1 className="mt-5 text-4xl font-semibold leading-tight text-primary md:text-[42px]">
             유민환 변호사
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-9 text-muted md:text-xl md:font-medium md:leading-9 md:text-background/75">
+          <p className="mt-6 max-w-[800px] text-lg leading-9 text-muted md:text-xl md:font-medium md:leading-9">
             창원에서 민사·형사 사건을 직접 상담하고 처리합니다. 의뢰인의 사정을 먼저 듣고, 가능한 방법과 한계를
             있는 그대로 설명드립니다.
           </p>
           {/* [확인 필요: 변호사님 문구 검토] */}
-          <div className="mt-8 max-w-2xl border-l-2 border-accent pl-5">
+          <div className="mt-8 max-w-[800px] border-l-2 border-accent pl-5">
             <h2 className="text-sm font-semibold text-accent md:text-[15px]">일을 대하는 태도</h2>
-            <p className="mt-3 text-base leading-8 text-primary md:text-[17px] md:leading-8 md:text-background/80">
+            <p className="mt-3 text-base leading-8 text-primary md:text-[17px] md:leading-8">
               사건을 처음 마주하면 무엇부터 확인해야 할지 알기 어렵습니다. 저는 이야기를 먼저 듣고, 사실과 자료를
               나누어 본 뒤, 지금 할 수 있는 일과 그 한계를 그대로 설명하려고 합니다.
             </p>
@@ -67,7 +67,7 @@ export default function LawyerPage() {
         </div>
 
         <div className="w-full max-w-[380px] lg:col-start-1 lg:row-start-1 lg:row-span-2 lg:max-w-none">
-          <div className="overflow-hidden rounded-lg border border-[#e8ddcb] bg-white/40 p-3 shadow-[0_12px_30px_rgba(15,29,46,0.08)] md:border-accent/25 md:bg-background/95 md:shadow-[0_22px_50px_rgba(0,0,0,0.16)]">
+          <div className="overflow-hidden rounded-lg border border-accent bg-white/40 p-3 shadow-[0_12px_30px_rgba(15,29,46,0.08)] md:shadow-[0_22px_50px_rgba(0,0,0,0.16)]">
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-md border border-[#e7dcc8] bg-[#f2eadc] md:border-accent/20 lg:aspect-[2/3]">
               <Image
                 src="/profile-tie.jpg"
@@ -81,7 +81,7 @@ export default function LawyerPage() {
             </div>
             <div className="px-1 pt-4 pb-2">
               <p className="text-sm font-semibold text-primary md:text-lg">유민환 변호사</p>
-              <p className="mt-2 text-sm leading-6 text-muted md:text-[15px] md:leading-7">
+              <p className="mt-2 text-base leading-7 text-muted md:text-[17px] md:leading-7">
                 결과를 장담하기보다,
                 <br />
                 과정에 충실하겠습니다.
@@ -91,7 +91,7 @@ export default function LawyerPage() {
         </div>
 
         <div className="lg:col-start-2 lg:row-start-2">
-          <div className="rounded-lg border border-[#e8ddcb] bg-white/60 p-6 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-7 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]">
+          <div className="rounded-lg border border-accent bg-white p-6 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:p-7 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]">
             <div className="space-y-8">
               <ProfileList title="자격·소속" items={qualifications} />
               <ProfileList title="경력" items={career} />

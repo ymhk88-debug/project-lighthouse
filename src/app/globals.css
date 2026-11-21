@@ -3,12 +3,12 @@
 @source "../components/**/*.{ts,tsx}";
 
 :root {
-  --background: #fbf7ef;
-  --foreground: #2d2a26;
-  --primary: #0f1d2e;
-  --accent: #b89b5e;
-  --muted: #746d63;
-  --border: #e5dccb;
+  --background: #f4f0e8;
+  --foreground: #111f32;
+  --primary: #111f32;
+  --accent: #b5965d;
+  --muted: #56606e;
+  --border: #b5965d;
 }
 
 @theme inline {
@@ -96,13 +96,7 @@ body {
   }
 }
 
-@media (min-width: 768px) {
-  body {
-    background: var(--primary);
-  }
-
-  .bg-white\/55 .md\:text-background\/70,
-  .bg-background\/60 .md\:text-background\/70 {
-    color: var(--muted);
-  }
+.text-accent,
+.hover\:text-accent:hover {
+  color: #7e6941;
 }

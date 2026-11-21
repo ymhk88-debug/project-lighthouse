@@ -30,13 +30,13 @@ const seongsanLotteRoutes = "100, 152, 156, 212, 222, 223, 3000, 3004, 9000";
 const seongsanEmartRoutes = "100, 152, 156, 212, 222, 223, 3000, 3004";
 
 const cardClass =
-  "rounded-lg border border-[#e8ddcb] bg-white/60 p-6 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-7 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]";
+  "rounded-lg border border-accent bg-white p-6 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:p-7 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]";
 
 const primaryButtonClass =
-  "inline-flex h-11 items-center justify-center rounded-md bg-primary px-5 text-sm font-semibold text-background transition-colors hover:bg-primary/90 md:h-12 md:bg-accent md:px-7 md:text-base md:text-primary md:shadow-[0_10px_24px_rgba(184,155,94,0.16)] md:hover:bg-accent/90";
+  "inline-flex h-11 items-center justify-center rounded-md bg-accent px-5 text-sm font-semibold text-primary shadow-[0_10px_24px_rgba(181,150,93,0.18)] transition-colors hover:bg-accent/90 md:h-12 md:px-7 md:text-base";
 
 const secondaryButtonClass =
-  "inline-flex h-11 items-center justify-center rounded-md border border-border bg-background px-5 text-sm font-semibold text-primary transition-colors hover:border-accent md:h-12 md:border-accent/35 md:bg-background/95 md:px-7 md:text-base";
+  "inline-flex h-11 items-center justify-center rounded-md border border-primary bg-white px-5 text-sm font-semibold text-primary transition-colors hover:bg-primary/5 md:h-12 md:px-7 md:text-base";
 
 function Icon({ name }: { name: "pin" | "bus" | "car" | "parking" }) {
   const className = "h-5 w-5 shrink-0 text-accent";
@@ -98,13 +98,13 @@ function CardTitle({ icon, children }: { icon?: ReactNode; children: string }) {
 
 export default function LocationPage() {
   return (
-    <div className="bg-background md:bg-primary">
-      <section className="mx-auto w-full max-w-7xl px-6 py-16 md:py-20">
+    <div className="bg-background">
+      <section className="mx-auto w-full max-w-[1160px] px-6 py-16 md:py-24">
         <p className="text-sm font-semibold tracking-[0.18em] text-accent md:text-[15px]">LOCATION</p>
-        <h1 className="mt-5 max-w-3xl text-3xl font-semibold leading-tight text-primary sm:text-4xl md:text-background md:text-6xl">
+        <h1 className="mt-5 max-w-3xl text-4xl font-semibold leading-tight text-primary md:text-[42px]">
           오시는 길
         </h1>
-        <p className="mt-6 max-w-3xl text-lg leading-9 text-muted md:text-xl md:font-medium md:leading-9 md:text-background/75">
+        <p className="mt-6 max-w-3xl text-lg leading-9 text-muted md:text-xl md:font-medium md:leading-9">
           방문 위치와 교통편, 상담 전 준비사항을 안내합니다.
         </p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row md:gap-4">
@@ -117,7 +117,7 @@ export default function LocationPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 pb-4">
+      <section className="mx-auto max-w-[1160px] px-6 pb-4">
         <article className={cardClass}>
           <div className="flex items-start gap-3">
             <span className="mt-1">
@@ -147,7 +147,7 @@ export default function LocationPage() {
             </div>
           </div>
           <div className="mt-6 flex flex-col gap-4 border-t border-border pt-6 sm:flex-row sm:items-end sm:justify-between">
-            <div className="max-w-3xl text-sm leading-7 text-primary/70 md:text-[15px]">
+            <div className="max-w-3xl text-base leading-7 text-primary/75 md:text-[17px]">
               <p>
                 방문 상담은 사전 일정 조율 후 진행됩니다. 법원이나 수사기관 기일, 외부 일정으로 자리를
                 비울 수 있으므로 방문 전 전화로 일정을 확인해 주세요.
@@ -169,7 +169,7 @@ export default function LocationPage() {
         </article>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-8 md:py-10">
+      <section className="mx-auto max-w-[1160px] px-6 py-8 md:py-10">
         <div className="grid items-stretch gap-4 lg:grid-cols-2">
           <article className={`${cardClass} flex h-full min-w-0 flex-col`}>
             <CardTitle>지도 확인</CardTitle>
@@ -192,8 +192,8 @@ export default function LocationPage() {
         </div>
       </section>
 
-      <section id="visit-prep" className="scroll-mt-24 mx-auto max-w-7xl px-6 py-8 md:py-10">
-        <h2 className="text-2xl font-semibold leading-tight text-primary md:text-4xl md:text-background">
+      <section id="visit-prep" className="scroll-mt-24 mx-auto max-w-[1160px] px-6 py-8 md:py-10">
+        <h2 className="text-2xl font-semibold leading-tight text-primary md:text-4xl">
           방문 전 확인하면 좋은 것
         </h2>
         <div className="mt-8 grid gap-4 lg:grid-cols-3">
@@ -203,42 +203,42 @@ export default function LocationPage() {
                 {String(index + 1).padStart(2, "0")}
               </p>
               <h3 className="mt-4 text-lg font-semibold text-primary md:text-2xl">{item.title}</h3>
-              <p className="mt-4 text-sm leading-7 text-primary/70 md:text-[15px]">{item.description}</p>
+              <p className="mt-4 text-base leading-7 text-primary/75 md:text-[17px]">{item.description}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-8 md:py-10">
-        <h2 className="text-2xl font-semibold leading-tight text-primary md:text-4xl md:text-background">
+      <section className="mx-auto max-w-[1160px] px-6 py-8 md:py-10">
+        <h2 className="text-2xl font-semibold leading-tight text-primary md:text-4xl">
           교통 및 주차 안내
         </h2>
         <div className="mt-8 grid items-stretch gap-4 lg:grid-cols-2">
           <article className={`${cardClass} h-full min-w-0`}>
             <CardTitle icon={<Icon name="bus" />}>대중교통</CardTitle>
-            <p className="mt-4 text-sm leading-7 text-primary/70 md:text-[15px]">
+            <p className="mt-4 text-base leading-7 text-primary/75 md:text-[17px]">
               유민환법률사무소는 용지호수, 성산아트홀, 정우상가 인근 한성빌딩 12층에 있습니다.
             </p>
             <h3 className="mt-6 text-base font-semibold text-primary md:text-lg">성산아트홀 정류소</h3>
-            <ul className="mt-3 space-y-2 text-sm leading-7 text-primary/70 md:text-[15px]">
+            <ul className="mt-3 space-y-2 text-base leading-7 text-primary/75 md:text-[17px]">
               <li>성산아트홀(롯데아파트 방면): {seongsanLotteRoutes}</li>
               <li>성산아트홀(이마트 방면): {seongsanEmartRoutes}</li>
             </ul>
-            <p className="mt-3 text-sm leading-7 text-primary/70 md:text-[15px]">
+            <p className="mt-3 text-base leading-7 text-primary/75 md:text-[17px]">
               성산아트홀 정류소에서 한성빌딩까지는 직선거리 약 100m입니다.
             </p>
             <h3 className="mt-6 text-base font-semibold text-primary md:text-lg">정우상가·창원시청 정류소</h3>
-            <ul className="mt-3 space-y-2 text-sm leading-7 text-primary/70 md:text-[15px]">
+            <ul className="mt-3 space-y-2 text-base leading-7 text-primary/75 md:text-[17px]">
               <li>
                 창원시청(정우상가), 창원시청 정류소에 시청 방면 다수 노선이 정차합니다. 한성빌딩까지
                 직선거리 약 300m입니다.
               </li>
             </ul>
             <h3 className="mt-6 text-base font-semibold text-primary md:text-lg">용지호수</h3>
-            <ul className="mt-3 space-y-2 text-sm leading-7 text-primary/70 md:text-[15px]">
+            <ul className="mt-3 space-y-2 text-base leading-7 text-primary/75 md:text-[17px]">
               <li>사무소는 용지호수 바로 인근에 있습니다.</li>
             </ul>
-            <p className="mt-6 text-sm leading-7 text-primary/70 md:text-[15px]">
+            <p className="mt-6 text-base leading-7 text-primary/75 md:text-[17px]">
               버스 노선은 바뀔 수 있으니 출발 전에{" "}
               <a
                 href="https://bus.changwon.go.kr"
@@ -252,13 +252,13 @@ export default function LocationPage() {
           <div className="grid gap-4">
             <article className={cardClass}>
               <CardTitle icon={<Icon name="car" />}>자가용</CardTitle>
-              <p className="mt-4 text-sm leading-7 text-primary/70 md:text-[15px]">
+              <p className="mt-4 text-base leading-7 text-primary/75 md:text-[17px]">
                 방문 전 주소와 주차 가능 여부를 함께 확인해 주세요.
               </p>
             </article>
             <article className={cardClass}>
               <CardTitle icon={<Icon name="parking" />}>주차 안내</CardTitle>
-              <p className="mt-4 text-sm leading-7 text-primary/70 md:text-[15px]">
+              <p className="mt-4 text-base leading-7 text-primary/75 md:text-[17px]">
                 주차 가능 여부와 이용 방법은 상담 일정 조율 과정에서 함께 안내드립니다.
               </p>
             </article>
@@ -266,12 +266,12 @@ export default function LocationPage() {
         </div>
       </section>
 
-      <section className="px-6 py-12 md:py-16">
-        <div className="mx-auto max-w-7xl rounded-lg border border-border bg-white/45 px-6 py-10 text-primary md:border-accent/35 md:bg-transparent md:px-10 md:py-12 md:text-background">
+      <section className="px-6 py-16 md:py-24">
+        <div className="mx-auto max-w-[1160px] rounded-lg bg-primary px-6 py-10 text-background md:border md:border-accent/40 md:px-10 md:py-12">
           <h2 className="max-w-3xl text-3xl font-semibold leading-tight md:text-4xl">
             방문 전 사건의 흐름을 정리해 주세요
           </h2>
-          <p className="mt-5 max-w-3xl text-base leading-8 text-primary/75 md:text-[17px] md:font-medium md:text-background/75">
+          <p className="mt-5 max-w-3xl text-base leading-8 text-background/80 md:text-[17px] md:font-medium">
             방문 전 상담 절차와 준비자료를 확인하시면 더 차분하게 상담을 준비할 수 있습니다.
           </p>
           <div className="mt-8">

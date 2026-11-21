@@ -131,8 +131,8 @@ function TextLink({
 }) {
   const className =
     variant === "primary"
-      ? "bg-primary text-background hover:bg-primary/90 md:bg-accent md:text-primary md:shadow-[0_10px_24px_rgba(184,155,94,0.16)] md:hover:bg-accent/90"
-      : "border border-border bg-background text-primary hover:border-accent md:border-accent/35 md:bg-background/95";
+      ? "bg-accent text-primary shadow-[0_10px_24px_rgba(181,150,93,0.18)] hover:bg-accent/90"
+      : "border border-primary bg-white text-primary hover:bg-primary/5";
 
   return (
     <Link
@@ -153,11 +153,11 @@ function SectionHeading({
 }) {
   return (
     <div className="max-w-2xl">
-      <h2 className="whitespace-pre-line text-2xl font-semibold leading-tight text-primary md:text-background md:text-4xl md:leading-tight">
+      <h2 className="whitespace-pre-line text-2xl font-semibold leading-tight text-primary md:text-4xl md:leading-tight">
         {title}
       </h2>
       {description ? (
-        <p className="mt-6 whitespace-pre-line text-base leading-8 text-muted md:text-[17px] md:font-medium md:leading-8 md:text-background/75">
+        <p className="mt-6 whitespace-pre-line text-base leading-8 text-muted md:text-[17px] md:font-medium md:leading-8">
           {description}
         </p>
       ) : null}
@@ -175,12 +175,12 @@ function ChecklistCard({
   items: string[];
 }) {
   return (
-    <article className="rounded-lg border border-[#e8ddcb] bg-white/60 p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]">
+    <article className="rounded-lg border border-accent bg-white p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]">
       <h3 className="text-xl font-semibold leading-8 text-primary md:text-2xl">{title}</h3>
-      <p className="mt-4 text-sm leading-7 text-primary/70 md:text-[15px] md:leading-7">{description}</p>
+      <p className="mt-4 text-base leading-7 text-primary/75 md:text-[17px] md:leading-7">{description}</p>
       <ul className="mt-6 space-y-3">
         {items.map((item) => (
-          <li key={item} className="flex gap-3 text-sm leading-7 text-primary/70 md:text-[15px]">
+          <li key={item} className="flex gap-3 text-base leading-7 text-primary/75 md:text-[17px]">
             <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>{item}</span>
           </li>
@@ -192,13 +192,13 @@ function ChecklistCard({
 
 export default function InheritanceFamilyPracticePage() {
   return (
-    <div className="bg-background md:bg-primary">
-      <section className="mx-auto w-full max-w-7xl px-6 py-16 md:py-20">
+    <div className="bg-background">
+      <section className="mx-auto w-full max-w-[1160px] px-6 py-16 md:py-24">
         <p className="text-sm font-semibold tracking-[0.18em] text-accent md:text-[15px]">Inheritance & Family Practice</p>
-        <h1 className="mt-5 max-w-3xl text-3xl font-semibold leading-tight text-primary sm:text-4xl md:text-background md:text-6xl">
+        <h1 className="mt-5 max-w-3xl text-4xl font-semibold leading-tight text-primary md:text-[42px]">
           상속·가사
         </h1>
-        <p className="mt-6 max-w-3xl whitespace-pre-line text-lg leading-9 text-muted md:text-xl md:font-medium md:leading-9 md:text-background/75">
+        <p className="mt-6 max-w-3xl whitespace-pre-line text-lg leading-9 text-muted md:text-xl md:font-medium md:leading-9">
           {
             "상속과 가사 문제는 가족관계, 재산관계, 기존 협의 내용, 남아 있는 자료를 차분히 나누어 보는 과정이 필요합니다.\n상담에서는 감정적인 문제와 법적인 쟁점을 구분하고, 현재 단계에서 필요한 대응 방향을 함께 확인합니다."
           }
@@ -211,8 +211,8 @@ export default function InheritanceFamilyPracticePage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
-        <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="border-y border-border">
+        <div className="mx-auto max-w-[1160px] px-6 py-16 md:py-24">
           <SectionHeading
             title="상속·가사 사건에서 먼저 확인하는 것"
             description="가족 간 문제는 감정적인 갈등과 법적인 쟁점이 함께 얽혀 있는 경우가 많습니다. 먼저 가족관계, 재산관계, 기한과 자료를 나누어 정리합니다."
@@ -221,7 +221,7 @@ export default function InheritanceFamilyPracticePage() {
             {firstCheckItems.map((item, index) => (
               <article
                 key={item.title}
-                className="rounded-lg border border-[#e8ddcb] bg-background p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+                className="rounded-lg border border-accent bg-background p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
               >
                 <p className="text-xs font-semibold text-accent md:text-sm">
                   {String(index + 1).padStart(2, "0")}
@@ -229,7 +229,7 @@ export default function InheritanceFamilyPracticePage() {
                 <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-sm leading-7 text-primary/70 md:text-[15px] md:leading-7">
+                <p className="mt-3 text-base leading-7 text-primary/75 md:text-[17px] md:leading-7">
                   {item.description}
                 </p>
               </article>
@@ -238,7 +238,7 @@ export default function InheritanceFamilyPracticePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="mx-auto max-w-[1160px] px-6 py-16 md:py-24">
         <SectionHeading
           title="자주 상담하는 상속·가사 상황"
           description="상속·가사 문제는 한 가지 주장만으로 판단하기보다, 가족관계와 재산자료, 기존 대화와 협의 내용을 함께 확인해야 합니다."
@@ -247,13 +247,13 @@ export default function InheritanceFamilyPracticePage() {
           {situationCards.map((item) => (
             <article
               key={item.title}
-              className="rounded-lg border border-[#e8ddcb] bg-white/60 p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+              className="rounded-lg border border-accent bg-white p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
             >
               <p className="text-xs font-semibold tracking-[0.16em] text-accent md:text-sm">{item.label}</p>
               <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
                 {item.title}
               </h3>
-              <p className="mt-3 text-sm leading-7 text-primary/70 md:text-[15px] md:leading-7">
+              <p className="mt-3 text-base leading-7 text-primary/75 md:text-[17px] md:leading-7">
                 {item.description}
               </p>
             </article>
@@ -261,8 +261,8 @@ export default function InheritanceFamilyPracticePage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
-        <div className="mx-auto grid max-w-7xl gap-4 px-6 py-16 md:py-12 lg:grid-cols-2">
+      <section className="border-y border-border">
+        <div className="mx-auto grid max-w-[1160px] gap-4 px-6 py-16 md:py-24 lg:grid-cols-2">
           <ChecklistCard
             title="상속 문제에서 정리할 것"
             description="상속 문제는 먼저 상속인 범위와 재산 목록을 확인하고, 생전 증여나 유언, 채무와 기한 문제를 나누어 정리해야 합니다."
@@ -276,7 +276,7 @@ export default function InheritanceFamilyPracticePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="mx-auto max-w-[1160px] px-6 py-16 md:py-24">
         <SectionHeading
           title="상담 전 준비하면 좋은 자료"
           description={
@@ -287,7 +287,7 @@ export default function InheritanceFamilyPracticePage() {
           {preparationCards.map((card) => (
             <article
               key={card.title}
-              className="rounded-lg border border-[#e8ddcb] bg-white/60 p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+              className="rounded-lg border border-accent bg-white p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
             >
               <p className="text-xs font-semibold tracking-[0.16em] text-accent md:text-sm">{card.label}</p>
               <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
@@ -295,7 +295,7 @@ export default function InheritanceFamilyPracticePage() {
               </h3>
               <ul className="mt-5 space-y-3">
                 {card.items.map((item) => (
-                  <li key={item} className="flex gap-3 text-sm leading-7 text-primary/70 md:text-[15px]">
+                  <li key={item} className="flex gap-3 text-base leading-7 text-primary/75 md:text-[17px]">
                     <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                     <span>{item}</span>
                   </li>
@@ -306,8 +306,8 @@ export default function InheritanceFamilyPracticePage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
-        <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="border-y border-border">
+        <div className="mx-auto max-w-[1160px] px-6 py-16 md:py-24">
           <SectionHeading
             title="관련 법률 실무 노트"
             description="상속·가사 문제는 가족관계와 재산자료를 함께 정리해야 하므로, 관련 글을 참고해 상담 전 쟁점을 미리 살펴볼 수 있습니다."
@@ -316,13 +316,13 @@ export default function InheritanceFamilyPracticePage() {
             {noteCards.map((item) => (
               <article
                 key={item.title}
-                className="rounded-lg border border-[#e8ddcb] bg-background p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+                className="rounded-lg border border-accent bg-background p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
               >
                 <p className="text-xs font-semibold tracking-[0.16em] text-accent md:text-sm">{item.label}</p>
                 <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-sm leading-7 text-primary/70 md:text-[15px] md:leading-7">
+                <p className="mt-3 text-base leading-7 text-primary/75 md:text-[17px] md:leading-7">
                   {item.description}
                 </p>
                 <a
@@ -339,8 +339,8 @@ export default function InheritanceFamilyPracticePage() {
         </div>
       </section>
 
-      <section className="px-6 py-16 md:py-12">
-        <div className="mx-auto max-w-7xl rounded-lg bg-primary px-6 py-12 text-background md:border md:border-accent/30 md:px-10">
+      <section className="px-6 py-16 md:py-24">
+        <div className="mx-auto max-w-[1160px] rounded-lg bg-primary px-6 py-12 text-background md:border md:border-accent/30 md:px-10">
           <h2 className="max-w-3xl text-3xl font-semibold leading-tight md:text-4xl">
             상속·가사 문제는 가족관계와 재산관계를 나누어 정리해야 합니다
           </h2>
@@ -352,7 +352,7 @@ export default function InheritanceFamilyPracticePage() {
           <div className="mt-8">
             <Link
               href="/consultation"
-              className="inline-flex h-11 items-center justify-center rounded-md bg-background px-5 text-sm font-semibold text-primary transition-colors hover:bg-background/90 md:h-12 md:px-7 md:text-base"
+              className="inline-flex h-11 items-center justify-center rounded-md bg-accent px-5 text-sm font-semibold text-primary shadow-[0_10px_24px_rgba(181,150,93,0.18)] transition-colors hover:bg-accent/90 md:h-12 md:px-7 md:text-base"
             >
               상담 안내 보기
             </Link>

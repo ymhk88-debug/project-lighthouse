@@ -69,7 +69,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className="min-h-screen bg-background text-foreground antialiased md:bg-primary">
+      <body className="min-h-screen bg-background text-foreground antialiased">
         <Header />
         <main className="min-h-[calc(100vh-320px)]">{children}</main>
         <Footer />

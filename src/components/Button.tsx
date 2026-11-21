@@ -13,8 +13,8 @@ export function Button({
 }: ButtonProps) {
   const variantClasses =
     variant === "primary"
-      ? "bg-primary text-background hover:bg-primary/90 md:bg-accent md:text-primary md:shadow-[0_10px_24px_rgba(184,155,94,0.16)] md:hover:bg-accent/90"
-      : "border border-border text-primary hover:border-accent md:border-accent/35 md:bg-background/95";
+      ? "bg-accent text-primary shadow-[0_10px_24px_rgba(181,150,93,0.18)] hover:bg-accent/90"
+      : "border border-primary bg-white text-primary hover:bg-primary/5";
 
   return (
     <button

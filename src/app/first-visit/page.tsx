@@ -109,8 +109,8 @@ function TextLink({
 }) {
   const className =
     variant === "primary"
-      ? "bg-primary text-background hover:bg-primary/90 md:bg-accent md:text-primary md:shadow-[0_10px_24px_rgba(184,155,94,0.16)] md:hover:bg-accent/90"
-      : "border border-border bg-background text-primary hover:border-accent md:border-accent/35 md:bg-background/95";
+      ? "bg-accent text-primary shadow-[0_10px_24px_rgba(181,150,93,0.18)] hover:bg-accent/90"
+      : "border border-primary bg-white text-primary hover:bg-primary/5";
 
   return (
     <Link
@@ -131,11 +131,11 @@ function SectionHeading({
 }) {
   return (
     <div className="max-w-2xl">
-      <h2 className="whitespace-pre-line text-2xl font-semibold leading-tight text-primary md:text-background md:text-4xl md:leading-tight">
+      <h2 className="whitespace-pre-line text-2xl font-semibold leading-tight text-primary md:text-4xl md:leading-tight">
         {title}
       </h2>
       {description ? (
-        <p className="mt-6 max-w-2xl whitespace-pre-line text-base leading-8 text-muted md:text-[17px] md:font-medium md:leading-8 md:text-background/75">
+        <p className="mt-6 max-w-[800px] whitespace-pre-line text-base leading-8 text-muted md:text-[17px] md:font-medium md:leading-8">
           {description}
         </p>
       ) : null}
@@ -145,14 +145,14 @@ function SectionHeading({
 
 export default function FirstVisitPage() {
   return (
-    <div className="bg-background md:bg-primary">
-      <section className="mx-auto grid w-full max-w-7xl gap-10 px-6 py-16 md:py-20 lg:grid-cols-[1fr_0.72fr] lg:items-center">
+    <div className="bg-background">
+      <section className="mx-auto grid w-full max-w-[1160px] gap-10 px-6 py-16 md:py-24 lg:grid-cols-[1fr_0.72fr] lg:items-center">
         <div>
           <p className="text-sm font-semibold tracking-[0.18em] text-accent md:text-[15px]">처음 오셨나요</p>
-          <h1 className="mt-5 max-w-3xl whitespace-pre-line text-3xl font-semibold leading-tight text-primary sm:text-4xl md:text-background md:text-6xl">
+          <h1 className="mt-5 max-w-3xl whitespace-pre-line text-4xl font-semibold leading-tight text-primary md:text-[42px]">
             {"막막한 상황을\n먼저 정리하는 곳입니다."}
           </h1>
-          <p className="mt-6 max-w-2xl whitespace-pre-line text-lg leading-9 text-muted md:text-xl md:font-medium md:leading-9 md:text-background/75">
+          <p className="mt-6 max-w-[800px] whitespace-pre-line text-lg leading-9 text-muted md:text-xl md:font-medium md:leading-9">
             {
               "법률 문제를 처음 겪으면 무엇부터 해야 할지 알기 어렵습니다.\n처음부터 모든 답을 알고 있을 필요는 없습니다.\n중요한 것은 현재 상황을 차분히 정리하고,\n가능한 선택지를 확인하는 것입니다."
             }
@@ -165,7 +165,7 @@ export default function FirstVisitPage() {
           </div>
         </div>
 
-        <div className="rounded-lg border border-[#e8ddcb] bg-white/60 p-6 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]">
+        <div className="rounded-lg border border-accent bg-white p-6 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]">
           <p className="text-sm font-semibold text-primary md:text-lg">
             처음 상담 전 확인할 것
           </p>
@@ -187,8 +187,8 @@ export default function FirstVisitPage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
-        <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="border-y border-border">
+        <div className="mx-auto max-w-[1160px] px-6 py-16 md:py-24">
           <SectionHeading
             title="처음부터 모든 답을 알 필요는 없습니다."
             description={
@@ -198,8 +198,8 @@ export default function FirstVisitPage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
-        <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="border-y border-border">
+        <div className="mx-auto max-w-[1160px] px-6 py-16 md:py-24">
           <SectionHeading
             title="상담 전 준비하면 좋은 자료"
             description={
@@ -210,35 +210,35 @@ export default function FirstVisitPage() {
             {preparationCards.map((card) => (
               <article
                 key={card.title}
-                className="flex flex-col rounded-lg border border-[#e8ddcb] bg-background p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+                className="flex flex-col rounded-lg border border-accent bg-background p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
               >
                 <h3 className="text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
                   {card.title}
                 </h3>
-                <p className="mt-3 text-sm leading-7 text-primary/70 md:text-[15px] md:leading-7">
+                <p className="mt-3 text-base leading-7 text-primary/75 md:text-[17px] md:leading-7">
                   {card.description}
                 </p>
                 <ul className="mt-5 space-y-3">
                   {card.items.map((item) => (
-                    <li key={item} className="flex gap-3 text-sm leading-7 text-primary/70 md:text-[15px]">
+                    <li key={item} className="flex gap-3 text-base leading-7 text-primary/75 md:text-[17px]">
                       <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
-                <p className="mt-auto pt-6 text-sm leading-7 text-primary/70 md:text-[15px] md:leading-7">
+                <p className="mt-auto pt-6 text-base leading-7 text-primary/75 md:text-[17px] md:leading-7">
                   {card.note}
                 </p>
               </article>
             ))}
           </div>
-          <p className="mt-6 max-w-3xl text-sm leading-7 text-muted md:text-[15px] md:font-medium md:leading-8 md:text-background/75">
+          <p className="mt-6 max-w-3xl text-base leading-7 text-muted md:text-[17px] md:font-medium md:leading-8">
             자료가 전부 준비되지 않았더라도 상담은 가능합니다. 다만 현재 가지고 있는 자료를 기준으로 먼저 사실관계와 기한을 확인하고, 추가로 필요한 자료를 정리하는 방식으로 진행합니다.
           </p>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="mx-auto max-w-[1160px] px-6 py-16 md:py-24">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <SectionHeading
             title="분야와 관계없이 함께 정리하면 좋은 것"
@@ -248,7 +248,7 @@ export default function FirstVisitPage() {
             {prepItems.map((item, index) => (
               <div
                 key={item}
-                className="rounded-lg border border-[#e8ddcb] bg-white/60 p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+                className="rounded-lg border border-accent bg-white p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
               >
                 <p className="text-xs font-semibold text-accent md:text-sm">
                   {String(index + 1).padStart(2, "0")}
@@ -262,8 +262,8 @@ export default function FirstVisitPage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
-        <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="border-y border-border">
+        <div className="mx-auto max-w-[1160px] px-6 py-16 md:py-24">
           <SectionHeading
             title="급한 마음에 바로 대응하기 전, 먼저 확인해야 합니다."
             description={
@@ -273,13 +273,13 @@ export default function FirstVisitPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="mx-auto max-w-[1160px] px-6 py-16 md:py-24">
         <SectionHeading title="이런 경우 상담을 권합니다." />
         <div className="mt-10 grid gap-4 md:grid-cols-2">
           {consultationCases.map((item) => (
             <div
               key={item}
-              className="rounded-lg border border-[#e8ddcb] bg-white/60 p-6 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+              className="rounded-lg border border-accent bg-white p-6 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
             >
               <p className="flex gap-3 text-sm font-semibold leading-7 text-primary md:text-lg">
                 <span className="shrink-0 font-bold text-accent">✓</span>
@@ -290,8 +290,8 @@ export default function FirstVisitPage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
-        <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="border-y border-border">
+        <div className="mx-auto max-w-[1160px] px-6 py-16 md:py-24">
           <SectionHeading
             title="상담은 현재 상황을 정리하는 과정입니다."
             description={
@@ -301,12 +301,12 @@ export default function FirstVisitPage() {
         </div>
       </section>
 
-      <section className="px-6 py-16 md:py-12">
-        <div className="mx-auto max-w-7xl rounded-lg bg-primary px-6 py-12 text-background md:border md:border-accent/30 md:px-10">
+      <section className="px-6 py-16 md:py-24">
+        <div className="mx-auto max-w-[1160px] rounded-lg bg-primary px-6 py-12 text-background md:border md:border-accent/30 md:px-10">
           <h2 className="max-w-2xl text-3xl font-semibold leading-tight md:text-4xl">
             현재 상황부터 함께 정리해보겠습니다.
           </h2>
-          <p className="mt-5 max-w-2xl whitespace-pre-line leading-7 text-background/75 md:text-[17px] md:font-medium md:leading-8">
+          <p className="mt-5 max-w-[800px] whitespace-pre-line leading-7 text-background/75 md:text-[17px] md:font-medium md:leading-8">
             {
               "받은 서류, 연락 내용, 가지고 있는 자료를 바탕으로\n지금 무엇을 확인해야 하는지부터 차분히 살펴보겠습니다."
             }
@@ -314,7 +314,7 @@ export default function FirstVisitPage() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row md:gap-4">
             <Link
               href="/issues"
-              className="inline-flex h-11 items-center justify-center rounded-md bg-background px-5 text-sm font-semibold text-primary transition-colors hover:bg-background/90 md:h-12 md:px-7 md:text-base"
+              className="inline-flex h-11 items-center justify-center rounded-md bg-accent px-5 text-sm font-semibold text-primary shadow-[0_10px_24px_rgba(181,150,93,0.18)] transition-colors hover:bg-accent/90 md:h-12 md:px-7 md:text-base"
             >
               상황별 쟁점 보기
             </Link>
