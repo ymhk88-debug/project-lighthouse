@@ -131,8 +131,8 @@ function TextLink({
 }) {
   const className =
     variant === "primary"
-      ? "bg-primary text-background hover:bg-primary/90 md:bg-accent md:text-primary md:shadow-[0_10px_24px_rgba(184,155,94,0.16)] md:hover:bg-accent/90"
-      : "border border-border bg-background text-primary hover:border-accent md:border-accent/35 md:bg-background/95";
+      ? "bg-accent text-primary hover:bg-accent/90 md:bg-accent md:text-primary md:shadow-[0_10px_24px_rgba(184,155,94,0.16)] md:hover:bg-accent/90"
+      : "border border-border bg-background text-primary hover:border-accent md:border-accent/35 md:bg-white";
 
   return (
     <Link
@@ -153,11 +153,11 @@ function SectionHeading({
 }) {
   return (
     <div className="max-w-2xl">
-      <h2 className="whitespace-pre-line text-2xl font-semibold leading-tight text-primary md:text-background md:text-4xl md:leading-tight">
+      <h2 className="whitespace-pre-line text-2xl font-semibold leading-tight text-primary md:text-primary md:text-4xl md:leading-tight">
         {title}
       </h2>
       {description ? (
-        <p className="mt-6 whitespace-pre-line text-base leading-8 text-muted md:text-[17px] md:font-medium md:leading-8 md:text-background/75">
+        <p className="mt-6 whitespace-pre-line text-base leading-8 text-muted md:text-[17px] md:font-medium md:leading-8 md:text-muted">
           {description}
         </p>
       ) : null}
@@ -175,7 +175,7 @@ function ChecklistCard({
   items: string[];
 }) {
   return (
-    <article className="rounded-lg border border-[#e8ddcb] bg-white/60 p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]">
+    <article className="rounded-lg border border-[#e8ddcb] bg-white p-5 shadow-sm md:border-accent/25 md:bg-white md:p-6 md:shadow-sm">
       <h3 className="text-xl font-semibold leading-8 text-primary md:text-2xl">{title}</h3>
       <p className="mt-4 text-sm leading-7 text-primary/70 md:text-[15px] md:leading-7">{description}</p>
       <ul className="mt-6 space-y-3">
@@ -192,13 +192,14 @@ function ChecklistCard({
 
 export default function AdministrativePracticePage() {
   return (
-    <div className="bg-background md:bg-primary">
-      <section className="mx-auto w-full max-w-7xl px-6 py-16 md:py-20">
+    <div className="bg-background">
+      <div className="bg-primary">
+      <section className="mx-auto w-full max-w-[1160px] px-6 py-16 md:py-20">
         <p className="text-sm font-semibold tracking-[0.18em] text-accent md:text-[15px]">Administrative Practice</p>
-        <h1 className="mt-5 max-w-3xl text-3xl font-semibold leading-tight text-primary sm:text-4xl md:text-background md:text-6xl">
+        <h1 className="mt-5 max-w-3xl text-3xl font-semibold leading-tight text-background sm:text-4xl md:text-background md:text-6xl">
           행정 사건
         </h1>
-        <p className="mt-6 max-w-3xl whitespace-pre-line text-lg leading-9 text-muted md:text-xl md:font-medium md:leading-9 md:text-background/75">
+        <p className="mt-6 max-w-3xl whitespace-pre-line text-lg leading-9 text-background/75 md:text-xl md:font-medium md:leading-9 md:text-background/75">
           {
             "행정 사건은 처분서, 통지서, 제출기한, 불복기간을 먼저 확인하는 것이 중요합니다.\n상담에서는 행정기관의 처분 내용과 기한, 제출자료를 함께 정리하고 현재 단계에서 가능한 대응 방향을 검토합니다."
           }
@@ -210,9 +211,17 @@ export default function AdministrativePracticePage() {
           </TextLink>
         </div>
       </section>
+      </div>
+      <div className="border-b border-border bg-[#F7F2E8]"><div className="mx-auto max-w-[1160px] px-6 pt-5 text-sm leading-7 text-primary/80">처분이 확정되기 전 사전통지나 의견제출을 요구받은 경우에는 받은 문서와 제출기한부터 확인해야 합니다.</div></div>
+      <nav aria-label="사건별 안내 바로가기" className="border-b border-border bg-[#F7F2E8]">
+        <div className="mx-auto flex max-w-[1160px] flex-wrap gap-3 px-6 py-5">
+          <a href="#disposition" className="inline-flex items-center rounded-md border border-border bg-white px-4 py-3 text-sm font-semibold text-primary transition-colors hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">처분 후 대응 안내 보기 →</a>
+          <a href="#appeal" className="inline-flex items-center rounded-md border border-border bg-white px-4 py-3 text-sm font-semibold text-primary transition-colors hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">불복 절차 안내 보기 →</a>
+        </div>
+      </nav>
 
-      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
-        <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="border-y border-border bg-[#F0EBE2] md:border-accent/15 md:bg-[#F0EBE2]">
+        <div className="mx-auto max-w-[1160px] px-6 py-16 md:py-20">
           <SectionHeading
             title="행정 사건에서 먼저 확인하는 것"
             description="행정 사건은 처분 내용뿐 아니라, 언제 통지를 받았는지와 어떤 기한이 있는지가 중요합니다. 먼저 문서와 기한, 제출자료를 나누어 정리합니다."
@@ -221,7 +230,7 @@ export default function AdministrativePracticePage() {
             {firstCheckItems.map((item, index) => (
               <article
                 key={item.title}
-                className="rounded-lg border border-[#e8ddcb] bg-background p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+                className="rounded-lg border border-[#e8ddcb] bg-background p-5 shadow-sm md:border-accent/25 md:p-6 md:shadow-sm"
               >
                 <p className="text-xs font-semibold text-accent md:text-sm">
                   {String(index + 1).padStart(2, "0")}
@@ -238,7 +247,7 @@ export default function AdministrativePracticePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="mx-auto max-w-[1160px] px-6 py-16 md:py-20">
         <SectionHeading
           title="자주 상담하는 행정 사건 상황"
           description="행정 사건은 처분의 종류와 기한, 처분 전후 제출자료에 따라 검토할 쟁점이 달라집니다."
@@ -247,7 +256,7 @@ export default function AdministrativePracticePage() {
           {situationCards.map((item) => (
             <article
               key={item.title}
-              className="rounded-lg border border-[#e8ddcb] bg-white/60 p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+              className="rounded-lg border border-[#e8ddcb] bg-white p-5 shadow-sm md:border-accent/25 md:bg-white md:p-6 md:shadow-sm"
             >
               <p className="text-xs font-semibold tracking-[0.16em] text-accent md:text-sm">{item.label}</p>
               <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
@@ -261,22 +270,26 @@ export default function AdministrativePracticePage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
-        <div className="mx-auto grid max-w-7xl gap-4 px-6 py-16 md:py-12 lg:grid-cols-2">
-          <ChecklistCard
+      <section className="border-y border-border bg-[#F0EBE2] md:border-accent/15 md:bg-[#F0EBE2]">
+        <div className="mx-auto grid max-w-[1160px] gap-4 px-6 py-16 md:py-20 lg:grid-cols-2">
+          <div id="disposition" className="scroll-mt-24">
+            <ChecklistCard
             title="처분을 받은 입장에서 정리할 것"
             description="행정처분을 받은 경우에는 먼저 처분서와 통지서를 확인하고, 처분 사유와 기한, 제출 가능한 자료를 나누어 정리해야 합니다."
             items={dispositionChecklist}
           />
-          <ChecklistCard
+          </div>
+          <div id="appeal" className="scroll-mt-24">
+            <ChecklistCard
             title="불복 절차 전에 확인할 것"
             description="이의신청, 행정심판, 행정소송은 각각 절차와 기한이 다를 수 있습니다. 먼저 어떤 절차가 가능한지와 기한이 남아 있는지 확인해야 합니다."
             items={appealChecklist}
           />
+          </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="mx-auto max-w-[1160px] px-6 py-16 md:py-20">
         <SectionHeading
           title="상담 전 준비하면 좋은 자료"
           description={
@@ -287,7 +300,7 @@ export default function AdministrativePracticePage() {
           {preparationCards.map((card) => (
             <article
               key={card.title}
-              className="rounded-lg border border-[#e8ddcb] bg-white/60 p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+              className="rounded-lg border border-[#e8ddcb] bg-white p-5 shadow-sm md:border-accent/25 md:bg-white md:p-6 md:shadow-sm"
             >
               <p className="text-xs font-semibold tracking-[0.16em] text-accent md:text-sm">{card.label}</p>
               <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
@@ -306,8 +319,8 @@ export default function AdministrativePracticePage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
-        <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="border-y border-border bg-[#F0EBE2] md:border-accent/15 md:bg-[#F0EBE2]">
+        <div className="mx-auto max-w-[1160px] px-6 py-16 md:py-20">
           <SectionHeading
             title="관련 법률 실무 노트"
             description="행정 사건은 기한과 절차가 중요하므로, 관련 글을 참고해 상담 전 처분서와 자료를 미리 정리할 수 있습니다."
@@ -316,7 +329,7 @@ export default function AdministrativePracticePage() {
             {noteCards.map((item) => (
               <article
                 key={item.title}
-                className="rounded-lg border border-[#e8ddcb] bg-background p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+                className="rounded-lg border border-[#e8ddcb] bg-background p-5 shadow-sm md:border-accent/25 md:p-6 md:shadow-sm"
               >
                 <p className="text-xs font-semibold tracking-[0.16em] text-accent md:text-sm">{item.label}</p>
                 <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
@@ -339,8 +352,8 @@ export default function AdministrativePracticePage() {
         </div>
       </section>
 
-      <section className="px-6 py-16 md:py-12">
-        <div className="mx-auto max-w-7xl rounded-lg bg-primary px-6 py-12 text-background md:border md:border-accent/30 md:px-10">
+      <section className="px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-[1160px] rounded-lg bg-primary px-6 py-12 text-background md:border md:border-accent/30 md:px-10">
           <h2 className="max-w-3xl text-3xl font-semibold leading-tight md:text-4xl">
             행정 사건은 처분서와 기한을 먼저 확인해야 합니다
           </h2>

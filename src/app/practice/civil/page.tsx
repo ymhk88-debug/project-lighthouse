@@ -189,8 +189,8 @@ function TextLink({
 }) {
   const className =
     variant === "primary"
-      ? "bg-primary text-background hover:bg-primary/90 md:bg-accent md:text-primary md:shadow-[0_10px_24px_rgba(184,155,94,0.16)] md:hover:bg-accent/90"
-      : "border border-border bg-background text-primary hover:border-accent md:border-accent/35 md:bg-background/95";
+      ? "bg-accent text-primary hover:bg-accent/90 md:bg-accent md:text-primary md:shadow-[0_10px_24px_rgba(184,155,94,0.16)] md:hover:bg-accent/90"
+      : "border border-border bg-background text-primary hover:border-accent md:border-accent/35 md:bg-white";
 
   return (
     <Link
@@ -211,11 +211,11 @@ function SectionHeading({
 }) {
   return (
     <div className="max-w-2xl">
-      <h2 className="whitespace-pre-line text-2xl font-semibold leading-tight text-primary md:text-background md:text-4xl md:leading-tight">
+      <h2 className="whitespace-pre-line text-2xl font-semibold leading-tight text-primary md:text-primary md:text-4xl md:leading-tight">
         {title}
       </h2>
       {description ? (
-        <p className="mt-6 whitespace-pre-line text-base leading-8 text-muted md:text-[17px] md:font-medium md:leading-8 md:text-background/75">
+        <p className="mt-6 whitespace-pre-line text-base leading-8 text-muted md:text-[17px] md:font-medium md:leading-8 md:text-muted">
           {description}
         </p>
       ) : null}
@@ -233,7 +233,7 @@ function ChecklistCard({
   items: string[];
 }) {
   return (
-    <article className="rounded-lg border border-[#e8ddcb] bg-white/60 p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]">
+    <article className="rounded-lg border border-[#e8ddcb] bg-white p-5 shadow-sm md:border-accent/25 md:bg-white md:p-6 md:shadow-sm">
       <h3 className="text-xl font-semibold leading-8 text-primary md:text-2xl">{title}</h3>
       <p className="mt-4 text-sm leading-7 text-primary/70 md:text-[15px] md:leading-7">{description}</p>
       <ul className="mt-6 space-y-3">
@@ -250,13 +250,14 @@ function ChecklistCard({
 
 export default function CivilPracticePage() {
   return (
-    <div className="bg-background md:bg-primary">
-      <section className="mx-auto w-full max-w-7xl px-6 py-16 md:py-20">
+    <div className="bg-background">
+      <div className="bg-primary">
+      <section className="mx-auto w-full max-w-[1160px] px-6 py-16 md:py-20">
         <p className="text-sm font-semibold tracking-[0.18em] text-accent md:text-[15px]">Civil Practice</p>
-        <h1 className="mt-5 max-w-3xl text-3xl font-semibold leading-tight text-primary sm:text-4xl md:text-background md:text-6xl">
+        <h1 className="mt-5 max-w-3xl text-3xl font-semibold leading-tight text-background sm:text-4xl md:text-background md:text-6xl">
           민사 사건
         </h1>
-        <p className="mt-6 max-w-3xl whitespace-pre-line text-lg leading-9 text-muted md:text-xl md:font-medium md:leading-9 md:text-background/75">
+        <p className="mt-6 max-w-3xl whitespace-pre-line text-lg leading-9 text-background/75 md:text-xl md:font-medium md:leading-9 md:text-background/75">
           {
             "민사 분쟁은 청구할 내용과 다툴 내용을 나누어 보고, 계약서·계좌이체·문자·내용증명 등 자료를 먼저 정리하는 것이 중요합니다.\n상담에서는 사건의 흐름과 증거자료를 함께 확인하고, 현재 단계에서 필요한 대응 방향을 검토합니다."
           }
@@ -268,9 +269,16 @@ export default function CivilPracticePage() {
           </TextLink>
         </div>
       </section>
+      </div>
+      <nav aria-label="사건별 안내 바로가기" className="border-b border-border bg-[#F7F2E8]">
+        <div className="mx-auto flex max-w-[1160px] flex-wrap gap-3 px-6 py-5">
+          <a href="#claimant" className="inline-flex items-center rounded-md border border-border bg-white px-4 py-3 text-sm font-semibold text-primary transition-colors hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">청구하는 경우 안내 보기 →</a>
+          <a href="#respondent" className="inline-flex items-center rounded-md border border-border bg-white px-4 py-3 text-sm font-semibold text-primary transition-colors hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">청구를 받은 경우 안내 보기 →</a>
+        </div>
+      </nav>
 
-      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
-        <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="border-y border-border bg-[#F0EBE2] md:border-accent/15 md:bg-[#F0EBE2]">
+        <div className="mx-auto max-w-[1160px] px-6 py-16 md:py-20">
           <SectionHeading
             title="민사 사건에서 먼저 확인하는 것"
             description="민사 사건은 소송을 제기하는 상황인지, 소장이나 지급명령을 받은 상황인지에 따라 먼저 확인해야 할 내용이 달라집니다."
@@ -279,7 +287,7 @@ export default function CivilPracticePage() {
             {firstCheckItems.map((item, index) => (
               <article
                 key={item.title}
-                className="rounded-lg border border-[#e8ddcb] bg-background p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+                className="rounded-lg border border-[#e8ddcb] bg-background p-5 shadow-sm md:border-accent/25 md:p-6 md:shadow-sm"
               >
                 <p className="text-xs font-semibold text-accent md:text-sm">
                   {String(index + 1).padStart(2, "0")}
@@ -296,7 +304,7 @@ export default function CivilPracticePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="mx-auto max-w-[1160px] px-6 py-16 md:py-20">
         <SectionHeading
           title="자주 상담하는 민사 분쟁 상황"
           description="민사 분쟁은 계약서 하나만으로 판단하기보다, 거래 경위와 이후 연락, 송금 내역, 일부 변제 등 여러 자료를 함께 확인해야 합니다."
@@ -305,7 +313,7 @@ export default function CivilPracticePage() {
           {situationCards.map((item) => (
             <article
               key={item.title}
-              className="rounded-lg border border-[#e8ddcb] bg-white/60 p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+              className="rounded-lg border border-[#e8ddcb] bg-white p-5 shadow-sm md:border-accent/25 md:bg-white md:p-6 md:shadow-sm"
             >
               <p className="text-xs font-semibold tracking-[0.16em] text-accent md:text-sm">{item.label}</p>
               <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
@@ -319,22 +327,26 @@ export default function CivilPracticePage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
-        <div className="mx-auto grid max-w-7xl gap-4 px-6 py-16 md:py-12 lg:grid-cols-2">
-          <ChecklistCard
+      <section className="border-y border-border bg-[#F0EBE2] md:border-accent/15 md:bg-[#F0EBE2]">
+        <div className="mx-auto grid max-w-[1160px] gap-4 px-6 py-16 md:py-20 lg:grid-cols-2">
+          <div id="claimant" className="scroll-mt-24">
+            <ChecklistCard
             title="청구하는 입장에서 정리할 것"
             description="돈을 청구하거나 계약상 책임을 묻는 경우에는 청구금액과 근거, 상대방의 의무, 실제 이행 내역을 자료로 정리하는 과정이 필요합니다."
             items={claimantChecklist}
           />
-          <ChecklistCard
+          </div>
+          <div id="respondent" className="scroll-mt-24">
+            <ChecklistCard
             title="청구를 받은 입장에서 정리할 것"
             description="소장이나 지급명령을 받은 경우에는 먼저 기한을 확인하고, 상대방 주장에서 인정할 부분과 다툴 부분을 나누어 정리해야 합니다."
             items={respondentChecklist}
           />
+          </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="mx-auto max-w-[1160px] px-6 py-16 md:py-20">
         <SectionHeading
           title="민사분쟁은 보통 이렇게 정리합니다"
           description={
@@ -345,7 +357,7 @@ export default function CivilPracticePage() {
           {civilProcessSteps.map((step, index) => (
             <article
               key={step.title}
-              className="flex flex-col rounded-lg border border-[#e8ddcb] bg-white/60 p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+              className="flex flex-col rounded-lg border border-[#e8ddcb] bg-white p-5 shadow-sm md:border-accent/25 md:bg-white md:p-6 md:shadow-sm"
             >
               <p className="text-xs font-semibold text-accent md:text-sm">
                 {String(index + 1).padStart(2, "0")}
@@ -379,7 +391,7 @@ export default function CivilPracticePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="mx-auto max-w-[1160px] px-6 py-16 md:py-20">
         <SectionHeading
           title="상담 전 준비하면 좋은 자료"
           description={
@@ -390,7 +402,7 @@ export default function CivilPracticePage() {
           {preparationCards.map((card) => (
             <article
               key={card.title}
-              className="rounded-lg border border-[#e8ddcb] bg-white/60 p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+              className="rounded-lg border border-[#e8ddcb] bg-white p-5 shadow-sm md:border-accent/25 md:bg-white md:p-6 md:shadow-sm"
             >
               <p className="text-xs font-semibold tracking-[0.16em] text-accent md:text-sm">{card.label}</p>
               <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
@@ -409,8 +421,8 @@ export default function CivilPracticePage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
-        <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="border-y border-border bg-[#F0EBE2] md:border-accent/15 md:bg-[#F0EBE2]">
+        <div className="mx-auto max-w-[1160px] px-6 py-16 md:py-20">
           <SectionHeading
             title="관련 법률 실무 노트"
             description="민사 분쟁 초기 대응과 자료 정리에 관해 블로그에 정리한 글을 함께 참고할 수 있습니다."
@@ -419,7 +431,7 @@ export default function CivilPracticePage() {
             {noteCards.map((item) => (
               <article
                 key={item.title}
-                className="rounded-lg border border-[#e8ddcb] bg-background p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+                className="rounded-lg border border-[#e8ddcb] bg-background p-5 shadow-sm md:border-accent/25 md:p-6 md:shadow-sm"
               >
                 <p className="text-xs font-semibold tracking-[0.16em] text-accent md:text-sm">{item.label}</p>
                 <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
@@ -442,8 +454,8 @@ export default function CivilPracticePage() {
         </div>
       </section>
 
-      <section className="px-6 py-16 md:py-12">
-        <div className="mx-auto max-w-7xl rounded-lg bg-primary px-6 py-12 text-background md:border md:border-accent/30 md:px-10">
+      <section className="px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-[1160px] rounded-lg bg-primary px-6 py-12 text-background md:border md:border-accent/30 md:px-10">
           <h2 className="max-w-3xl text-3xl font-semibold leading-tight md:text-4xl">
             민사 분쟁은 청구와 증거를 나누어 정리해야 합니다
           </h2>

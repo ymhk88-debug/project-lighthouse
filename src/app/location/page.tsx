@@ -5,7 +5,6 @@ const officePhone = "055-263-5882";
 const mobilePhone = "050-5948-5158";
 const naverMapUrl =
   "https://map.naver.com/p/search/%EB%B3%80%ED%98%B8%EC%82%AC%20%EC%9C%A0%EB%AF%BC%ED%99%98%20%EB%B2%95%EB%A5%A0%EC%82%AC%EB%AC%B4%EC%86%8C/place/2076772014?c=15.00,0,0,0,dh&isCorrectAnswer=true&placePath=%2Fhome%3Ffrom%3Dmap%26fromPanelNum%3D1%26additionalHeight%3D76%26timestamp%3D202607011737%26locale%3Dko%26svcName%3Dmap_pcv5%26searchText%3D%EB%B3%80%ED%98%B8%EC%82%AC%20%EC%9C%A0%EB%AF%BC%ED%99%98%20%EB%B2%95%EB%A5%A0%EC%82%AC%EB%AC%B4%EC%86%8C";
-const naverMapEmbedUrl = "";
 
 const visitChecklist = [
   {
@@ -53,8 +52,8 @@ function TextLink({
 }) {
   const className =
     variant === "primary"
-      ? "bg-primary text-background hover:bg-primary/90 md:bg-accent md:text-primary md:shadow-[0_10px_24px_rgba(184,155,94,0.16)] md:hover:bg-accent/90"
-      : "border border-border bg-background text-primary hover:border-accent md:border-accent/35 md:bg-background/95";
+      ? "bg-accent text-primary hover:bg-accent/90 md:bg-accent md:text-primary md:shadow-[0_10px_24px_rgba(184,155,94,0.16)] md:hover:bg-accent/90"
+      : "border border-border bg-background text-primary hover:border-accent md:border-accent/35 md:bg-white";
 
   return (
     <Link
@@ -75,11 +74,11 @@ function SectionHeading({
 }) {
   return (
     <div className="max-w-2xl">
-      <h2 className="whitespace-pre-line text-2xl font-semibold leading-tight text-primary md:text-background md:text-4xl md:leading-tight">
+      <h2 className="whitespace-pre-line text-2xl font-semibold leading-tight text-primary md:text-primary md:text-4xl md:leading-tight">
         {title}
       </h2>
       {description ? (
-        <p className="mt-6 whitespace-pre-line text-base leading-8 text-muted md:text-[17px] md:font-medium md:leading-8 md:text-background/75">
+        <p className="mt-6 whitespace-pre-line text-base leading-8 text-muted md:text-[17px] md:font-medium md:leading-8 md:text-muted">
           {description}
         </p>
       ) : null}
@@ -89,13 +88,14 @@ function SectionHeading({
 
 export default function LocationPage() {
   return (
-    <div className="bg-background md:bg-primary">
-      <section className="mx-auto w-full max-w-7xl px-6 py-16 md:py-20">
+    <div className="bg-background">
+      <div className="bg-primary">
+      <section className="mx-auto w-full max-w-[1160px] px-6 py-16 md:py-20">
         <p className="text-sm font-semibold tracking-[0.18em] text-accent md:text-[15px]">Location</p>
-        <h1 className="mt-5 max-w-3xl text-3xl font-semibold leading-tight text-primary sm:text-4xl md:text-background md:text-6xl">
+        <h1 className="mt-5 max-w-3xl text-3xl font-semibold leading-tight text-background sm:text-4xl md:text-background md:text-6xl">
           오시는 길
         </h1>
-        <p className="mt-6 max-w-3xl whitespace-pre-line text-lg leading-9 text-muted md:text-xl md:font-medium md:leading-9 md:text-background/75">
+        <p className="mt-6 max-w-3xl whitespace-pre-line text-lg leading-9 text-background/75 md:text-xl md:font-medium md:leading-9 md:text-background/75">
           {
             "방문 상담은 사건을 차분히 정리하기 위한 시간입니다.\n일정을 조율하고 관련 자료를 준비해 오시면, 사실관계와 절차를 더 정확하게 함께 확인할 수 있습니다."
           }
@@ -107,102 +107,57 @@ export default function LocationPage() {
           </TextLink>
         </div>
       </section>
+      </div>
 
-      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
-        <div className="mx-auto grid max-w-7xl gap-8 px-6 py-16 md:py-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+      <section className="border-y border-border bg-[#F0EBE2]">
+        <div className="mx-auto max-w-[1160px] px-6 py-16 md:py-20">
           <SectionHeading
-            title="사무실 위치"
-            description={
-              "방문 상담은 사전 일정 조율 후 진행됩니다.\n법원이나 수사기관 기일, 외부 일정으로 자리를 비울 수 있으므로 방문 전 전화로 일정을 확인해 주세요."
-            }
+            title="사무실 위치 및 연락처"
+            description="방문 상담은 사전 일정 조율 후 진행됩니다. 정확한 위치는 아래의 네이버지도 링크에서 확인하실 수 있습니다."
           />
-          <div className="rounded-lg border border-[#e8ddcb] bg-white/60 p-6 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-7 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]">
-            <p className="text-sm font-semibold text-primary md:text-lg">사무실 주소</p>
-            <p className="mt-4 text-base font-semibold leading-8 text-primary">
-              {address}
-            </p>
-            <p className="mt-4 text-sm leading-7 text-muted md:text-[15px] md:leading-7 md:text-primary/70">
-              서류를 가지고 오시는 경우, 받은 서류와 관련 자료를 가능한
-              범위에서 함께 준비해 오시면 좋습니다.
-            </p>
-            <div className="mt-6 rounded-md border border-border bg-background/60 p-4">
-              <p className="text-sm font-semibold text-primary md:text-lg">상담 문의</p>
-              <p className="mt-2 text-sm leading-7 text-muted md:text-[15px] md:leading-7 md:text-primary/70">
-                사무실{" "}
-                <a
-                  href={`tel:${officePhone}`}
-                  className="transition-colors hover:text-accent"
-                >
-                  {officePhone}
-                </a>
-              </p>
-              <p className="text-sm leading-7 text-muted md:text-[15px] md:leading-7 md:text-primary/70">
-                휴대폰{" "}
-                <a
-                  href={`tel:${mobilePhone}`}
-                  className="transition-colors hover:text-accent"
-                >
-                  {mobilePhone}
-                </a>
-              </p>
-              <p className="mt-3 text-sm leading-7 text-primary/70 md:text-[15px]">
-                방문 전 전화로 상담 일정과 준비자료를 함께 확인해 주세요.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-16 md:py-12">
-        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-          <SectionHeading
-            title="지도 확인"
-            description={
-              "네이버지도를 통해 사무실 위치를 확인하실 수 있습니다.\n방문 상담은 사전 일정 조율 후 진행되므로, 방문 전 전화로 일정을 확인해 주세요."
-            }
-          />
-          <div className="rounded-lg border border-[#e8ddcb] bg-white/60 p-6 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-7 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]">
-            {naverMapEmbedUrl ? (
-              <div className="overflow-hidden rounded-md border border-border bg-background/60">
-                <iframe
-                  title="유민환 변호사 사무실 위치"
-                  src={naverMapEmbedUrl}
-                  className="h-[320px] w-full md:h-[420px]"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
-              </div>
-            ) : (
-              <div className="flex min-h-52 flex-col items-center justify-center rounded-md border border-dashed border-border bg-background/60 px-6 text-center">
-                <p className="text-sm leading-7 text-primary/70 md:text-[15px] md:leading-7">
-                  사무실 위치는 네이버지도에서 확인하실 수 있습니다.
-                  <br />
-                  정확한 길 안내는 네이버지도에서 크게 보기를 이용해 주세요.
+          <div className="mt-8 grid gap-5 lg:grid-cols-2 lg:items-stretch">
+            <div className="flex h-full flex-col rounded-lg border border-border bg-white p-6 shadow-sm md:p-8">
+              <p className="text-sm font-semibold tracking-[0.14em] text-[#816432]">OFFICE</p>
+              <h3 className="mt-3 text-xl font-semibold text-primary md:text-2xl">방문 주소</h3>
+              <p className="mt-5 text-lg font-semibold leading-8 text-primary">{address}</p>
+              <p className="mt-2 text-sm leading-7 text-muted">상담 일정과 건물 출입 방법은 방문 전에 확인해 주세요.</p>
+              <div className="mt-7 border-t border-border pt-6">
+                <p className="font-semibold text-primary">전화 문의</p>
+                <p className="mt-3 text-sm leading-7 text-primary">
+                  사무실 <a className="font-semibold underline decoration-accent/50 underline-offset-4 hover:text-[#816432]" href={`tel:${officePhone}`}>{officePhone}</a>
+                </p>
+                <p className="text-sm leading-7 text-primary">
+                  휴대폰 <a className="font-semibold underline decoration-accent/50 underline-offset-4 hover:text-[#816432]" href={`tel:${mobilePhone}`}>{mobilePhone}</a>
                 </p>
               </div>
-            )}
-            <div className="mt-6 flex justify-center">
-              <a
-                href={naverMapUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex h-11 items-center justify-center rounded-md bg-primary px-5 text-sm font-semibold text-background transition-colors hover:bg-primary/90 md:h-12 md:px-7 md:bg-accent md:text-primary md:shadow-[0_10px_24px_rgba(184,155,94,0.16)]"
-              >
-                네이버지도에서 크게 보기
+              <p className="mt-auto pt-6 text-sm leading-7 text-muted">기일이나 외부 일정으로 부재중일 수 있으므로 방문 전 일정을 조율해 주세요.</p>
+            </div>
+            <div className="flex h-full flex-col rounded-lg border border-border bg-white p-6 shadow-sm md:p-8">
+              <p className="text-sm font-semibold tracking-[0.14em] text-[#816432]">MAP & DIRECTIONS</p>
+              <h3 className="mt-3 text-xl font-semibold text-primary md:text-2xl">네이버지도로 길 찾기</h3>
+              <div className="mt-6 flex min-h-48 flex-1 flex-col justify-center rounded-md border border-accent/20 bg-[#F7F2E8] px-6 py-8">
+                <div aria-hidden="true" className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-xl text-background">⌖</div>
+                <p className="mt-5 text-lg font-semibold text-primary">창원시 성산구 용지로169번길 7</p>
+                <p className="mt-1 text-sm text-muted">12층 · 사무실 위치 및 이동 경로</p>
+                <p className="mt-5 text-sm leading-7 text-primary/75">별도의 지도 이미지를 임의로 표시하지 않고, 실제 위치 정보가 있는 네이버지도로 연결합니다.</p>
+              </div>
+              <a href={naverMapUrl} target="_blank" rel="noopener noreferrer"
+                className="mt-6 inline-flex min-h-12 items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-semibold text-background transition-colors hover:bg-primary/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+                네이버지도에서 위치 확인하기 →
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
-        <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="border-y border-border bg-[#F0EBE2] md:border-accent/15 md:bg-[#F0EBE2]">
+        <div className="mx-auto max-w-[1160px] px-6 py-16 md:py-20">
           <SectionHeading title="방문 전 확인하면 좋은 것" />
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {visitChecklist.map((item, index) => (
               <article
                 key={item.title}
-                className="rounded-lg border border-[#e8ddcb] bg-white/60 p-6 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+                className="rounded-lg border border-[#e8ddcb] bg-white p-6 shadow-sm md:border-accent/25 md:bg-white md:shadow-sm"
               >
                 <p className="text-xs font-semibold text-accent md:text-sm">
                   {String(index + 1).padStart(2, "0")}
@@ -219,13 +174,13 @@ export default function LocationPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="mx-auto max-w-[1160px] px-6 py-16 md:py-20">
         <SectionHeading title="교통 및 주차 안내" />
         <div className="mt-8 grid gap-4 md:grid-cols-3">
           {transitItems.map((item) => (
             <article
               key={item.title}
-              className="rounded-lg border border-[#e8ddcb] bg-white/60 p-6 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+              className="rounded-lg border border-[#e8ddcb] bg-white p-6 shadow-sm md:border-accent/25 md:bg-white md:shadow-sm"
             >
               <h3 className="text-lg font-semibold text-primary md:text-2xl">
                 {item.title}
@@ -238,8 +193,8 @@ export default function LocationPage() {
         </div>
       </section>
 
-      <section className="px-6 py-16 md:py-12">
-        <div className="mx-auto max-w-7xl rounded-lg bg-primary px-6 py-12 text-background md:border md:border-accent/30 md:px-10">
+      <section className="px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-[1160px] rounded-lg bg-primary px-6 py-12 text-background md:border md:border-accent/30 md:px-10">
           <h2 className="max-w-3xl text-3xl font-semibold leading-tight md:text-4xl">
             방문 전 사건의 흐름을 먼저 정리해 주세요
           </h2>

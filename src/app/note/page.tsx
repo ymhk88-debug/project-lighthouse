@@ -212,8 +212,8 @@ function TextLink({
 }) {
   const className =
     variant === "primary"
-      ? "bg-primary text-background hover:bg-primary/90 md:bg-accent md:text-primary md:shadow-[0_10px_24px_rgba(184,155,94,0.16)] md:hover:bg-accent/90"
-      : "border border-border bg-background text-primary hover:border-accent md:border-accent/35 md:bg-background/95";
+      ? "bg-accent text-primary hover:bg-accent/90 md:bg-accent md:text-primary md:shadow-[0_10px_24px_rgba(184,155,94,0.16)] md:hover:bg-accent/90"
+      : "border border-border bg-background text-primary hover:border-accent md:border-accent/35 md:bg-white";
 
   if (external) {
     return (
@@ -247,11 +247,11 @@ function SectionHeading({
 }) {
   return (
     <div className="max-w-2xl">
-      <h2 className="whitespace-pre-line text-2xl font-semibold leading-tight text-primary md:text-background md:text-4xl md:leading-tight">
+      <h2 className="whitespace-pre-line text-2xl font-semibold leading-tight text-primary md:text-primary md:text-4xl md:leading-tight">
         {title}
       </h2>
       {description ? (
-        <p className="mt-6 whitespace-pre-line text-base leading-8 text-muted md:text-[17px] md:font-medium md:leading-8 md:text-background/75">
+        <p className="mt-6 whitespace-pre-line text-base leading-8 text-muted md:text-[17px] md:font-medium md:leading-8 md:text-muted">
           {description}
         </p>
       ) : null}
@@ -261,13 +261,14 @@ function SectionHeading({
 
 export default function NotePage() {
   return (
-    <div className="bg-background md:bg-primary">
-      <section className="mx-auto w-full max-w-7xl px-6 py-16 md:py-20">
+    <div className="bg-background">
+      <div className="bg-primary">
+      <section className="mx-auto w-full max-w-[1160px] px-6 py-16 md:py-20">
         <p className="text-sm font-semibold tracking-[0.18em] text-accent md:text-[15px]">Legal Practice Notes</p>
-        <h1 className="mt-5 max-w-3xl text-3xl font-semibold leading-tight text-primary sm:text-4xl md:text-background md:text-6xl">
+        <h1 className="mt-5 max-w-3xl text-3xl font-semibold leading-tight text-background sm:text-4xl md:text-background md:text-6xl">
           법률 실무 노트
         </h1>
-        <p className="mt-6 max-w-3xl whitespace-pre-line text-lg leading-9 text-muted md:text-xl md:font-medium md:leading-9 md:text-background/75">
+        <p className="mt-6 max-w-3xl whitespace-pre-line text-lg leading-9 text-background/75 md:text-xl md:font-medium md:leading-9 md:text-background/75">
           {
             "사건을 제대로 이해하기 위해서는 먼저 사실관계와 절차를 차분히 정리해야 합니다.\n법률 실무 노트는 결과를 장담하기 위한 글이 아닙니다. 사건을 더 정확히 이해하고 준비하기 위한 기록입니다."
           }
@@ -281,9 +282,10 @@ export default function NotePage() {
           </TextLink>
         </div>
       </section>
+      </div>
 
-      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
-        <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="border-y border-border bg-[#F0EBE2] md:border-accent/15 md:bg-[#F0EBE2]">
+        <div className="mx-auto max-w-[1160px] px-6 py-16 md:py-20">
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <SectionHeading
               title="먼저 정리하고, 그다음 판단합니다."
@@ -295,7 +297,7 @@ export default function NotePage() {
               {purposeCards.map((item, index) => (
                 <article
                   key={item.title}
-                  className="rounded-lg border border-[#e8ddcb] bg-white/60 p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+                  className="rounded-lg border border-[#e8ddcb] bg-white p-5 shadow-sm md:border-accent/25 md:bg-white md:p-6 md:shadow-sm"
                 >
                   <p className="text-xs font-semibold text-accent md:text-sm">
                     {String(index + 1).padStart(2, "0")}
@@ -313,7 +315,7 @@ export default function NotePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="mx-auto max-w-[1160px] px-6 py-16 md:py-20">
         <SectionHeading
           title="주제별로 정리한 법률 실무 노트"
           description={
@@ -324,7 +326,7 @@ export default function NotePage() {
           {topicClusters.map((cluster, index) => (
             <article
               key={cluster.title}
-              className="rounded-lg border border-[#e8ddcb] bg-white/60 p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+              className="rounded-lg border border-[#e8ddcb] bg-white p-5 shadow-sm md:border-accent/25 md:bg-white md:p-6 md:shadow-sm"
             >
               <div className="flex items-start gap-4">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-accent/40 bg-accent/10 text-xs font-semibold text-accent">
@@ -343,7 +345,7 @@ export default function NotePage() {
                 {cluster.posts.map((post) => (
                   <div
                     key={post.title}
-                    className="rounded-md border border-[#eadfce] bg-background/80 p-4 md:border-accent/20 md:bg-white/70"
+                    className="rounded-md border border-[#eadfce] bg-background/80 p-4 md:border-accent/20 md:bg-white"
                   >
                     <h4 className="text-base font-semibold leading-7 text-primary">
                       {post.title}
@@ -371,7 +373,7 @@ export default function NotePage() {
             </article>
           ))}
         </div>
-        <div className="mt-8 rounded-lg border border-[#e8ddcb] bg-white/60 p-5 md:border-accent/25 md:bg-background/95 md:p-6">
+        <div className="mt-8 rounded-lg border border-[#e8ddcb] bg-white p-5 md:border-accent/25 md:bg-white md:p-6">
           <h3 className="text-lg font-semibold text-primary">함께 보면 좋은 안내</h3>
           <div className="mt-4 flex flex-wrap gap-3">
             {internalLinks.map((item) => (
@@ -387,8 +389,8 @@ export default function NotePage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
-        <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="border-y border-border bg-[#F0EBE2] md:border-accent/15 md:bg-[#F0EBE2]">
+        <div className="mx-auto max-w-[1160px] px-6 py-16 md:py-20">
           <SectionHeading
             title="전체 글은 블로그에서 확인할 수 있습니다"
             description={
@@ -403,8 +405,8 @@ export default function NotePage() {
         </div>
       </section>
 
-      <section className="px-6 py-16 md:py-12">
-        <div className="mx-auto max-w-7xl rounded-lg bg-primary px-6 py-12 text-background md:border md:border-accent/30 md:px-10">
+      <section className="px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-[1160px] rounded-lg bg-primary px-6 py-12 text-background md:border md:border-accent/30 md:px-10">
           <h2 className="max-w-3xl text-3xl font-semibold leading-tight md:text-4xl">
             글만으로 정리되지 않는 부분은 상담에서 함께 확인합니다
           </h2>
