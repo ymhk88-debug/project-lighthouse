@@ -6,6 +6,8 @@
 - Final Kakao Map link reflected on `/location`.
 - Public phone numbers reflected: 사무실 055-263-5882, 휴대폰 010-5948-5158
 - Footer office information, lawyer information, address, and phone numbers reflected.
+- Business registration number: 519-12-02825.
+- 대표변호사: 유민환. 광고책임변호사: 유민환 변호사.
 - Consultation page CTA includes the public phone numbers.
 
 ## Required Before Public Deploy

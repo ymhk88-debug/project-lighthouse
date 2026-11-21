@@ -148,9 +148,9 @@ export default function Home() {
             유민환
           </h1>
           <p className="hero-line mt-6 max-w-xl text-2xl font-semibold leading-snug text-primary md:text-3xl md:text-background">
-            이야기를 먼저 듣고,
+            의뢰인의 편에 서서,
             <br />
-            사실부터 정리합니다.
+            사건의 처음부터 끝까지 직접 챙깁니다.
           </p>
           <div className="hero-line mt-8 flex flex-col gap-3 sm:flex-row md:gap-4">
             <a

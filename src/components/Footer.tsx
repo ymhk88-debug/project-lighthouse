@@ -1,5 +1,13 @@
 import Link from "next/link";
-import { address, email, mobilePhone, officePhone } from "@/lib/contact";
+import {
+  address,
+  advertisingLawyer,
+  businessRegistrationNumber,
+  email,
+  mobilePhone,
+  officePhone,
+  representativeLawyer,
+} from "@/lib/contact";
 
 export function Footer() {
   return (
@@ -12,6 +20,15 @@ export function Footer() {
             alt="유민환법률사무소"
             className="mt-3 h-6 w-auto"
           />
+          <p className="mt-5 text-sm text-background/70 md:text-base md:text-background/80">
+            대표변호사 {representativeLawyer}
+          </p>
+          <p className="mt-1.5 text-sm text-background/70 md:text-base md:text-background/80">
+            광고책임변호사 {advertisingLawyer}
+          </p>
+          <p className="mt-1.5 text-sm text-background/70 md:text-base md:text-background/80">
+            사업자등록번호 {businessRegistrationNumber}
+          </p>
           <p className="mt-5 text-sm text-background/70 md:text-base md:text-background/80">
             주소: {address}
           </p>
