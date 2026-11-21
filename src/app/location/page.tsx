@@ -86,20 +86,26 @@ function SectionHeading({
 export default function LocationPage() {
   return (
     <div className="bg-background md:bg-primary">
-      <section className="mx-auto w-full max-w-6xl px-6 pt-12 pb-6 md:pt-16 md:pb-8">
-        <p className="text-sm font-semibold tracking-[0.18em] text-accent md:text-[15px]">오시는 길</p>
-        <h1 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-primary sm:text-4xl md:text-background md:text-5xl">
-          창원 용지호수가
-          <br />
-          내려다보이는 12층
+      <section className="mx-auto w-full max-w-7xl px-6 py-16 md:py-20">
+        <p className="text-sm font-semibold tracking-[0.18em] text-accent md:text-[15px]">Location</p>
+        <h1 className="mt-5 max-w-3xl text-3xl font-semibold leading-tight text-primary sm:text-4xl md:text-background md:text-6xl">
+          오시는 길
         </h1>
-        <div className="mt-6">
-          <OfficeCarousel />
+        <p className="mt-6 max-w-3xl whitespace-pre-line text-lg leading-9 text-muted md:text-xl md:font-medium md:leading-9 md:text-background/75">
+          {
+            "방문 상담은 사건을 차분히 정리하기 위한 시간입니다.\n일정을 조율하고 관련 자료를 준비해 오시면, 사실관계와 절차를 더 정확하게 함께 확인할 수 있습니다."
+          }
+        </p>
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row md:gap-4">
+          <TextLink href="/consultation">상담 안내 보기</TextLink>
+          <TextLink href="/note" variant="secondary">
+            법률 실무 노트 보기
+          </TextLink>
         </div>
       </section>
 
-      <section className="border-y border-border bg-white/35 pt-8 md:border-accent/15 md:bg-primary md:pt-8">
-        <div className="mx-auto grid max-w-7xl gap-8 px-6 pt-8 pb-16 md:pt-6 md:pb-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
+        <div className="mx-auto grid max-w-7xl gap-8 px-6 py-16 md:py-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <SectionHeading
             title="사무실 위치"
             description={
@@ -172,6 +178,20 @@ export default function LocationPage() {
                 카카오맵에서 크게 보기
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="office-view-heading" className="mx-auto w-full max-w-7xl px-6 pb-16 md:pb-14">
+        <div className="mx-auto max-w-[760px]">
+          <h2
+            id="office-view-heading"
+            className="text-xl font-semibold leading-snug text-primary md:text-2xl md:text-background"
+          >
+            창원 용지호수가 내려다보이는 12층
+          </h2>
+          <div className="mt-5">
+            <OfficeCarousel />
           </div>
         </div>
       </section>

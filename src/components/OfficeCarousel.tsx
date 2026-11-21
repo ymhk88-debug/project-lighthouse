@@ -66,10 +66,10 @@ export function OfficeCarousel() {
           go(index - 1);
         }
       }}
-      className="outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+      className="mx-auto w-full max-w-[760px] outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
     >
       <div
-        className="relative aspect-[4/3] w-full overflow-hidden bg-[#e7e1d6] touch-pan-y md:aspect-auto md:h-[min(70vh,calc(100svh-26rem))]"
+        className="relative h-[min(50vh,75vw)] w-full overflow-hidden bg-[#e7e1d6] touch-pan-y md:h-[420px] md:max-h-[420px]"
         onPointerDown={(event) => {
           if (event.button !== 0) return;
           if (event.target instanceof Element && event.target.closest("button")) return;
@@ -100,7 +100,7 @@ export function OfficeCarousel() {
               alt={active ? item.alt : ""}
               fill
               quality={90}
-              sizes="(min-width: 1024px) 1080px, 100vw"
+              sizes="(min-width: 768px) 760px, 100vw"
               preload={active || upcoming}
               aria-hidden={!active}
               draggable={false}
