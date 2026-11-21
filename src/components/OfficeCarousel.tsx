@@ -5,34 +5,24 @@ import { useRef, useState } from "react";
 
 const slides = [
   {
-    src: "/office/reception-desk.jpg",
-    alt: "12층 안내 데스크와 뒤쪽 나무 벽",
-    fit: "contain",
-  },
-  {
     src: "/office/office-sign-1.jpg",
     alt: "사무소 입구 간판",
-    fit: "contain",
-  },
-  {
-    src: "/office/office-sign-2.jpg",
-    alt: "옆에서 본 사무소 입구 간판",
-    fit: "contain",
-  },
-  {
-    src: "/office/office-plaque.jpg",
-    alt: "사무소 금속 현판",
-    fit: "contain",
-  },
-  {
-    src: "/office/office-logo-wall.jpg",
-    alt: "사무소 로고",
     fit: "contain",
   },
   {
     src: "/office/reception-desk-night.jpg",
     alt: "안내 데스크와 유리벽 너머 상담 테이블",
     fit: "cover",
+  },
+  {
+    src: "/office/reception-desk.jpg",
+    alt: "12층 안내 데스크와 뒤쪽 나무 벽",
+    fit: "contain",
+  },
+  {
+    src: "/office/office-plaque.jpg",
+    alt: "사무소 금속 현판",
+    fit: "contain",
   },
   {
     src: "/office/reception-blinds.jpg",
@@ -72,11 +62,6 @@ const slides = [
   {
     src: "/office/office-view-2.jpg",
     alt: "창밖으로 보이는 호수, 인근 건물, 산",
-    fit: "cover",
-  },
-  {
-    src: "/office/office-view-3.jpg",
-    alt: "창밖으로 더 넓게 보이는 호수와 산",
     fit: "cover",
   },
   {
