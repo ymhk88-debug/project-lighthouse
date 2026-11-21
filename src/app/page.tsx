@@ -166,6 +166,12 @@ export default function Home() {
                 <br />
                 과정에 충실하겠습니다.
               </p>
+              <Link
+                href="/profile"
+                className="mt-4 inline-flex text-sm font-semibold text-[#816432] underline decoration-accent/50 underline-offset-4 transition-colors hover:text-primary"
+              >
+                변호사 소개 보기 →
+              </Link>
             </div>
           </div>
         </div>
