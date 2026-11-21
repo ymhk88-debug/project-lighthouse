@@ -54,7 +54,7 @@ function TextLink({
   const className =
     variant === "primary"
       ? "bg-primary text-background hover:bg-primary/90 md:bg-accent md:text-primary md:shadow-[0_10px_24px_rgba(184,155,94,0.16)] md:hover:bg-accent/90"
-      : "border border-border bg-background text-primary hover:border-accent md:border-accent/35 md:bg-background/95";
+      : "border border-border bg-background text-primary hover:border-accent md:border-accent/35 md:bg-white";
 
   return (
     <Link
@@ -75,11 +75,11 @@ function SectionHeading({
 }) {
   return (
     <div className="max-w-2xl">
-      <h2 className="whitespace-pre-line text-2xl font-semibold leading-tight text-primary md:text-background md:text-4xl md:leading-tight">
+      <h2 className="whitespace-pre-line text-2xl font-semibold leading-tight text-primary md:text-primary md:text-4xl md:leading-tight">
         {title}
       </h2>
       {description ? (
-        <p className="mt-6 whitespace-pre-line text-base leading-8 text-muted md:text-[17px] md:font-medium md:leading-8 md:text-background/75">
+        <p className="mt-6 whitespace-pre-line text-base leading-8 text-muted md:text-[17px] md:font-medium md:leading-8 md:text-muted">
           {description}
         </p>
       ) : null}
@@ -89,13 +89,14 @@ function SectionHeading({
 
 export default function LocationPage() {
   return (
-    <div className="bg-background md:bg-primary">
-      <section className="mx-auto w-full max-w-7xl px-6 py-16 md:py-20">
+    <div className="bg-background">
+      <div className="bg-primary">
+      <section className="mx-auto w-full max-w-[1160px] px-6 py-16 md:py-20">
         <p className="text-sm font-semibold tracking-[0.18em] text-accent md:text-[15px]">Location</p>
-        <h1 className="mt-5 max-w-3xl text-3xl font-semibold leading-tight text-primary sm:text-4xl md:text-background md:text-6xl">
+        <h1 className="mt-5 max-w-3xl text-3xl font-semibold leading-tight text-background sm:text-4xl md:text-background md:text-6xl">
           오시는 길
         </h1>
-        <p className="mt-6 max-w-3xl whitespace-pre-line text-lg leading-9 text-muted md:text-xl md:font-medium md:leading-9 md:text-background/75">
+        <p className="mt-6 max-w-3xl whitespace-pre-line text-lg leading-9 text-background/75 md:text-xl md:font-medium md:leading-9 md:text-background/75">
           {
             "방문 상담은 사건을 차분히 정리하기 위한 시간입니다.\n일정을 조율하고 관련 자료를 준비해 오시면, 사실관계와 절차를 더 정확하게 함께 확인할 수 있습니다."
           }
@@ -107,16 +108,17 @@ export default function LocationPage() {
           </TextLink>
         </div>
       </section>
+      </div>
 
-      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
-        <div className="mx-auto grid max-w-7xl gap-8 px-6 py-16 md:py-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+      <section className="border-y border-border bg-[#F0EBE2] md:border-accent/15 md:bg-[#F0EBE2]">
+        <div className="mx-auto grid max-w-[1160px] gap-8 px-6 py-16 md:py-20 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <SectionHeading
             title="사무실 위치"
             description={
               "방문 상담은 사전 일정 조율 후 진행됩니다.\n법원이나 수사기관 기일, 외부 일정으로 자리를 비울 수 있으므로 방문 전 전화로 일정을 확인해 주세요."
             }
           />
-          <div className="rounded-lg border border-[#e8ddcb] bg-white/60 p-6 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-7 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]">
+          <div className="rounded-lg border border-[#e8ddcb] bg-white p-6 shadow-sm md:border-accent/25 md:bg-white md:p-7 md:shadow-sm">
             <p className="text-sm font-semibold text-primary md:text-lg">사무실 주소</p>
             <p className="mt-4 text-base font-semibold leading-8 text-primary">
               {address}
@@ -153,7 +155,7 @@ export default function LocationPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="mx-auto max-w-[1160px] px-6 py-16 md:py-20">
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <SectionHeading
             title="지도 확인"
@@ -161,7 +163,7 @@ export default function LocationPage() {
               "네이버지도를 통해 사무실 위치를 확인하실 수 있습니다.\n방문 상담은 사전 일정 조율 후 진행되므로, 방문 전 전화로 일정을 확인해 주세요."
             }
           />
-          <div className="rounded-lg border border-[#e8ddcb] bg-white/60 p-6 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-7 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]">
+          <div className="rounded-lg border border-[#e8ddcb] bg-white p-6 shadow-sm md:border-accent/25 md:bg-white md:p-7 md:shadow-sm">
             {naverMapEmbedUrl ? (
               <div className="overflow-hidden rounded-md border border-border bg-background/60">
                 <iframe
@@ -195,14 +197,14 @@ export default function LocationPage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
-        <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="border-y border-border bg-[#F0EBE2] md:border-accent/15 md:bg-[#F0EBE2]">
+        <div className="mx-auto max-w-[1160px] px-6 py-16 md:py-20">
           <SectionHeading title="방문 전 확인하면 좋은 것" />
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {visitChecklist.map((item, index) => (
               <article
                 key={item.title}
-                className="rounded-lg border border-[#e8ddcb] bg-white/60 p-6 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+                className="rounded-lg border border-[#e8ddcb] bg-white p-6 shadow-sm md:border-accent/25 md:bg-white md:shadow-sm"
               >
                 <p className="text-xs font-semibold text-accent md:text-sm">
                   {String(index + 1).padStart(2, "0")}
@@ -219,13 +221,13 @@ export default function LocationPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="mx-auto max-w-[1160px] px-6 py-16 md:py-20">
         <SectionHeading title="교통 및 주차 안내" />
         <div className="mt-8 grid gap-4 md:grid-cols-3">
           {transitItems.map((item) => (
             <article
               key={item.title}
-              className="rounded-lg border border-[#e8ddcb] bg-white/60 p-6 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+              className="rounded-lg border border-[#e8ddcb] bg-white p-6 shadow-sm md:border-accent/25 md:bg-white md:shadow-sm"
             >
               <h3 className="text-lg font-semibold text-primary md:text-2xl">
                 {item.title}
@@ -238,8 +240,8 @@ export default function LocationPage() {
         </div>
       </section>
 
-      <section className="px-6 py-16 md:py-12">
-        <div className="mx-auto max-w-7xl rounded-lg bg-primary px-6 py-12 text-background md:border md:border-accent/30 md:px-10">
+      <section className="px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-[1160px] rounded-lg bg-primary px-6 py-12 text-background md:border md:border-accent/30 md:px-10">
           <h2 className="max-w-3xl text-3xl font-semibold leading-tight md:text-4xl">
             방문 전 사건의 흐름을 먼저 정리해 주세요
           </h2>
