@@ -171,7 +171,7 @@ function TextLink({
   const className =
     variant === "primary"
       ? "bg-primary text-background hover:bg-primary/90 md:bg-accent md:text-primary md:shadow-[0_10px_24px_rgba(184,155,94,0.16)] md:hover:bg-accent/90"
-      : "border border-border bg-background text-primary hover:border-accent md:border-accent/35 md:bg-background/95";
+      : "border border-border bg-background text-primary hover:border-accent md:border-accent/35 md:bg-white";
 
   return (
     <Link
@@ -197,11 +197,11 @@ function SectionHeading({
       {eyebrow ? (
         <p className="text-sm font-semibold tracking-[0.18em] text-accent md:text-[15px]">{eyebrow}</p>
       ) : null}
-      <h2 className="mt-3 whitespace-pre-line text-2xl font-semibold leading-tight text-primary md:text-background md:text-4xl md:leading-tight">
+      <h2 className="mt-3 whitespace-pre-line text-2xl font-semibold leading-tight text-primary md:text-primary md:text-4xl md:leading-tight">
         {title}
       </h2>
       {description ? (
-        <p className="mt-5 whitespace-pre-line text-base leading-8 text-muted md:text-[17px] md:font-medium md:leading-8 md:text-background/75">
+        <p className="mt-5 whitespace-pre-line text-base leading-8 text-muted md:text-[17px] md:font-medium md:leading-8 md:text-muted">
           {description}
         </p>
       ) : null}
@@ -225,7 +225,7 @@ function IssueCard({
   href: string;
 }) {
   return (
-    <article className="flex min-h-[30rem] flex-col rounded-lg border border-[#e8ddcb] bg-white/60 p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]">
+    <article className="flex min-h-[30rem] flex-col rounded-lg border border-[#e8ddcb] bg-white p-5 shadow-sm md:border-accent/25 md:bg-white md:p-6 md:shadow-sm">
       <p className="text-xs font-semibold tracking-[0.16em] text-accent md:text-sm">{field}</p>
       <h3 className="mt-3 text-xl font-semibold leading-8 text-primary md:text-2xl md:leading-9">
         {title}
@@ -258,7 +258,7 @@ function IssueCard({
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex h-11 items-center justify-center rounded-md border border-border bg-background px-5 text-sm font-semibold text-primary transition-colors hover:border-accent md:border-accent/35 md:bg-background/95 md:text-[15px]"
+          className="inline-flex h-11 items-center justify-center rounded-md border border-border bg-background px-5 text-sm font-semibold text-primary transition-colors hover:border-accent md:border-accent/35 md:bg-white md:text-[15px]"
         >
           관련 글 보기
         </a>
@@ -269,20 +269,21 @@ function IssueCard({
 
 export default function IssuesPage() {
   return (
-    <div className="bg-background md:bg-primary">
-      <section className="mx-auto w-full max-w-7xl px-6 py-16 md:py-20">
+    <div className="bg-background">
+      <div className="bg-primary">
+      <section className="mx-auto w-full max-w-[1160px] px-6 py-16 md:py-20">
         <p className="text-sm font-semibold tracking-[0.18em] text-accent md:text-[15px]">
           Situational Issues
         </p>
-        <h1 className="mt-5 max-w-4xl text-3xl font-semibold leading-tight text-primary sm:text-4xl md:text-background md:text-6xl md:leading-tight">
+        <h1 className="mt-5 max-w-4xl text-3xl font-semibold leading-tight text-background sm:text-4xl md:text-background md:text-6xl md:leading-tight">
           상담에서 자주 정리하는 상황
         </h1>
-        <p className="mt-6 max-w-3xl whitespace-pre-line text-lg leading-9 text-muted md:text-xl md:font-medium md:leading-9 md:text-background/75">
+        <p className="mt-6 max-w-3xl whitespace-pre-line text-lg leading-9 text-background/75 md:text-xl md:font-medium md:leading-9 md:text-background/75">
           {
             "법률문제는 분야명보다 현재 처한 상황에서 시작되는 경우가 많습니다. 아래 항목은 상담 전에 자주 확인하는 쟁점을 상황별로 정리한 것입니다."
           }
         </p>
-        <p className="mt-5 max-w-3xl whitespace-pre-line leading-7 text-foreground/75 md:text-[17px] md:font-medium md:leading-8 md:text-background/78">
+        <p className="mt-5 max-w-3xl whitespace-pre-line leading-7 text-foreground/75 md:text-[17px] md:font-medium md:leading-8 md:text-primary/78">
           {
             "각 상황은 실제 상담에서 먼저 확인하는 자료와 쟁점을 중심으로 정리했습니다. 구체적인 대응은 사건의 경위, 자료, 기한에 따라 달라질 수 있습니다."
           }
@@ -294,9 +295,10 @@ export default function IssuesPage() {
           </TextLink>
         </div>
       </section>
+      </div>
 
-      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
-        <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="border-y border-border bg-[#F0EBE2] md:border-accent/15 md:bg-[#F0EBE2]">
+        <div className="mx-auto max-w-[1160px] px-6 py-16 md:py-20">
           <SectionHeading
             title="상황별로 먼저 확인할 것"
             description={
@@ -311,7 +313,7 @@ export default function IssuesPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="mx-auto max-w-[1160px] px-6 py-16 md:py-20">
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <SectionHeading
             eyebrow="상담 전 정리"
@@ -322,7 +324,7 @@ export default function IssuesPage() {
             {preparationItems.map((item, index) => (
               <div
                 key={item}
-                className="min-h-[76px] rounded-lg border border-[#e8ddcb] bg-white/60 px-5 py-4 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:px-6 md:py-5 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+                className="min-h-[76px] rounded-lg border border-[#e8ddcb] bg-white px-5 py-4 shadow-sm md:border-accent/25 md:bg-white md:px-6 md:py-5 md:shadow-sm"
               >
                 <div className="flex h-full items-center gap-4">
                   <p className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-accent/40 bg-accent/10 text-xs font-semibold text-accent">
@@ -341,15 +343,15 @@ export default function IssuesPage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
-        <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="border-y border-border bg-[#F0EBE2] md:border-accent/15 md:bg-[#F0EBE2]">
+        <div className="mx-auto max-w-[1160px] px-6 py-16 md:py-20">
           <SectionHeading title="함께 확인할 페이지" />
           <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {relatedPages.map((page) => (
               <Link
                 key={page.href}
                 href={page.href}
-                className="rounded-lg border border-[#e8ddcb] bg-background p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] transition-colors hover:border-accent md:border-accent/25 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+                className="rounded-lg border border-[#e8ddcb] bg-background p-5 shadow-sm transition-colors hover:border-accent md:border-accent/25 md:p-6 md:shadow-sm"
               >
                 <h3 className="text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
                   {page.title}
