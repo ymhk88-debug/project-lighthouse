@@ -170,7 +170,7 @@ function TextLink({
 }) {
   const className =
     variant === "primary"
-      ? "bg-primary text-background hover:bg-primary/90 md:bg-accent md:text-primary md:shadow-[0_10px_24px_rgba(184,155,94,0.16)] md:hover:bg-accent/90"
+      ? "bg-accent text-primary hover:bg-accent/90 md:bg-accent md:text-primary md:shadow-[0_10px_24px_rgba(184,155,94,0.16)] md:hover:bg-accent/90"
       : "border border-border bg-background text-primary hover:border-accent md:border-accent/35 md:bg-white";
 
   return (
@@ -283,7 +283,7 @@ export default function IssuesPage() {
             "법률문제는 분야명보다 현재 처한 상황에서 시작되는 경우가 많습니다. 아래 항목은 상담 전에 자주 확인하는 쟁점을 상황별로 정리한 것입니다."
           }
         </p>
-        <p className="mt-5 max-w-3xl whitespace-pre-line leading-7 text-foreground/75 md:text-[17px] md:font-medium md:leading-8 md:text-primary/78">
+        <p className="mt-5 max-w-3xl whitespace-pre-line leading-7 text-background/80 md:text-[17px] md:font-medium md:leading-8 md:text-background/80">
           {
             "각 상황은 실제 상담에서 먼저 확인하는 자료와 쟁점을 중심으로 정리했습니다. 구체적인 대응은 사건의 경위, 자료, 기한에 따라 달라질 수 있습니다."
           }
