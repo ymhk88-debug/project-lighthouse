@@ -5,6 +5,12 @@ import { useRef, useState } from "react";
 
 const slides = [
   {
+    // 확인 필요: 12층 안내 데스크 안내 문구
+    src: "/office/reception-desk.jpg",
+    alt: "12층 안내 데스크와 뒤쪽 나무 벽",
+    caption: "12층에 도착하시면 안내 데스크가 보입니다.",
+  },
+  {
     src: "/office/office-meeting-room.jpg",
     alt: "유리벽 안의 상담 테이블과 창밖으로 보이는 산과 도시",
     caption: "유리벽 안의 상담 테이블입니다. 창밖으로 산과 도시가 보입니다.",
@@ -29,16 +35,10 @@ const slides = [
     alt: "창가에 놓인 상담 테이블과 의자",
     caption: "상담은 예약제로 이 방에서 진행됩니다.",
   },
-  {
-    // 확인 필요: 12층 안내 데스크 안내 문구
-    src: "/office/reception-desk.jpg",
-    alt: "12층 안내 데스크와 뒤쪽 나무 벽",
-    caption: "12층에 도착하시면 안내 데스크가 보입니다.",
-  },
 ];
 
-const buttonClass =
-  "inline-flex h-11 w-11 items-center justify-center rounded-full bg-background/90 text-xl text-primary shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent";
+const controlClass =
+  "inline-flex h-11 items-center justify-center rounded-md border border-border bg-background px-4 text-sm font-semibold text-primary transition-colors hover:border-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent md:border-accent/35 md:bg-background/95";
 
 export function OfficeCarousel() {
   const [index, setIndex] = useState(0);
@@ -66,13 +66,45 @@ export function OfficeCarousel() {
           go(index - 1);
         }
       }}
-      className="mx-auto w-full max-w-[760px] outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+      className="grid items-start gap-8 outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent lg:grid-cols-[0.9fr_1.1fr]"
     >
+      <div className="contents lg:block lg:max-w-2xl">
+        <div className="order-1">
+          <h2
+            id="office-view-heading"
+            className="text-2xl font-semibold leading-tight text-primary md:text-4xl md:leading-tight md:text-background"
+          >
+            사무실 둘러보기
+          </h2>
+          <p className="mt-6 text-base leading-8 text-muted md:text-[17px] md:font-medium md:leading-8 md:text-background/75">
+            창원 용지호수가 내려다보이는 12층입니다. 상담은 사진 속 상담실에서 진행됩니다.
+          </p>
+        </div>
+        <div className="order-3 lg:mt-8">
+          <p className="min-h-14 text-sm leading-7 text-primary md:text-[15px] md:text-background/80">
+            {slide.caption}
+          </p>
+          <div className="mt-6 flex items-center justify-between gap-4">
+            <p className="text-sm font-semibold text-primary md:text-background" aria-live="polite">
+              {index + 1} / {count}
+            </p>
+            <div className="flex gap-2">
+              <button type="button" className={controlClass} aria-label="이전 사진" onClick={() => go(index - 1)}>
+                이전
+              </button>
+              <button type="button" className={controlClass} aria-label="다음 사진" onClick={() => go(index + 1)}>
+                다음
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div
-        className="relative h-[min(50vh,75vw)] w-full overflow-hidden bg-[#e7e1d6] touch-pan-y md:h-[420px] md:max-h-[420px]"
+        className="relative order-2 aspect-[4/3] w-full max-h-[50vh] overflow-hidden rounded-lg border border-[#e8ddcb] bg-[#e7e1d6] shadow-[0_8px_24px_rgba(15,29,46,0.05)] touch-pan-y md:border-accent/25 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)] lg:order-none lg:max-h-none"
+        style={{ aspectRatio: "4 / 3" }}
         onPointerDown={(event) => {
           if (event.button !== 0) return;
-          if (event.target instanceof Element && event.target.closest("button")) return;
           startX.current = event.clientX;
           event.currentTarget.setPointerCapture(event.pointerId);
         }}
@@ -100,7 +132,7 @@ export function OfficeCarousel() {
               alt={active ? item.alt : ""}
               fill
               quality={90}
-              sizes="(min-width: 768px) 760px, 100vw"
+              sizes="(min-width: 1024px) 680px, 100vw"
               preload={active || upcoming}
               aria-hidden={!active}
               draggable={false}
@@ -110,46 +142,7 @@ export function OfficeCarousel() {
             />
           );
         })}
-        <button
-          type="button"
-          className={`${buttonClass} absolute top-1/2 left-3 -translate-y-1/2`}
-          aria-label="이전 사진"
-          onClick={() => go(index - 1)}
-        >
-          ‹
-        </button>
-        <button
-          type="button"
-          className={`${buttonClass} absolute top-1/2 right-3 -translate-y-1/2`}
-          aria-label="다음 사진"
-          onClick={() => go(index + 1)}
-        >
-          ›
-        </button>
       </div>
-      <div className="mt-4 flex items-center justify-between gap-4">
-        <p className="text-sm font-semibold text-primary md:text-background" aria-live="polite">
-          {index + 1} / {count}
-        </p>
-        <div className="flex gap-2" role="tablist" aria-label="사진 선택">
-          {slides.map((item, itemIndex) => (
-            <button
-              key={item.src}
-              type="button"
-              role="tab"
-              aria-selected={itemIndex === index}
-              aria-label={`${itemIndex + 1}번 사진, ${item.alt}`}
-              className={`h-2.5 w-2.5 rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${
-                itemIndex === index ? "bg-accent" : "bg-primary/25 md:bg-background/40"
-              }`}
-              onClick={() => go(itemIndex)}
-            />
-          ))}
-        </div>
-      </div>
-      <p className="mt-3 min-h-14 max-w-xl text-sm leading-7 text-primary md:text-[15px] md:text-background/80">
-        {slide.caption}
-      </p>
     </div>
   );
 }

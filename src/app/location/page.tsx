@@ -182,21 +182,13 @@ export default function LocationPage() {
         </div>
       </section>
 
-      <section aria-labelledby="office-view-heading" className="mx-auto w-full max-w-7xl px-6 pb-16 md:pb-14">
-        <div className="mx-auto max-w-[760px]">
-          <h2
-            id="office-view-heading"
-            className="text-xl font-semibold leading-snug text-primary md:text-2xl md:text-background"
-          >
-            창원 용지호수가 내려다보이는 12층
-          </h2>
-          <div className="mt-5">
-            <OfficeCarousel />
-          </div>
+      <section aria-labelledby="office-view-heading" className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
+        <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+          <OfficeCarousel />
         </div>
       </section>
 
-      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
+      <section className="border-b border-border bg-white/35 md:border-accent/15 md:bg-primary">
         <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
           <SectionHeading title="방문 전 확인하면 좋은 것" />
           <div className="mt-8 grid gap-4 md:grid-cols-3">
