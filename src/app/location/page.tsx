@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { KakaoRoughMap } from "@/components/KakaoRoughMap";
+import { OfficePhoto } from "@/components/OfficePhoto";
 import { address, email, mobilePhone, officePhone } from "@/lib/contact";
 
 const kakaoMapUrl = "https://place.map.kakao.com/132675957";
@@ -151,6 +152,26 @@ export default function LocationPage() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+        <div className="grid items-center gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            {/* 확인 필요: 12층 안내 데스크 안내 문구 */}
+            <h2 className="text-2xl font-semibold leading-tight text-primary md:text-background md:text-4xl">
+              안내 데스크
+            </h2>
+            <p className="mt-4 text-base leading-8 text-muted md:text-[17px] md:text-background/75">
+              12층에 도착하시면 안내 데스크가 보입니다.
+            </p>
+          </div>
+          <OfficePhoto
+            src="/office/reception-desk.jpg"
+            alt="12층 안내 데스크와 뒤쪽 나무 벽"
+            ratio="1717 / 2000"
+            sizes="(min-width: 1024px) 640px, 100vw"
+          />
         </div>
       </section>
 

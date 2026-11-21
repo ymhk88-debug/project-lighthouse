@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { OfficePhoto } from "@/components/OfficePhoto";
 import { ProfileImage } from "@/components/ProfileImage";
 
 const trustItems = [
@@ -190,6 +191,45 @@ export default function Home() {
                 과정에 충실하겠습니다.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
+        <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+          <h2 className="max-w-3xl text-2xl font-semibold leading-tight text-primary md:text-background md:text-4xl">
+            창원 용지호수가 내려다보이는 12층 상담실
+          </h2>
+          <p className="mt-4 max-w-2xl text-base leading-7 text-muted md:text-[17px] md:text-background/75">
+            상담 테이블 앞으로 용지호수와 산이 보입니다.
+          </p>
+          <div className="mt-8 grid gap-3 md:grid-cols-3">
+            <div className="md:col-span-3">
+              <OfficePhoto
+                src="/office/office-meeting-room.jpg"
+                alt="유리벽 안의 상담 테이블과 창밖으로 보이는 산과 도시"
+                ratio="2000 / 1559"
+                sizes="(min-width: 768px) 1152px, 100vw"
+              />
+            </div>
+            <OfficePhoto
+              src="/office/office-window-view.jpg"
+              alt="상담실 창으로 보이는 용지호수와 산"
+              ratio="4 / 3"
+              sizes="(min-width: 768px) 380px, 100vw"
+            />
+            <OfficePhoto
+              src="/office/office-wood-table.jpg"
+              alt="상담실의 긴 나무 테이블과 검은 의자"
+              ratio="4 / 3"
+              sizes="(min-width: 768px) 380px, 100vw"
+            />
+            <OfficePhoto
+              src="/office/office-lake-view.jpg"
+              alt="사무실에서 내려다본 용지호수와 주변 산"
+              ratio="4 / 3"
+              sizes="(min-width: 768px) 380px, 100vw"
+            />
           </div>
         </div>
       </section>
