@@ -250,7 +250,7 @@ function TextLink({
   const className =
     variant === "primary"
       ? "bg-primary text-background hover:bg-primary/90 md:bg-accent md:text-primary md:shadow-[0_10px_24px_rgba(184,155,94,0.16)] md:hover:bg-accent/90"
-      : "border border-border bg-background text-primary hover:border-accent md:border-accent/35 md:bg-background/95";
+      : "border border-border bg-background text-primary hover:border-accent md:border-accent/35 md:bg-white";
 
   return (
     <Link
@@ -277,21 +277,21 @@ function FaqSection({
 }) {
   const sectionClass =
     index % 2 === 0
-      ? "border-y border-border bg-white/35 md:border-accent/15 md:bg-primary"
-      : "bg-background md:bg-primary";
+      ? "border-y border-border bg-[#F0EBE2] md:border-accent/15 md:bg-[#F0EBE2]"
+      : "bg-background md:bg-[#F0EBE2]";
 
   return (
     <section className={sectionClass}>
-      <div className="mx-auto grid max-w-7xl gap-8 px-6 py-16 md:py-12 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
+      <div className="mx-auto grid max-w-[1160px] gap-8 px-6 py-16 md:py-20 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
         <div>
           <p className="text-xs font-semibold text-accent md:text-sm">
             {String(index + 1).padStart(2, "0")}
           </p>
-          <h2 className="mt-4 text-2xl font-semibold leading-tight text-primary md:text-background md:text-4xl">
+          <h2 className="mt-4 text-2xl font-semibold leading-tight text-primary md:text-primary md:text-4xl">
             {title}
           </h2>
         </div>
-        <div className="divide-y divide-border rounded-lg border border-[#e8ddcb] bg-white/60 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]">
+        <div className="divide-y divide-border rounded-lg border border-[#e8ddcb] bg-white shadow-sm md:border-accent/25 md:bg-white md:shadow-sm">
           {items.map((item) => (
             <details key={item.question} className="group p-5">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-semibold leading-7 text-primary md:text-lg md:leading-8">
@@ -322,13 +322,14 @@ function FaqSection({
 
 export default function FaqPage() {
   return (
-    <div className="bg-background md:bg-primary">
-      <section className="mx-auto w-full max-w-7xl px-6 py-16 md:py-20">
+    <div className="bg-background">
+      <div className="bg-primary">
+      <section className="mx-auto w-full max-w-[1160px] px-6 py-16 md:py-20">
         <p className="text-sm font-semibold tracking-[0.18em] text-accent md:text-[15px]">FAQ</p>
-        <h1 className="mt-5 max-w-3xl whitespace-pre-line text-3xl font-semibold leading-tight text-primary sm:text-4xl md:text-background md:text-6xl">
+        <h1 className="mt-5 max-w-3xl whitespace-pre-line text-3xl font-semibold leading-tight text-background sm:text-4xl md:text-background md:text-6xl">
           {"자주 묻는 질문을\n먼저 정리했습니다."}
         </h1>
-        <p className="mt-6 max-w-2xl whitespace-pre-line text-lg leading-9 text-muted md:text-xl md:font-medium md:leading-9 md:text-background/75">
+        <p className="mt-6 max-w-2xl whitespace-pre-line text-lg leading-9 text-background/75 md:text-xl md:font-medium md:leading-9 md:text-background/75">
           {
             "상담 전 자주 궁금해하시는 내용을 모았습니다.\n상황마다 답은 달라질 수 있지만,\n먼저 확인하면 도움이 되는 기준을 정리했습니다."
           }
@@ -340,6 +341,7 @@ export default function FaqPage() {
           </TextLink>
         </div>
       </section>
+      </div>
 
       {faqSections.map((section, index) => (
         <FaqSection
@@ -350,8 +352,8 @@ export default function FaqPage() {
         />
       ))}
 
-      <section className="px-6 py-16 md:py-12">
-        <div className="mx-auto max-w-7xl rounded-lg bg-primary px-6 py-12 text-background md:border md:border-accent/30 md:px-10">
+      <section className="px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-[1160px] rounded-lg bg-primary px-6 py-12 text-background md:border md:border-accent/30 md:px-10">
           <h2 className="max-w-2xl text-3xl font-semibold leading-tight md:text-4xl">
             질문만으로 정리되지 않는 부분은 상담에서 함께 확인하겠습니다.
           </h2>
