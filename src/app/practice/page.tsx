@@ -139,7 +139,7 @@ function TextLink({
   const className =
     variant === "primary"
       ? "bg-primary text-background hover:bg-primary/90 md:bg-accent md:text-primary md:shadow-[0_10px_24px_rgba(184,155,94,0.16)] md:hover:bg-accent/90"
-      : "border border-border bg-background text-primary hover:border-accent md:border-accent/35 md:bg-background/95";
+      : "border border-border bg-background text-primary hover:border-accent md:border-accent/35 md:bg-white";
 
   return (
     <Link
@@ -169,7 +169,7 @@ function PracticeCard({
   links: { title: string; href: string }[];
 }) {
   return (
-    <article className="flex flex-col rounded-lg border border-[#e8ddcb] bg-white/60 p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-7 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]">
+    <article className="flex flex-col rounded-lg border border-[#e8ddcb] bg-white p-5 shadow-sm md:border-accent/25 md:bg-white md:p-7 md:shadow-sm">
       <div className="flex items-start gap-4">
         <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-accent/40 bg-accent/10 text-xs font-semibold text-accent">
           {String(index + 1).padStart(2, "0")}
@@ -213,13 +213,14 @@ function PracticeCard({
 
 export default function PracticePage() {
   return (
-    <div className="bg-background md:bg-primary">
-      <section className="mx-auto w-full max-w-7xl px-6 py-16 md:py-20">
+    <div className="bg-background">
+      <div className="bg-primary">
+      <section className="mx-auto w-full max-w-[1160px] px-6 py-16 md:py-20">
         <p className="text-sm font-semibold tracking-[0.18em] text-accent md:text-[15px]">업무분야</p>
-        <h1 className="mt-5 max-w-3xl whitespace-pre-line text-3xl font-semibold leading-tight text-primary sm:text-4xl md:text-background md:text-6xl">
+        <h1 className="mt-5 max-w-3xl whitespace-pre-line text-3xl font-semibold leading-tight text-background sm:text-4xl md:text-background md:text-6xl">
           {"분야보다 먼저,\n사건의 흐름을 정리합니다."}
         </h1>
-        <p className="mt-6 max-w-2xl whitespace-pre-line text-lg leading-9 text-muted md:text-xl md:font-medium md:leading-9 md:text-background/75">
+        <p className="mt-6 max-w-2xl whitespace-pre-line text-lg leading-9 text-background/75 md:text-xl md:font-medium md:leading-9 md:text-background/75">
           {
             "법률 문제는 이름만으로 해결 방향이 정해지지 않습니다.\n현재 어떤 일이 있었는지, 어떤 자료가 있는지,\n앞으로 어떤 절차가 예상되는지부터 차분히 확인하겠습니다."
           }
@@ -231,14 +232,15 @@ export default function PracticePage() {
           </TextLink>
         </div>
       </section>
+      </div>
 
-      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
-        <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="border-y border-border bg-[#F0EBE2] md:border-accent/15 md:bg-[#F0EBE2]">
+        <div className="mx-auto max-w-[1160px] px-6 py-16 md:py-20">
           <div className="max-w-2xl">
-            <h2 className="text-2xl font-semibold leading-tight text-primary md:text-background md:text-4xl md:leading-tight">
+            <h2 className="text-2xl font-semibold leading-tight text-primary md:text-primary md:text-4xl md:leading-tight">
               업무 분야별로 자주 정리하는 쟁점
             </h2>
-            <p className="mt-6 text-base leading-8 text-muted md:text-[17px] md:font-medium md:leading-8 md:text-background/75">
+            <p className="mt-6 text-base leading-8 text-muted md:text-[17px] md:font-medium md:leading-8 md:text-muted">
               상담에서는 사건의 이름보다 현재 받은 연락, 서류, 기한, 상대방과의 관계, 가지고 있는 자료를 먼저 확인합니다. 아래 주제들은 실제 상담에서 자주 나누어 보는 상황을 기준으로 정리했습니다.
             </p>
           </div>
@@ -259,13 +261,13 @@ export default function PracticePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="mx-auto max-w-[1160px] px-6 py-16 md:py-20">
         <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
           <div className="max-w-2xl">
-            <h2 className="text-2xl font-semibold leading-tight text-primary md:text-background md:text-4xl md:leading-tight">
+            <h2 className="text-2xl font-semibold leading-tight text-primary md:text-primary md:text-4xl md:leading-tight">
               상담 전 함께 보면 좋은 페이지
             </h2>
-            <p className="mt-6 text-base leading-8 text-muted md:text-[17px] md:font-medium md:leading-8 md:text-background/75">
+            <p className="mt-6 text-base leading-8 text-muted md:text-[17px] md:font-medium md:leading-8 md:text-muted">
               업무 분야를 정하기 어렵다면, 먼저 현재 상황과 받은 서류를 기준으로 정리해 볼 수 있습니다.
             </p>
           </div>
@@ -274,7 +276,7 @@ export default function PracticePage() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="rounded-lg border border-[#e8ddcb] bg-white/60 p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] transition-colors hover:border-accent md:border-accent/25 md:bg-background/95 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+                className="rounded-lg border border-[#e8ddcb] bg-white p-5 shadow-sm transition-colors hover:border-accent md:border-accent/25 md:bg-white md:shadow-sm"
               >
                 <h3 className="text-lg font-semibold text-primary md:text-xl">{link.title}</h3>
                 <p className="mt-3 text-sm leading-7 text-primary/70 md:text-[15px]">
@@ -286,8 +288,8 @@ export default function PracticePage() {
         </div>
       </section>
 
-      <section className="px-6 py-16 md:py-12">
-        <div className="mx-auto max-w-7xl rounded-lg bg-primary px-6 py-12 text-background md:border md:border-accent/30 md:px-10">
+      <section className="px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-[1160px] rounded-lg bg-primary px-6 py-12 text-background md:border md:border-accent/30 md:px-10">
           <h2 className="max-w-2xl text-3xl font-semibold leading-tight md:text-4xl">
             사건은 분야보다 과정이 중요합니다.
           </h2>
