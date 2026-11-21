@@ -1,6 +1,5 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { OfficePhoto } from "@/components/OfficePhoto";
 import { address, email, mobilePhone, officePhone } from "@/lib/contact";
 
 const consultationSteps = [
@@ -189,14 +188,6 @@ export default function ConsultationPage() {
           <TextLink href="/location" variant="secondary">
             오시는 길
           </TextLink>
-        </div>
-        <div className="mt-12 max-w-3xl">
-          <OfficePhoto
-            src="/office/consult-room.jpg"
-            alt="창가에 놓인 상담 테이블과 의자"
-            ratio="2000 / 1893"
-            sizes="(min-width: 768px) 768px, 100vw"
-          />
         </div>
       </section>
 

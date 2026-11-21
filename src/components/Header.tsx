@@ -12,6 +12,7 @@ const navigation = [
   { label: "법률 실무 노트", href: "/note" },
   { label: "FAQ", href: "/faq" },
   { label: "상담 안내", href: "/consultation" },
+  { label: "사무실 안내", href: "/office" },
   { label: "오시는 길", href: "/location" },
 ];
 
@@ -37,7 +38,7 @@ export function Header() {
             className="hidden h-[30px] w-auto md:block"
           />
         </Link>
-        <nav className="hidden items-center gap-4 text-sm font-medium text-primary lg:flex lg:gap-5 lg:text-[15px] lg:text-background/85">
+        <nav className="hidden items-center gap-3 text-sm font-medium text-primary lg:flex lg:gap-3.5 lg:text-sm lg:text-background/85">
           {navigation.map((item) => (
             <Link
               key={item.href}
