@@ -54,6 +54,16 @@ const situationCards = [
   },
 ];
 
+const beforeDispositionChecklist = [
+  "사전통지서 또는 의견제출 안내문을 받은 날짜",
+  "예정된 처분의 종류와 사유",
+  "의견제출 기한과 제출 방법",
+  "행정기관 조사 내용과 사실관계",
+  "이미 제출한 자료나 소명 내용",
+  "관련 문서와 객관 자료",
+  "추가로 확인해야 할 사실과 자료",
+];
+
 const dispositionChecklist = [
   "처분서 또는 사전통지서 수령일",
   "처분의 종류와 내용",
@@ -215,6 +225,7 @@ export default function AdministrativePracticePage() {
       <div className="border-b border-border bg-[#F7F2E8]"><div className="mx-auto max-w-[1160px] px-6 pt-5 text-sm leading-7 text-primary/80">처분이 확정되기 전 사전통지나 의견제출을 요구받은 경우에는 받은 문서와 제출기한부터 확인해야 합니다.</div></div>
       <nav aria-label="사건별 안내 바로가기" className="border-b border-border bg-[#F7F2E8]">
         <div className="mx-auto flex max-w-[1160px] flex-wrap gap-3 px-6 py-5">
+          <a href="#before-disposition" className="inline-flex items-center rounded-md border border-border bg-white px-4 py-3 text-sm font-semibold text-primary transition-colors hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">처분 전 대응 안내 보기 →</a>
           <a href="#disposition" className="inline-flex items-center rounded-md border border-border bg-white px-4 py-3 text-sm font-semibold text-primary transition-colors hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">처분 후 대응 안내 보기 →</a>
           <a href="#appeal" className="inline-flex items-center rounded-md border border-border bg-white px-4 py-3 text-sm font-semibold text-primary transition-colors hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">불복 절차 안내 보기 →</a>
         </div>
@@ -271,7 +282,14 @@ export default function AdministrativePracticePage() {
       </section>
 
       <section className="border-y border-border bg-[#F0EBE2] md:border-accent/15 md:bg-[#F0EBE2]">
-        <div className="mx-auto grid max-w-[1160px] gap-4 px-6 py-16 md:py-20 lg:grid-cols-2">
+        <div className="mx-auto grid max-w-[1160px] gap-4 px-6 py-16 md:py-20 lg:grid-cols-3">
+          <div id="before-disposition" className="scroll-mt-24">
+            <ChecklistCard
+              title="처분 전 대응에서 정리할 것"
+              description="처분 사전통지나 의견제출 요청을 받은 경우에는 예정된 처분 내용과 제출기한을 확인하고, 행정기관에 설명할 사실과 자료를 정리합니다."
+              items={beforeDispositionChecklist}
+            />
+          </div>
           <div id="disposition" className="scroll-mt-24">
             <ChecklistCard
             title="처분을 받은 입장에서 정리할 것"
