@@ -45,7 +45,7 @@ export default function ProfilePage() {
             <p className="text-sm font-semibold tracking-[0.18em] text-accent">
               ATTORNEY PROFILE
             </p>
-            <h1 className="mt-5 text-3xl font-semibold leading-tight text-background sm:text-4xl md:text-6xl">
+            <h1 className="font-serif mt-5 text-3xl font-semibold leading-tight text-background sm:text-4xl md:text-6xl">
               유민환 변호사
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-9 text-background/80">
@@ -82,7 +82,7 @@ export default function ProfilePage() {
 
       <section className="mx-auto max-w-[1160px] px-6 py-16 md:py-20">
         <p className="text-sm font-semibold tracking-[0.16em] text-[#816432]">WORKING PRINCIPLES</p>
-        <h2 className="mt-3 text-2xl font-semibold text-primary md:text-4xl">사건을 대하는 세 가지 기준</h2>
+        <h2 className="font-serif mt-3 text-2xl font-semibold text-primary md:text-4xl">사건을 대하는 세 가지 기준</h2>
         <div className="mt-8 grid gap-4 md:grid-cols-3">
           {principles.map((item) => (
             <article key={item.number} className="rounded-lg border border-border bg-white p-6 shadow-sm">
@@ -97,7 +97,7 @@ export default function ProfilePage() {
       <section className="bg-[#F0EBE2]">
         <div className="mx-auto max-w-[1160px] px-6 py-16 md:py-20">
           <p className="text-sm font-semibold tracking-[0.16em] text-[#816432]">PRACTICE AREAS</p>
-          <h2 className="mt-3 text-2xl font-semibold text-primary md:text-4xl">주요 업무분야</h2>
+          <h2 className="font-serif mt-3 text-2xl font-semibold text-primary md:text-4xl">주요 업무분야</h2>
           <p className="mt-4 max-w-2xl text-base leading-8 text-muted">
             사건의 명칭보다 먼저 현재 단계와 확보된 자료를 확인합니다.
           </p>
@@ -117,7 +117,7 @@ export default function ProfilePage() {
         <div className="mx-auto grid max-w-[1160px] gap-8 px-6 py-16 md:grid-cols-[1fr_auto] md:items-end md:py-20">
           <div>
             <p className="text-sm font-semibold tracking-[0.16em] text-[#7E6941]">BEFORE YOUR VISIT</p>
-            <h2 className="mt-3 text-2xl font-semibold leading-tight text-background md:text-4xl">상담은 현재 상황을 정리하는 과정입니다.</h2>
+            <h2 className="font-serif mt-3 text-2xl font-semibold leading-tight text-background md:text-4xl">상담은 현재 상황을 정리하는 과정입니다.</h2>
             <p className="mt-5 max-w-2xl text-base leading-8 text-background/75">
               받은 서류, 정해진 기한, 현재 가지고 있는 자료부터 함께 확인합니다.
               모든 자료가 준비되지 않아도 상담 전 안내를 살펴보실 수 있습니다.
