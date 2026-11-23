@@ -171,7 +171,7 @@ function PracticeCard({
   return (
     <article className="flex flex-col rounded-lg border border-[#e8ddcb] bg-white p-5 shadow-sm md:border-accent/25 md:bg-white md:p-7 md:shadow-sm">
       <div className="flex items-start gap-4">
-        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-accent/40 bg-accent/10 text-xs font-semibold text-accent">
+        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-accent/40 bg-accent/10 text-xs font-semibold text-[#7E6941]">
           {String(index + 1).padStart(2, "0")}
         </span>
         <div>
