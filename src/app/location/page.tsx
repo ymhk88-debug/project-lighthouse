@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { OfficeCarousel } from "@/components/OfficeCarousel";
 
 const address = "경남 창원시 성산구 용지로169번길 7 한성빌딩 12층(용호동)";
 const officePhone = "055-263-5882";
@@ -146,6 +147,15 @@ export default function LocationPage() {
                 네이버지도에서 위치 확인하기 →
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section aria-label="사무실 사진" className="bg-background">
+        <div className="mx-auto w-full max-w-[1160px] px-6 py-16 md:py-20">
+          <SectionHeading title="사무실 사진" />
+          <div className="mt-8 min-w-0 rounded-xl border border-border bg-white p-3 shadow-sm sm:p-5">
+            <OfficeCarousel />
           </div>
         </div>
       </section>
