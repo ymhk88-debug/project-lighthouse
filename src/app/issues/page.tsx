@@ -195,7 +195,7 @@ function SectionHeading({
   return (
     <div className="max-w-3xl">
       {eyebrow ? (
-        <p className="text-sm font-semibold tracking-[0.18em] text-accent md:text-[15px]">{eyebrow}</p>
+        <p className="text-sm font-semibold tracking-[0.18em] text-[#7E6941] md:text-[15px]">{eyebrow}</p>
       ) : null}
       <h2 className="mt-3 whitespace-pre-line text-2xl font-semibold leading-tight text-primary md:text-primary md:text-4xl md:leading-tight">
         {title}
@@ -226,7 +226,7 @@ function IssueCard({
 }) {
   return (
     <article className="flex min-h-[30rem] flex-col rounded-lg border border-[#e8ddcb] bg-white p-5 shadow-sm md:border-accent/25 md:bg-white md:p-6 md:shadow-sm">
-      <p className="text-xs font-semibold tracking-[0.16em] text-accent md:text-sm">{field}</p>
+      <p className="text-xs font-semibold tracking-[0.16em] text-[#7E6941] md:text-sm">{field}</p>
       <h3 className="mt-3 text-xl font-semibold leading-8 text-primary md:text-2xl md:leading-9">
         {title}
       </h3>
@@ -247,7 +247,7 @@ function IssueCard({
       </div>
 
       <div className="mt-6 rounded-md border border-[#e8ddcb] bg-white/65 p-4 md:border-accent/25">
-        <p className="text-xs font-semibold tracking-[0.14em] text-accent">함께 볼 글</p>
+        <p className="text-xs font-semibold tracking-[0.14em] text-[#7E6941]">함께 볼 글</p>
         <p className="mt-2 text-sm font-semibold leading-6 text-primary md:text-[15px] md:leading-7">
           {articleTitle}
         </p>
@@ -327,7 +327,7 @@ export default function IssuesPage() {
                 className="min-h-[76px] rounded-lg border border-[#e8ddcb] bg-white px-5 py-4 shadow-sm md:border-accent/25 md:bg-white md:px-6 md:py-5 md:shadow-sm"
               >
                 <div className="flex h-full items-center gap-4">
-                  <p className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-accent/40 bg-accent/10 text-xs font-semibold text-accent">
+                  <p className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-accent/40 bg-accent/10 text-xs font-semibold text-[#7E6941]">
                     {String(index + 1).padStart(2, "0")}
                   </p>
                   <p className="text-base font-semibold leading-snug text-primary">
