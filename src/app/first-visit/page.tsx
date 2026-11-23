@@ -252,7 +252,7 @@ export default function FirstVisitPage() {
                 key={item}
                 className="rounded-lg border border-[#e8ddcb] bg-white p-5 shadow-sm md:border-accent/25 md:bg-white md:p-6 md:shadow-sm"
               >
-                <p className="text-xs font-semibold text-accent md:text-sm">
+                <p className="text-xs font-semibold text-[#7E6941] md:text-sm">
                   {String(index + 1).padStart(2, "0")}
                 </p>
                 <p className="mt-3 text-sm font-semibold leading-6 text-primary md:text-lg md:leading-7">
@@ -284,7 +284,7 @@ export default function FirstVisitPage() {
               className="rounded-lg border border-[#e8ddcb] bg-white p-6 shadow-sm md:border-accent/25 md:bg-white md:shadow-sm"
             >
               <p className="flex gap-3 text-sm font-semibold leading-7 text-primary md:text-lg">
-                <span className="shrink-0 font-bold text-accent">✓</span>
+                <span className="shrink-0 font-bold text-[#7E6941]">✓</span>
                 <span>{item}</span>
               </p>
             </div>
