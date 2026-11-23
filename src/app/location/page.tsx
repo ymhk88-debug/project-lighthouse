@@ -74,7 +74,7 @@ function SectionHeading({
 }) {
   return (
     <div className="max-w-2xl">
-      <h2 className="whitespace-pre-line text-2xl font-semibold leading-tight text-primary md:text-primary md:text-4xl md:leading-tight">
+      <h2 className="font-serif whitespace-pre-line text-2xl font-semibold leading-tight text-primary md:text-primary md:text-4xl md:leading-tight">
         {title}
       </h2>
       {description ? (
@@ -92,7 +92,7 @@ export default function LocationPage() {
       <div className="bg-primary">
       <section className="mx-auto w-full max-w-[1160px] px-6 py-16 md:py-20">
         <p className="text-sm font-semibold tracking-[0.18em] text-accent md:text-[15px]">Location</p>
-        <h1 className="mt-5 max-w-3xl text-3xl font-semibold leading-tight text-background sm:text-4xl md:text-background md:text-6xl">
+        <h1 className="font-serif mt-5 max-w-3xl text-3xl font-semibold leading-tight text-background sm:text-4xl md:text-background md:text-6xl">
           오시는 길
         </h1>
         <p className="mt-6 max-w-3xl whitespace-pre-line text-lg leading-9 text-background/75 md:text-xl md:font-medium md:leading-9 md:text-background/75">
@@ -195,7 +195,7 @@ export default function LocationPage() {
 
       <section className="px-6 py-16 md:py-20">
         <div className="mx-auto max-w-[1160px] rounded-lg bg-primary px-6 py-12 text-background md:border md:border-accent/30 md:px-10">
-          <h2 className="max-w-3xl text-3xl font-semibold leading-tight md:text-4xl">
+          <h2 className="font-serif max-w-3xl text-3xl font-semibold leading-tight md:text-4xl">
             방문 전 사건의 흐름을 먼저 정리해 주세요
           </h2>
           <p className="mt-5 max-w-3xl whitespace-pre-line leading-7 text-background/75 md:text-[17px] md:font-medium md:leading-8">
