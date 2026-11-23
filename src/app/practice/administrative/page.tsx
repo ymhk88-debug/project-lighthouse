@@ -186,7 +186,7 @@ function ChecklistCard({
 }) {
   return (
     <article className="rounded-lg border border-[#e8ddcb] bg-white p-5 shadow-sm md:border-accent/25 md:bg-white md:p-6 md:shadow-sm">
-      <h3 className="text-xl font-semibold leading-8 text-primary md:text-2xl">{title}</h3>
+      <h3 className="text-xl font-semibold leading-8 text-primary md:text-2xl break-keep [overflow-wrap:anywhere]">{title}</h3>
       <p className="mt-4 text-sm leading-7 text-primary/70 md:text-[15px] md:leading-7">{description}</p>
       <ul className="mt-6 space-y-3">
         {items.map((item) => (
@@ -246,7 +246,7 @@ export default function AdministrativePracticePage() {
                 <p className="text-xs font-semibold text-[#816432] md:text-sm">
                   {String(index + 1).padStart(2, "0")}
                 </p>
-                <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
+                <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8 break-keep [overflow-wrap:anywhere]">
                   {item.title}
                 </h3>
                 <p className="mt-3 text-sm leading-7 text-primary/70 md:text-[15px] md:leading-7">
@@ -270,7 +270,7 @@ export default function AdministrativePracticePage() {
               className="rounded-lg border border-[#e8ddcb] bg-white p-5 shadow-sm md:border-accent/25 md:bg-white md:p-6 md:shadow-sm"
             >
               <p className="text-xs font-semibold tracking-[0.16em] text-[#816432] md:text-sm">{item.label}</p>
-              <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
+              <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8 break-keep [overflow-wrap:anywhere]">
                 {item.title}
               </h3>
               <p className="mt-3 text-sm leading-7 text-primary/70 md:text-[15px] md:leading-7">
@@ -321,7 +321,7 @@ export default function AdministrativePracticePage() {
               className="rounded-lg border border-[#e8ddcb] bg-white p-5 shadow-sm md:border-accent/25 md:bg-white md:p-6 md:shadow-sm"
             >
               <p className="text-xs font-semibold tracking-[0.16em] text-[#816432] md:text-sm">{card.label}</p>
-              <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
+              <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8 break-keep [overflow-wrap:anywhere]">
                 {card.title}
               </h3>
               <ul className="mt-5 space-y-3">
@@ -350,7 +350,7 @@ export default function AdministrativePracticePage() {
                 className="rounded-lg border border-[#e8ddcb] bg-background p-5 shadow-sm md:border-accent/25 md:p-6 md:shadow-sm"
               >
                 <p className="text-xs font-semibold tracking-[0.16em] text-[#816432] md:text-sm">{item.label}</p>
-                <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
+                <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8 break-keep [overflow-wrap:anywhere]">
                   {item.title}
                 </h3>
                 <p className="mt-3 text-sm leading-7 text-primary/70 md:text-[15px] md:leading-7">
