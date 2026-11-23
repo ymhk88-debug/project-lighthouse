@@ -289,7 +289,7 @@ export default function CivilPracticePage() {
                 key={item.title}
                 className="rounded-lg border border-[#e8ddcb] bg-background p-5 shadow-sm md:border-accent/25 md:p-6 md:shadow-sm"
               >
-                <p className="text-xs font-semibold text-accent md:text-sm">
+                <p className="text-xs font-semibold text-[#7E6941] md:text-sm">
                   {String(index + 1).padStart(2, "0")}
                 </p>
                 <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
@@ -315,7 +315,7 @@ export default function CivilPracticePage() {
               key={item.title}
               className="rounded-lg border border-[#e8ddcb] bg-white p-5 shadow-sm md:border-accent/25 md:bg-white md:p-6 md:shadow-sm"
             >
-              <p className="text-xs font-semibold tracking-[0.16em] text-accent md:text-sm">{item.label}</p>
+              <p className="text-xs font-semibold tracking-[0.16em] text-[#7E6941] md:text-sm">{item.label}</p>
               <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
                 {item.title}
               </h3>
@@ -359,7 +359,7 @@ export default function CivilPracticePage() {
               key={step.title}
               className="flex flex-col rounded-lg border border-[#e8ddcb] bg-white p-5 shadow-sm md:border-accent/25 md:bg-white md:p-6 md:shadow-sm"
             >
-              <p className="text-xs font-semibold text-accent md:text-sm">
+              <p className="text-xs font-semibold text-[#7E6941] md:text-sm">
                 {String(index + 1).padStart(2, "0")}
               </p>
               <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
@@ -369,7 +369,7 @@ export default function CivilPracticePage() {
                 {step.description}
               </p>
               <div className="mt-auto pt-6">
-                <p className="text-xs font-semibold tracking-[0.14em] text-accent">함께 볼 글</p>
+                <p className="text-xs font-semibold tracking-[0.14em] text-[#7E6941]">함께 볼 글</p>
                 <a
                   href={step.href}
                   target="_blank"
@@ -404,7 +404,7 @@ export default function CivilPracticePage() {
               key={card.title}
               className="rounded-lg border border-[#e8ddcb] bg-white p-5 shadow-sm md:border-accent/25 md:bg-white md:p-6 md:shadow-sm"
             >
-              <p className="text-xs font-semibold tracking-[0.16em] text-accent md:text-sm">{card.label}</p>
+              <p className="text-xs font-semibold tracking-[0.16em] text-[#7E6941] md:text-sm">{card.label}</p>
               <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
                 {card.title}
               </h3>
@@ -433,7 +433,7 @@ export default function CivilPracticePage() {
                 key={item.title}
                 className="rounded-lg border border-[#e8ddcb] bg-background p-5 shadow-sm md:border-accent/25 md:p-6 md:shadow-sm"
               >
-                <p className="text-xs font-semibold tracking-[0.16em] text-accent md:text-sm">{item.label}</p>
+                <p className="text-xs font-semibold tracking-[0.16em] text-[#7E6941] md:text-sm">{item.label}</p>
                 <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
                   {item.title}
                 </h3>
