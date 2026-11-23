@@ -171,12 +171,12 @@ function PracticeCard({
   return (
     <article className="flex flex-col rounded-lg border border-[#e8ddcb] bg-white p-5 shadow-sm md:border-accent/25 md:bg-white md:p-7 md:shadow-sm">
       <div className="flex items-start gap-4">
-        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-accent/40 bg-accent/10 text-xs font-semibold text-[#7E6941]">
+        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-accent/40 bg-accent/10 text-xs font-semibold text-[#816432]">
           {String(index + 1).padStart(2, "0")}
         </span>
         <div>
           <h3 className="text-2xl font-semibold text-primary md:text-3xl">{title}</h3>
-          <p className="mt-4 whitespace-pre-line text-sm leading-7 text-muted md:text-[15px] md:leading-7 md:text-primary/70">
+          <p className="mt-4 whitespace-pre-line text-sm leading-7 text-[#625B52] md:text-[15px] md:leading-7 md:text-primary/70">
             {description}
           </p>
         </div>
@@ -217,7 +217,7 @@ export default function PracticePage() {
       <div className="bg-primary">
       <section className="mx-auto w-full max-w-[1160px] px-6 py-16 md:py-20">
         <p className="text-sm font-semibold tracking-[0.18em] text-accent md:text-[15px]">업무분야</p>
-        <h1 className="font-serif mt-5 max-w-3xl whitespace-pre-line text-3xl font-semibold leading-tight text-background sm:text-4xl md:text-background md:text-6xl">
+        <h1 className="font-serif mt-5 max-w-3xl whitespace-pre-line text-3xl font-semibold leading-tight text-background sm:text-4xl md:text-background md:text-6xl break-keep [overflow-wrap:anywhere]">
           {"분야보다 먼저,\n사건의 흐름을 정리합니다."}
         </h1>
         <p className="mt-6 max-w-2xl whitespace-pre-line text-lg leading-9 text-background/75 md:text-xl md:font-medium md:leading-9 md:text-background/75">
@@ -237,10 +237,10 @@ export default function PracticePage() {
       <section className="border-y border-border bg-[#F0EBE2] md:border-accent/15 md:bg-[#F0EBE2]">
         <div className="mx-auto max-w-[1160px] px-6 py-16 md:py-20">
           <div className="max-w-2xl">
-            <h2 className="font-serif text-2xl font-semibold leading-tight text-primary md:text-primary md:text-4xl md:leading-tight">
+            <h2 className="font-serif text-2xl font-semibold leading-tight text-primary md:text-primary md:text-4xl md:leading-tight break-keep [overflow-wrap:anywhere]">
               업무 분야별로 자주 정리하는 쟁점
             </h2>
-            <p className="mt-6 text-base leading-8 text-muted md:text-[17px] md:font-medium md:leading-8 md:text-muted">
+            <p className="mt-6 text-base leading-8 text-[#625B52] md:text-[17px] md:font-medium md:leading-8 md:text-[#625B52]">
               상담에서는 사건의 이름보다 현재 받은 연락, 서류, 기한, 상대방과의 관계, 가지고 있는 자료를 먼저 확인합니다. 아래 주제들은 실제 상담에서 자주 나누어 보는 상황을 기준으로 정리했습니다.
             </p>
           </div>
@@ -264,10 +264,10 @@ export default function PracticePage() {
       <section className="mx-auto max-w-[1160px] px-6 py-16 md:py-20">
         <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
           <div className="max-w-2xl">
-            <h2 className="font-serif text-2xl font-semibold leading-tight text-primary md:text-primary md:text-4xl md:leading-tight">
+            <h2 className="font-serif text-2xl font-semibold leading-tight text-primary md:text-primary md:text-4xl md:leading-tight break-keep [overflow-wrap:anywhere]">
               상담 전 함께 보면 좋은 페이지
             </h2>
-            <p className="mt-6 text-base leading-8 text-muted md:text-[17px] md:font-medium md:leading-8 md:text-muted">
+            <p className="mt-6 text-base leading-8 text-[#625B52] md:text-[17px] md:font-medium md:leading-8 md:text-[#625B52]">
               업무 분야를 정하기 어렵다면, 먼저 현재 상황과 받은 서류를 기준으로 정리해 볼 수 있습니다.
             </p>
           </div>
@@ -290,7 +290,7 @@ export default function PracticePage() {
 
       <section className="px-6 py-16 md:py-20">
         <div className="mx-auto max-w-[1160px] rounded-lg bg-primary px-6 py-12 text-background md:border md:border-accent/30 md:px-10">
-          <h2 className="font-serif max-w-2xl text-3xl font-semibold leading-tight md:text-4xl">
+          <h2 className="font-serif max-w-2xl text-3xl font-semibold leading-tight md:text-4xl break-keep [overflow-wrap:anywhere]">
             사건은 분야보다 과정이 중요합니다.
           </h2>
           <p className="mt-5 max-w-2xl whitespace-pre-line leading-7 text-background/75 md:text-[17px] md:font-medium md:leading-8">
