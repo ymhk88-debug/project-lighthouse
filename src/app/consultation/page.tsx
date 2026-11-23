@@ -201,7 +201,7 @@ export default function ConsultationPage() {
                 key={item.title}
                 className="rounded-lg border border-[#e8ddcb] bg-white p-6 shadow-sm md:border-accent/25 md:bg-white md:shadow-sm"
               >
-                <p className="text-xs font-semibold text-accent md:text-sm">
+                <p className="text-xs font-semibold text-[#7E6941] md:text-sm">
                   {String(index + 1).padStart(2, "0")}
                 </p>
                 <h3 className="mt-4 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
@@ -250,7 +250,7 @@ export default function ConsultationPage() {
                 key={item.title}
                 className="rounded-lg border border-[#e8ddcb] bg-white p-5 shadow-sm md:border-accent/25 md:bg-white md:p-6 md:shadow-sm"
               >
-                <p className="text-xs font-semibold text-accent md:text-sm">
+                <p className="text-xs font-semibold text-[#7E6941] md:text-sm">
                   {String(index + 1).padStart(2, "0")}
                 </p>
                 <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
@@ -273,7 +273,7 @@ export default function ConsultationPage() {
               <details key={item.question} className="group p-5">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-semibold text-primary md:text-lg">
                   <span>{item.question}</span>
-                  <span className="text-accent transition-transform group-open:rotate-45">
+                  <span className="text-[#7E6941] transition-transform group-open:rotate-45">
                     +
                   </span>
                 </summary>
@@ -292,13 +292,13 @@ export default function ConsultationPage() {
           {afterSteps.map((step, index) => (
             <div key={step} className="contents">
               <div className="rounded-lg border border-[#e8ddcb] bg-white p-4 text-center shadow-sm md:border-accent/25 md:bg-white md:p-5 md:shadow-sm">
-                <p className="text-xs font-semibold text-accent md:text-sm">
+                <p className="text-xs font-semibold text-[#7E6941] md:text-sm">
                   {String(index + 1).padStart(2, "0")}
                 </p>
                 <p className="mt-2 text-sm font-semibold text-primary md:text-lg">{step}</p>
               </div>
               {index < afterSteps.length - 1 ? (
-                <span className="text-center text-accent md:-rotate-90">↓</span>
+                <span className="text-center text-[#7E6941] md:-rotate-90">↓</span>
               ) : null}
             </div>
           ))}
