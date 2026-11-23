@@ -116,7 +116,7 @@ export default function ProfilePage() {
       <section className="bg-primary">
         <div className="mx-auto grid max-w-[1160px] gap-8 px-6 py-16 md:grid-cols-[1fr_auto] md:items-end md:py-20">
           <div>
-            <p className="text-sm font-semibold tracking-[0.16em] text-accent">BEFORE YOUR VISIT</p>
+            <p className="text-sm font-semibold tracking-[0.16em] text-[#7E6941]">BEFORE YOUR VISIT</p>
             <h2 className="mt-3 text-2xl font-semibold leading-tight text-background md:text-4xl">상담은 현재 상황을 정리하는 과정입니다.</h2>
             <p className="mt-5 max-w-2xl text-base leading-8 text-background/75">
               받은 서류, 정해진 기한, 현재 가지고 있는 자료부터 함께 확인합니다.
