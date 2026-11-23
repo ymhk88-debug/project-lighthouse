@@ -25,7 +25,7 @@ export function Header() {
         >
           유민환 변호사
         </Link>
-        <nav className="hidden items-center gap-4 whitespace-nowrap text-sm font-medium text-background/85 xl:gap-6 xl:text-base lg:flex">
+        <nav className="hidden items-center gap-4 whitespace-nowrap text-sm font-medium text-background/85 xl:gap-6 xl:text-base xl:flex">
           {navigation.map((item) => (
             <Link
               key={item.href}
@@ -38,7 +38,7 @@ export function Header() {
         </nav>
         <button
           type="button"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-background/40 text-background lg:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-background/40 text-background xl:hidden"
           aria-label={isOpen ? "메뉴 닫기" : "메뉴 열기"}
           aria-expanded={isOpen}
           onClick={() => setIsOpen((current) => !current)}
@@ -51,7 +51,7 @@ export function Header() {
         </button>
       </div>
       {isOpen ? (
-        <nav className="border-t border-background/20 bg-primary px-6 py-4 lg:hidden">
+        <nav className="border-t border-background/20 bg-primary px-6 py-4 xl:hidden">
           <div className="mx-auto flex max-w-7xl flex-col gap-1 text-sm font-medium text-background">
             {navigation.map((item) => (
               <Link
