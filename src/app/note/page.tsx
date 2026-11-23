@@ -342,7 +342,7 @@ export default function NotePage() {
                 </div>
               </div>
               <div className="mt-6 grid gap-3">
-                {cluster.posts.map((post) => (
+                {cluster.posts.filter((post) => "href" in post).map((post) => (
                   <div
                     key={post.title}
                     className="rounded-md border border-[#eadfce] bg-background/80 p-4 md:border-accent/20 md:bg-white"
