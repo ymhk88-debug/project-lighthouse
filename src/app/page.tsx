@@ -104,7 +104,7 @@ function SectionHeading({
   return (
     <div className="max-w-3xl">
       {eyebrow ? (
-        <p className="text-sm font-semibold tracking-[0.16em] text-accent">{eyebrow}</p>
+        <p className={`text-sm font-semibold tracking-[0.16em] ${tone === "dark" ? "text-accent" : "text-[#7E6941]"}`}>{eyebrow}</p>
       ) : null}
       <h2 className={`mt-3 whitespace-pre-line text-2xl font-semibold leading-tight md:text-4xl ${tone === "dark" ? "text-background" : "text-primary"}`}>
         {title}
@@ -214,7 +214,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-[1160px] gap-4 px-6 py-6 md:grid-cols-3">
           {trustItems.map((item) => (
             <p key={item} className="text-sm font-medium leading-6 text-background/85">
-              <span className="mr-2 text-accent">✓</span>
+              <span className="mr-2 text-[#7E6941]">✓</span>
               {item}
             </p>
           ))}
@@ -296,13 +296,13 @@ export default function Home() {
           {processSteps.map((step, index) => (
             <div key={step} className="contents">
               <div className="rounded-lg border border-[#e8ddcb] bg-white/60 p-4 text-center shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-5 md:shadow-sm">
-                <p className="text-xs font-semibold text-accent md:text-sm">
+                <p className="text-xs font-semibold text-[#7E6941] md:text-sm">
                   {String(index + 1).padStart(2, "0")}
                 </p>
                 <p className="mt-2 text-sm font-semibold text-primary md:text-lg">{step}</p>
               </div>
               {index < processSteps.length - 1 ? (
-                <span className="text-center text-accent md:-rotate-90">↓</span>
+                <span className="text-center text-[#7E6941] md:-rotate-90">↓</span>
               ) : null}
             </div>
           ))}
@@ -323,7 +323,7 @@ export default function Home() {
               key={item.title}
               className="rounded-lg border border-[#e8ddcb] bg-white/60 p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-6 md:shadow-sm"
             >
-              <p className="text-xs font-semibold tracking-[0.16em] text-accent md:text-sm">{item.label}</p>
+              <p className="text-xs font-semibold tracking-[0.16em] text-[#7E6941] md:text-sm">{item.label}</p>
               <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
                 {item.title}
               </h3>
