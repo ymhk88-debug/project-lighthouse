@@ -340,9 +340,7 @@ export default function Home() {
               </a>
             </article>
           ))}
-          <div className="mt-6">
-            <Link href="/faq" className="inline-flex min-h-11 items-center font-semibold text-[#7E6941] underline decoration-accent underline-offset-4">자주 묻는 질문 전체 보기 →</Link>
-          </div>
+
         </div>
       </section>
 
@@ -355,7 +353,11 @@ export default function Home() {
               <p className="mt-2 text-sm leading-7 text-muted">{item.answer}</p>
             </div>
           ))}
-        </div>      </section>
+        </div>
+        <div className="mt-6">
+          <Link href="/faq" className="inline-flex min-h-11 items-center font-semibold text-[#7E6941] underline decoration-accent underline-offset-4">자주 묻는 질문 전체 보기 →</Link>
+        </div>
+      </section>
 
       <section className="px-6 pb-20">
         <div className="mx-auto max-w-[1160px] rounded-lg bg-primary px-6 py-12 text-background md:border md:border-accent/30 md:px-10">
