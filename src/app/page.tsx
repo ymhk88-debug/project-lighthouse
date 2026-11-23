@@ -106,7 +106,7 @@ function SectionHeading({
       {eyebrow ? (
         <p className={`text-sm font-semibold tracking-[0.16em] ${tone === "dark" ? "text-accent" : "text-[#7E6941]"}`}>{eyebrow}</p>
       ) : null}
-      <h2 className={`mt-3 whitespace-pre-line text-2xl font-semibold leading-tight md:text-4xl ${tone === "dark" ? "text-background" : "text-primary"}`}>
+      <h2 className={`mt-3 whitespace-pre-line font-serif text-2xl font-semibold leading-tight md:text-4xl ${tone === "dark" ? "text-background" : "text-primary"}`}>
         {title}
       </h2>
       {description ? (
@@ -361,7 +361,7 @@ export default function Home() {
 
       <section className="px-6 pb-20">
         <div className="mx-auto max-w-[1160px] rounded-lg bg-primary px-6 py-12 text-background md:border md:border-accent/30 md:px-10">
-          <h2 className="text-3xl font-semibold leading-tight md:text-4xl">
+          <h2 className="font-serif text-3xl font-semibold leading-tight md:text-4xl">
             상담은 현재 상황을 정리하는 과정입니다.
           </h2>
           <p className="mt-5 max-w-2xl leading-7 text-background/75 md:text-[17px] md:font-medium md:leading-8">
