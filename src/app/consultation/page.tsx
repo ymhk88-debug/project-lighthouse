@@ -93,7 +93,7 @@ const faqItems = [
 
 const afterSteps = ["상담", "자료 보완", "사건 검토", "위임 여부 결정", "사건 진행"];
 const officePhone = "055-263-5882";
-const mobilePhone = "050-5948-5158";
+const mobilePhone = "010-5948-5158";
 
 const relatedPages = [
   {
@@ -340,7 +340,7 @@ export default function ConsultationPage() {
               </a>
             </p>
             <p className="mt-3 text-sm leading-6 text-background/75 md:text-[15px]">
-              방문 상담은 일정 조율 후 진행됩니다.
+              상담은 예약제로 진행됩니다. 상담료 10만원, 평일 09:00~18:00입니다.
             </p>
           </div>
           <div className="mt-8">
