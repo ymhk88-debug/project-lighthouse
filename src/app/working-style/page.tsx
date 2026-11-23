@@ -65,7 +65,7 @@ function PrincipleSection({
     <section className={sectionClass}>
       <div className="mx-auto grid max-w-[1160px] gap-8 px-6 py-16 md:py-20 md:grid-cols-[0.75fr_1.25fr] md:items-start">
         <div>
-          <p className="text-xs font-semibold text-accent md:text-sm">
+          <p className="text-xs font-semibold text-[#7E6941] md:text-sm">
             {String(index + 1).padStart(2, "0")}
           </p>
           <h2 className="mt-4 text-2xl font-semibold leading-tight text-primary md:text-primary md:text-4xl md:leading-tight">
