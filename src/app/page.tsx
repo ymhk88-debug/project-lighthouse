@@ -231,7 +231,7 @@ export default function Home() {
               className="group flex min-h-48 flex-col rounded-lg border border-border bg-white p-6 transition-colors hover:border-accent"
             >
               <p className="text-xs font-semibold tracking-[0.14em] text-[#816432]">{item.label}</p>
-              <h3 className="mt-3 text-lg font-semibold leading-7 text-primary">{item.title}</h3>
+              <h3 className="mt-3 text-lg font-semibold leading-7 text-primary break-keep [overflow-wrap:anywhere]">{item.title}</h3>
               <p className="mt-3 text-sm leading-7 text-[#625B52]">{item.description}</p>
               <p className="mt-auto pt-5 text-sm font-semibold text-[#816432] group-hover:underline">관련 안내 보기 →</p>
             </Link>
@@ -324,7 +324,7 @@ export default function Home() {
               className="rounded-lg border border-[#e8ddcb] bg-white/60 p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-6 md:shadow-sm"
             >
               <p className="text-xs font-semibold tracking-[0.16em] text-[#816432] md:text-sm">{item.label}</p>
-              <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
+              <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8 break-keep [overflow-wrap:anywhere]">
                 {item.title}
               </h3>
               <p className="mt-3 text-sm leading-7 text-[#625B52] md:text-[15px] md:leading-7">
@@ -349,7 +349,7 @@ export default function Home() {
         <div className="mt-8 divide-y divide-border rounded-lg border border-[#e8ddcb] bg-white/60 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:shadow-sm">
           {faqItems.map((item) => (
             <div key={item.question} className="p-5 md:p-6">
-              <h3 className="font-semibold text-primary md:text-lg">{item.question}</h3>
+              <h3 className="font-semibold text-primary md:text-lg break-keep [overflow-wrap:anywhere]">{item.question}</h3>
               <p className="mt-2 text-sm leading-7 text-[#625B52]">{item.answer}</p>
             </div>
           ))}
