@@ -284,7 +284,7 @@ function FaqSection({
     <section className={sectionClass}>
       <div className="mx-auto grid max-w-[1160px] gap-8 px-6 py-16 md:py-20 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
         <div>
-          <p className="text-xs font-semibold text-accent md:text-sm">
+          <p className="text-xs font-semibold text-[#7E6941] md:text-sm">
             {String(index + 1).padStart(2, "0")}
           </p>
           <h2 className="mt-4 text-2xl font-semibold leading-tight text-primary md:text-primary md:text-4xl">
@@ -296,7 +296,7 @@ function FaqSection({
             <details key={item.question} className="group p-5">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-semibold leading-7 text-primary md:text-lg md:leading-8">
                 <span>{item.question}</span>
-                <span className="text-accent transition-transform group-open:rotate-45">
+                <span className="text-[#7E6941] transition-transform group-open:rotate-45">
                   +
                 </span>
               </summary>
