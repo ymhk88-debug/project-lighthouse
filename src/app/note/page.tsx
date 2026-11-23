@@ -353,7 +353,7 @@ export default function NotePage() {
                     <p className="mt-2 text-sm leading-7 text-primary/70">
                       {post.description}
                     </p>
-                    {"href" in post ? (
+                    {"href" in post && (
                       <a
                         href={post.href}
                         target="_blank"
@@ -362,10 +362,6 @@ export default function NotePage() {
                       >
                         블로그에서 보기
                       </a>
-                    ) : (
-                      <p className="mt-4 text-sm font-semibold text-[#816432]">
-                        {post.status}
-                      </p>
                     )}
                   </div>
                 ))}
