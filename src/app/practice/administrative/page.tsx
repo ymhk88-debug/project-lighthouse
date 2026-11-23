@@ -243,7 +243,7 @@ export default function AdministrativePracticePage() {
                 key={item.title}
                 className="rounded-lg border border-[#e8ddcb] bg-background p-5 shadow-sm md:border-accent/25 md:p-6 md:shadow-sm"
               >
-                <p className="text-xs font-semibold text-accent md:text-sm">
+                <p className="text-xs font-semibold text-[#7E6941] md:text-sm">
                   {String(index + 1).padStart(2, "0")}
                 </p>
                 <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
@@ -269,7 +269,7 @@ export default function AdministrativePracticePage() {
               key={item.title}
               className="rounded-lg border border-[#e8ddcb] bg-white p-5 shadow-sm md:border-accent/25 md:bg-white md:p-6 md:shadow-sm"
             >
-              <p className="text-xs font-semibold tracking-[0.16em] text-accent md:text-sm">{item.label}</p>
+              <p className="text-xs font-semibold tracking-[0.16em] text-[#7E6941] md:text-sm">{item.label}</p>
               <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
                 {item.title}
               </h3>
@@ -320,7 +320,7 @@ export default function AdministrativePracticePage() {
               key={card.title}
               className="rounded-lg border border-[#e8ddcb] bg-white p-5 shadow-sm md:border-accent/25 md:bg-white md:p-6 md:shadow-sm"
             >
-              <p className="text-xs font-semibold tracking-[0.16em] text-accent md:text-sm">{card.label}</p>
+              <p className="text-xs font-semibold tracking-[0.16em] text-[#7E6941] md:text-sm">{card.label}</p>
               <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
                 {card.title}
               </h3>
@@ -349,7 +349,7 @@ export default function AdministrativePracticePage() {
                 key={item.title}
                 className="rounded-lg border border-[#e8ddcb] bg-background p-5 shadow-sm md:border-accent/25 md:p-6 md:shadow-sm"
               >
-                <p className="text-xs font-semibold tracking-[0.16em] text-accent md:text-sm">{item.label}</p>
+                <p className="text-xs font-semibold tracking-[0.16em] text-[#7E6941] md:text-sm">{item.label}</p>
                 <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
                   {item.title}
                 </h3>
