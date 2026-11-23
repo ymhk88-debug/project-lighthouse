@@ -227,7 +227,7 @@ function IssueCard({
   return (
     <article className="flex min-h-[30rem] flex-col rounded-lg border border-[#e8ddcb] bg-white p-5 shadow-sm md:border-accent/25 md:bg-white md:p-6 md:shadow-sm">
       <p className="text-xs font-semibold tracking-[0.16em] text-[#816432] md:text-sm">{field}</p>
-      <h3 className="mt-3 text-xl font-semibold leading-8 text-primary md:text-2xl md:leading-9">
+      <h3 className="mt-3 text-xl font-semibold leading-8 text-primary md:text-2xl md:leading-9 break-keep [overflow-wrap:anywhere]">
         {title}
       </h3>
       <p className="mt-4 text-sm leading-7 text-primary/70 md:text-[15px] md:leading-7">
@@ -353,7 +353,7 @@ export default function IssuesPage() {
                 href={page.href}
                 className="rounded-lg border border-[#e8ddcb] bg-background p-5 shadow-sm transition-colors hover:border-accent md:border-accent/25 md:p-6 md:shadow-sm"
               >
-                <h3 className="text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
+                <h3 className="text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8 break-keep [overflow-wrap:anywhere]">
                   {page.title}
                 </h3>
                 <p className="mt-3 text-sm leading-7 text-primary/70 md:text-[15px] md:leading-7">
