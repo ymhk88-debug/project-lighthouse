@@ -104,13 +104,13 @@ function SectionHeading({
   return (
     <div className="max-w-3xl">
       {eyebrow ? (
-        <p className={`text-sm font-semibold tracking-[0.16em] ${tone === "dark" ? "text-accent" : "text-[#7E6941]"}`}>{eyebrow}</p>
+        <p className={`text-sm font-semibold tracking-[0.16em] ${tone === "dark" ? "text-accent" : "text-[#816432]"}`}>{eyebrow}</p>
       ) : null}
-      <h2 className={`mt-3 whitespace-pre-line font-serif text-2xl font-semibold leading-tight md:text-4xl ${tone === "dark" ? "text-background" : "text-primary"}`}>
+      <h2 className={`mt-3 whitespace-pre-line font-serif text-2xl font-semibold leading-tight md:text-4xl ${tone === "dark" ? "text-background" : "text-primary"} break-keep [overflow-wrap:anywhere]`}>
         {title}
       </h2>
       {description ? (
-        <p className={`mt-4 whitespace-pre-line text-base leading-8 md:text-[17px] ${tone === "dark" ? "text-background/75" : "text-muted"}`}>
+        <p className={`mt-4 whitespace-pre-line text-base leading-8 md:text-[17px] ${tone === "dark" ? "text-background/75" : "text-[#625B52]"}`}>
           {description}
         </p>
       ) : null}
@@ -193,7 +193,7 @@ export default function Home() {
             </div>
             <div className="px-1 pt-4 pb-2">
               <p className="text-sm font-semibold text-primary md:text-lg">유민환 변호사</p>
-              <p className="mt-2 text-sm leading-6 text-muted md:text-[15px] md:leading-7">
+              <p className="mt-2 text-sm leading-6 text-[#625B52] md:text-[15px] md:leading-7">
                 결과를 장담하기보다,
                 <br />
                 과정에 충실하겠습니다.
@@ -214,7 +214,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-[1160px] gap-4 px-6 py-6 md:grid-cols-3">
           {trustItems.map((item) => (
             <p key={item} className="text-sm font-medium leading-6 text-background/85">
-              <span className="mr-2 text-[#7E6941]">✓</span>
+              <span className="mr-2 text-accent">✓</span>
               {item}
             </p>
           ))}
@@ -230,10 +230,10 @@ export default function Home() {
               href={item.href}
               className="group flex min-h-48 flex-col rounded-lg border border-border bg-white p-6 transition-colors hover:border-accent"
             >
-              <p className="text-xs font-semibold tracking-[0.14em] text-[#7E6941]">{item.label}</p>
+              <p className="text-xs font-semibold tracking-[0.14em] text-[#816432]">{item.label}</p>
               <h3 className="mt-3 text-lg font-semibold leading-7 text-primary">{item.title}</h3>
-              <p className="mt-3 text-sm leading-7 text-muted">{item.description}</p>
-              <p className="mt-auto pt-5 text-sm font-semibold text-[#7E6941] group-hover:underline">관련 안내 보기 →</p>
+              <p className="mt-3 text-sm leading-7 text-[#625B52]">{item.description}</p>
+              <p className="mt-auto pt-5 text-sm font-semibold text-[#816432] group-hover:underline">관련 안내 보기 →</p>
             </Link>
           ))}
         </div>
@@ -282,7 +282,7 @@ export default function Home() {
                 className="group rounded-lg border border-border bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-accent"
               >
                 <p className="text-lg font-semibold text-primary md:text-xl">{area.title}</p>
-                <p className="mt-3 text-sm leading-7 text-muted">{area.description}</p>
+                <p className="mt-3 text-sm leading-7 text-[#625B52]">{area.description}</p>
                 <p className="mt-7 text-sm font-semibold text-[#816432] group-hover:underline">분야 살펴보기 →</p>
               </Link>
             ))}
@@ -296,13 +296,13 @@ export default function Home() {
           {processSteps.map((step, index) => (
             <div key={step} className="contents">
               <div className="rounded-lg border border-[#e8ddcb] bg-white/60 p-4 text-center shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-5 md:shadow-sm">
-                <p className="text-xs font-semibold text-[#7E6941] md:text-sm">
+                <p className="text-xs font-semibold text-[#816432] md:text-sm">
                   {String(index + 1).padStart(2, "0")}
                 </p>
                 <p className="mt-2 text-sm font-semibold text-primary md:text-lg">{step}</p>
               </div>
               {index < processSteps.length - 1 ? (
-                <span className="text-center text-[#7E6941] md:-rotate-90">↓</span>
+                <span className="text-center text-[#816432] md:-rotate-90">↓</span>
               ) : null}
             </div>
           ))}
@@ -323,11 +323,11 @@ export default function Home() {
               key={item.title}
               className="rounded-lg border border-[#e8ddcb] bg-white/60 p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-6 md:shadow-sm"
             >
-              <p className="text-xs font-semibold tracking-[0.16em] text-[#7E6941] md:text-sm">{item.label}</p>
+              <p className="text-xs font-semibold tracking-[0.16em] text-[#816432] md:text-sm">{item.label}</p>
               <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
                 {item.title}
               </h3>
-              <p className="mt-3 text-sm leading-7 text-muted md:text-[15px] md:leading-7">
+              <p className="mt-3 text-sm leading-7 text-[#625B52] md:text-[15px] md:leading-7">
                 {item.description}
               </p>
               <a
@@ -350,18 +350,18 @@ export default function Home() {
           {faqItems.map((item) => (
             <div key={item.question} className="p-5 md:p-6">
               <h3 className="font-semibold text-primary md:text-lg">{item.question}</h3>
-              <p className="mt-2 text-sm leading-7 text-muted">{item.answer}</p>
+              <p className="mt-2 text-sm leading-7 text-[#625B52]">{item.answer}</p>
             </div>
           ))}
         </div>
         <div className="mt-6">
-          <Link href="/faq" className="inline-flex min-h-11 items-center font-semibold text-[#7E6941] underline decoration-accent underline-offset-4">자주 묻는 질문 전체 보기 →</Link>
+          <Link href="/faq" className="inline-flex min-h-11 items-center font-semibold text-[#816432] underline decoration-accent underline-offset-4">자주 묻는 질문 전체 보기 →</Link>
         </div>
       </section>
 
       <section className="px-6 pb-20">
         <div className="mx-auto max-w-[1160px] rounded-lg bg-primary px-6 py-12 text-background md:border md:border-accent/30 md:px-10">
-          <h2 className="font-serif text-3xl font-semibold leading-tight md:text-4xl">
+          <h2 className="font-serif text-3xl font-semibold leading-tight md:text-4xl break-keep [overflow-wrap:anywhere]">
             상담은 현재 상황을 정리하는 과정입니다.
           </h2>
           <p className="mt-5 max-w-2xl leading-7 text-background/75 md:text-[17px] md:font-medium md:leading-8">
