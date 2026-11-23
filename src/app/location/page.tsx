@@ -74,11 +74,11 @@ function SectionHeading({
 }) {
   return (
     <div className="max-w-2xl">
-      <h2 className="font-serif whitespace-pre-line text-2xl font-semibold leading-tight text-primary md:text-primary md:text-4xl md:leading-tight">
+      <h2 className="font-serif whitespace-pre-line text-2xl font-semibold leading-tight text-primary md:text-primary md:text-4xl md:leading-tight break-keep [overflow-wrap:anywhere]">
         {title}
       </h2>
       {description ? (
-        <p className="mt-6 whitespace-pre-line text-base leading-8 text-muted md:text-[17px] md:font-medium md:leading-8 md:text-muted">
+        <p className="mt-6 whitespace-pre-line text-base leading-8 text-[#625B52] md:text-[17px] md:font-medium md:leading-8 md:text-[#625B52]">
           {description}
         </p>
       ) : null}
@@ -92,7 +92,7 @@ export default function LocationPage() {
       <div className="bg-primary">
       <section className="mx-auto w-full max-w-[1160px] px-6 py-16 md:py-20">
         <p className="text-sm font-semibold tracking-[0.18em] text-accent md:text-[15px]">Location</p>
-        <h1 className="font-serif mt-5 max-w-3xl text-3xl font-semibold leading-tight text-background sm:text-4xl md:text-background md:text-6xl">
+        <h1 className="font-serif mt-5 max-w-3xl text-3xl font-semibold leading-tight text-background sm:text-4xl md:text-background md:text-6xl break-keep [overflow-wrap:anywhere]">
           오시는 길
         </h1>
         <p className="mt-6 max-w-3xl whitespace-pre-line text-lg leading-9 text-background/75 md:text-xl md:font-medium md:leading-9 md:text-background/75">
@@ -120,7 +120,7 @@ export default function LocationPage() {
               <p className="text-sm font-semibold tracking-[0.14em] text-[#816432]">OFFICE</p>
               <h3 className="mt-3 text-xl font-semibold text-primary md:text-2xl">방문 주소</h3>
               <p className="mt-5 text-lg font-semibold leading-8 text-primary">{address}</p>
-              <p className="mt-2 text-sm leading-7 text-muted">상담 일정과 건물 출입 방법은 방문 전에 확인해 주세요.</p>
+              <p className="mt-2 text-sm leading-7 text-[#625B52]">상담 일정과 건물 출입 방법은 방문 전에 확인해 주세요.</p>
               <div className="mt-7 border-t border-border pt-6">
                 <p className="font-semibold text-primary">전화 문의</p>
                 <p className="mt-3 text-sm leading-7 text-primary">
@@ -130,7 +130,7 @@ export default function LocationPage() {
                   휴대폰 <a className="font-semibold underline decoration-accent/50 underline-offset-4 hover:text-[#816432]" href={`tel:${mobilePhone}`}>{mobilePhone}</a>
                 </p>
               </div>
-              <p className="mt-auto pt-6 text-sm leading-7 text-muted">기일이나 외부 일정으로 부재중일 수 있으므로 방문 전 일정을 조율해 주세요.</p>
+              <p className="mt-auto pt-6 text-sm leading-7 text-[#625B52]">기일이나 외부 일정으로 부재중일 수 있으므로 방문 전 일정을 조율해 주세요.</p>
             </div>
             <div className="flex h-full flex-col rounded-lg border border-border bg-white p-6 shadow-sm md:p-8">
               <p className="text-sm font-semibold tracking-[0.14em] text-[#816432]">MAP & DIRECTIONS</p>
@@ -138,7 +138,7 @@ export default function LocationPage() {
               <div className="mt-6 flex min-h-48 flex-1 flex-col justify-center rounded-md border border-accent/20 bg-[#F7F2E8] px-6 py-8">
                 <div aria-hidden="true" className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-xl text-background">⌖</div>
                 <p className="mt-5 text-lg font-semibold text-primary">경남 창원시 성산구 용지로169번길 7 한성빌딩 12층(용호동)</p>
-                <p className="mt-1 text-sm text-muted">사무실 위치 및 이동 경로</p>
+                <p className="mt-1 text-sm text-[#625B52]">사무실 위치 및 이동 경로</p>
                 <p className="mt-5 text-sm leading-7 text-primary/75">정확한 경로와 이동 시간은 네이버지도에서 확인해 주세요.</p>
               </div>
               <a href={naverMapUrl} target="_blank" rel="noopener noreferrer"
@@ -159,13 +159,13 @@ export default function LocationPage() {
                 key={item.title}
                 className="rounded-lg border border-[#e8ddcb] bg-white p-6 shadow-sm md:border-accent/25 md:bg-white md:shadow-sm"
               >
-                <p className="text-xs font-semibold text-[#7E6941] md:text-sm">
+                <p className="text-xs font-semibold text-[#816432] md:text-sm">
                   {String(index + 1).padStart(2, "0")}
                 </p>
                 <h3 className="mt-4 text-lg font-semibold text-primary md:text-2xl">
                   {item.title}
                 </h3>
-                <p className="mt-4 text-sm leading-7 text-muted md:text-[15px] md:leading-7 md:text-primary/70">
+                <p className="mt-4 text-sm leading-7 text-[#625B52] md:text-[15px] md:leading-7 md:text-primary/70">
                   {item.description}
                 </p>
               </article>
@@ -185,7 +185,7 @@ export default function LocationPage() {
               <h3 className="text-lg font-semibold text-primary md:text-2xl">
                 {item.title}
               </h3>
-              <p className="mt-4 text-sm leading-7 text-muted md:text-[15px] md:leading-7 md:text-primary/70">
+              <p className="mt-4 text-sm leading-7 text-[#625B52] md:text-[15px] md:leading-7 md:text-primary/70">
                 {item.description}
               </p>
             </article>
@@ -195,7 +195,7 @@ export default function LocationPage() {
 
       <section className="px-6 py-16 md:py-20">
         <div className="mx-auto max-w-[1160px] rounded-lg bg-primary px-6 py-12 text-background md:border md:border-accent/30 md:px-10">
-          <h2 className="font-serif max-w-3xl text-3xl font-semibold leading-tight md:text-4xl">
+          <h2 className="font-serif max-w-3xl text-3xl font-semibold leading-tight md:text-4xl break-keep [overflow-wrap:anywhere]">
             방문 전 사건의 흐름을 먼저 정리해 주세요
           </h2>
           <p className="mt-5 max-w-3xl whitespace-pre-line leading-7 text-background/75 md:text-[17px] md:font-medium md:leading-8">
