@@ -299,7 +299,7 @@ export default function NotePage() {
                   key={item.title}
                   className="rounded-lg border border-[#e8ddcb] bg-white p-5 shadow-sm md:border-accent/25 md:bg-white md:p-6 md:shadow-sm"
                 >
-                  <p className="text-xs font-semibold text-accent md:text-sm">
+                  <p className="text-xs font-semibold text-[#7E6941] md:text-sm">
                     {String(index + 1).padStart(2, "0")}
                   </p>
                   <h3 className="mt-3 text-lg font-semibold text-primary md:text-xl">
@@ -329,7 +329,7 @@ export default function NotePage() {
               className="rounded-lg border border-[#e8ddcb] bg-white p-5 shadow-sm md:border-accent/25 md:bg-white md:p-6 md:shadow-sm"
             >
               <div className="flex items-start gap-4">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-accent/40 bg-accent/10 text-xs font-semibold text-accent">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-accent/40 bg-accent/10 text-xs font-semibold text-[#7E6941]">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <div>
@@ -363,7 +363,7 @@ export default function NotePage() {
                         블로그에서 보기
                       </a>
                     ) : (
-                      <p className="mt-4 text-sm font-semibold text-accent">
+                      <p className="mt-4 text-sm font-semibold text-[#7E6941]">
                         {post.status}
                       </p>
                     )}
