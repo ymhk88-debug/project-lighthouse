@@ -43,13 +43,13 @@ export default function PrivacyPage() {
   return (
     <div className="bg-background md:bg-primary">
       <section className="mx-auto w-full max-w-7xl px-6 py-16 md:py-20">
-        <p className="text-sm font-semibold tracking-[0.18em] text-accent md:text-[15px]">
+        <p className="text-sm font-semibold tracking-[0.18em] text-[#816432] md:text-[15px] md:text-accent">
           Privacy Policy
         </p>
-        <h1 className="mt-5 max-w-3xl text-3xl font-semibold leading-tight text-primary sm:text-4xl md:text-6xl md:text-background">
+        <h1 className="mt-5 max-w-3xl text-3xl font-semibold leading-tight text-primary sm:text-4xl md:text-6xl md:text-background break-keep [overflow-wrap:anywhere]">
           개인정보처리방침
         </h1>
-        <p className="mt-6 max-w-3xl whitespace-pre-line text-lg leading-9 text-muted md:text-xl md:font-medium md:leading-9 md:text-background/75">
+        <p className="mt-6 max-w-3xl whitespace-pre-line text-lg leading-9 text-[#625B52] md:text-xl md:font-medium md:leading-9 md:text-background/75">
           {
             "유민환 변호사 홈페이지는 방문자의 개인정보를 신중하게 다루기 위해 필요한 기준을 정리합니다.\n현재 홈페이지는 전화 문의와 외부 링크 중심의 정적 안내형 홈페이지이며, 온라인 문의폼이나 자료 업로드 기능은 운영하지 않습니다."
           }
@@ -65,10 +65,10 @@ export default function PrivacyPage() {
                   key={section.title}
                   className="border-b border-border pb-8 last:border-b-0 last:pb-0"
                 >
-                  <p className="text-xs font-semibold tracking-[0.16em] text-accent md:text-sm">
+                  <p className="text-xs font-semibold tracking-[0.16em] text-[#816432] md:text-sm">
                     {String(index + 1).padStart(2, "0")}
                   </p>
-                  <h2 className="mt-3 text-xl font-semibold leading-8 text-primary md:text-2xl">
+                  <h2 className="mt-3 text-xl font-semibold leading-8 text-primary md:text-2xl break-keep [overflow-wrap:anywhere]">
                     {section.title}
                   </h2>
                   <p className="mt-3 whitespace-pre-line text-sm leading-7 text-primary/70 md:text-[15px] md:leading-8">
@@ -78,10 +78,10 @@ export default function PrivacyPage() {
               ))}
 
               <section className="border-b border-border pb-8">
-                <p className="text-xs font-semibold tracking-[0.16em] text-accent md:text-sm">
+                <p className="text-xs font-semibold tracking-[0.16em] text-[#816432] md:text-sm">
                   08
                 </p>
-                <h2 className="mt-3 text-xl font-semibold leading-8 text-primary md:text-2xl">
+                <h2 className="mt-3 text-xl font-semibold leading-8 text-primary md:text-2xl break-keep [overflow-wrap:anywhere]">
                   문의
                 </h2>
                 <p className="mt-3 text-sm leading-7 text-primary/70 md:text-[15px] md:leading-8">
