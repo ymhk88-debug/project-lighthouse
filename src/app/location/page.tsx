@@ -159,7 +159,7 @@ export default function LocationPage() {
                 key={item.title}
                 className="rounded-lg border border-[#e8ddcb] bg-white p-6 shadow-sm md:border-accent/25 md:bg-white md:shadow-sm"
               >
-                <p className="text-xs font-semibold text-accent md:text-sm">
+                <p className="text-xs font-semibold text-[#7E6941] md:text-sm">
                   {String(index + 1).padStart(2, "0")}
                 </p>
                 <h3 className="mt-4 text-lg font-semibold text-primary md:text-2xl">
