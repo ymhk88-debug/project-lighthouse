@@ -68,7 +68,7 @@ function PrincipleSection({
           <p className="text-xs font-semibold text-[#7E6941] md:text-sm">
             {String(index + 1).padStart(2, "0")}
           </p>
-          <h2 className="mt-4 text-2xl font-semibold leading-tight text-primary md:text-primary md:text-4xl md:leading-tight">
+          <h2 className="font-serif mt-4 text-2xl font-semibold leading-tight text-primary md:text-primary md:text-4xl md:leading-tight">
             {title}
           </h2>
         </div>
@@ -89,7 +89,7 @@ export default function WorkingStylePage() {
       <section className="mx-auto grid w-full max-w-[1160px] gap-10 px-6 py-16 md:py-20 lg:grid-cols-[1fr_0.72fr] lg:items-center">
         <div>
           <p className="text-sm font-semibold tracking-[0.18em] text-accent md:text-[15px]">일하는 방식</p>
-          <h1 className="mt-5 max-w-3xl whitespace-pre-line text-3xl font-semibold leading-tight text-background sm:text-4xl md:text-background md:text-6xl">
+          <h1 className="font-serif mt-5 max-w-3xl whitespace-pre-line text-3xl font-semibold leading-tight text-background sm:text-4xl md:text-background md:text-6xl">
             {"결과를 장담하지 않습니다.\n과정을 끝까지 책임지겠습니다."}
           </h1>
           <p className="mt-6 max-w-2xl whitespace-pre-line text-lg leading-9 text-background/75 md:text-xl md:font-medium md:leading-9 md:text-background/75">
@@ -139,7 +139,7 @@ export default function WorkingStylePage() {
 
       <section className="px-6 py-16 md:py-20">
         <div className="mx-auto max-w-[1160px] rounded-lg bg-primary px-6 py-12 text-background md:border md:border-accent/30 md:px-10">
-          <h2 className="max-w-2xl text-3xl font-semibold leading-tight md:text-4xl">
+          <h2 className="font-serif max-w-2xl text-3xl font-semibold leading-tight md:text-4xl">
             현재 상황을 함께 정리해보겠습니다.
           </h2>
           <p className="mt-5 max-w-2xl leading-7 text-background/75 md:text-[17px] md:font-medium md:leading-8">
