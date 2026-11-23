@@ -1,8 +1,8 @@
 import Link from "next/link";
 
-const address = "창원시 성산구 용지로169번길 7, 12층";
+const address = "경남 창원시 성산구 용지로169번길 7 한성빌딩 12층(용호동)";
 const officePhone = "055-263-5882";
-const mobilePhone = "050-5948-5158";
+const mobilePhone = "010-5948-5158";
 const naverMapUrl =
   "https://map.naver.com/p/search/%EB%B3%80%ED%98%B8%EC%82%AC%20%EC%9C%A0%EB%AF%BC%ED%99%98%20%EB%B2%95%EB%A5%A0%EC%82%AC%EB%AC%B4%EC%86%8C/place/2076772014?c=15.00,0,0,0,dh&isCorrectAnswer=true&placePath=%2Fhome%3Ffrom%3Dmap%26fromPanelNum%3D1%26additionalHeight%3D76%26timestamp%3D202607011737%26locale%3Dko%26svcName%3Dmap_pcv5%26searchText%3D%EB%B3%80%ED%98%B8%EC%82%AC%20%EC%9C%A0%EB%AF%BC%ED%99%98%20%EB%B2%95%EB%A5%A0%EC%82%AC%EB%AC%B4%EC%86%8C";
 
@@ -137,9 +137,9 @@ export default function LocationPage() {
               <h3 className="mt-3 text-xl font-semibold text-primary md:text-2xl">네이버지도로 길 찾기</h3>
               <div className="mt-6 flex min-h-48 flex-1 flex-col justify-center rounded-md border border-accent/20 bg-[#F7F2E8] px-6 py-8">
                 <div aria-hidden="true" className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-xl text-background">⌖</div>
-                <p className="mt-5 text-lg font-semibold text-primary">창원시 성산구 용지로169번길 7</p>
-                <p className="mt-1 text-sm text-muted">12층 · 사무실 위치 및 이동 경로</p>
-                <p className="mt-5 text-sm leading-7 text-primary/75">별도의 지도 이미지를 임의로 표시하지 않고, 실제 위치 정보가 있는 네이버지도로 연결합니다.</p>
+                <p className="mt-5 text-lg font-semibold text-primary">경남 창원시 성산구 용지로169번길 7 한성빌딩 12층(용호동)</p>
+                <p className="mt-1 text-sm text-muted">사무실 위치 및 이동 경로</p>
+                <p className="mt-5 text-sm leading-7 text-primary/75">정확한 경로와 이동 시간은 네이버지도에서 확인해 주세요.</p>
               </div>
               <a href={naverMapUrl} target="_blank" rel="noopener noreferrer"
                 className="mt-6 inline-flex min-h-12 items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-semibold text-background transition-colors hover:bg-primary/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
