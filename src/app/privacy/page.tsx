@@ -1,5 +1,5 @@
 const officePhone = "055-263-5882";
-const mobilePhone = "050-5948-5158";
+const mobilePhone = "010-5948-5158";
 
 const policySections = [
   {
