@@ -163,11 +163,11 @@ function SectionHeading({
 }) {
   return (
     <div className="max-w-2xl">
-      <h2 className="font-serif whitespace-pre-line text-2xl font-semibold leading-tight text-primary md:text-primary md:text-4xl md:leading-tight">
+      <h2 className="font-serif whitespace-pre-line text-2xl font-semibold leading-tight text-primary md:text-primary md:text-4xl md:leading-tight break-keep [overflow-wrap:anywhere]">
         {title}
       </h2>
       {description ? (
-        <p className="mt-6 whitespace-pre-line text-base leading-8 text-muted md:text-[17px] md:font-medium md:leading-8 md:text-muted">
+        <p className="mt-6 whitespace-pre-line text-base leading-8 text-[#625B52] md:text-[17px] md:font-medium md:leading-8 md:text-[#625B52]">
           {description}
         </p>
       ) : null}
@@ -206,7 +206,7 @@ export default function AdministrativePracticePage() {
       <div className="bg-primary">
       <section className="mx-auto w-full max-w-[1160px] px-6 py-16 md:py-20">
         <p className="text-sm font-semibold tracking-[0.18em] text-accent md:text-[15px]">Administrative Practice</p>
-        <h1 className="font-serif mt-5 max-w-3xl text-3xl font-semibold leading-tight text-background sm:text-4xl md:text-background md:text-6xl">
+        <h1 className="font-serif mt-5 max-w-3xl text-3xl font-semibold leading-tight text-background sm:text-4xl md:text-background md:text-6xl break-keep [overflow-wrap:anywhere]">
           행정 사건
         </h1>
         <p className="mt-6 max-w-3xl whitespace-pre-line text-lg leading-9 text-background/75 md:text-xl md:font-medium md:leading-9 md:text-background/75">
@@ -243,7 +243,7 @@ export default function AdministrativePracticePage() {
                 key={item.title}
                 className="rounded-lg border border-[#e8ddcb] bg-background p-5 shadow-sm md:border-accent/25 md:p-6 md:shadow-sm"
               >
-                <p className="text-xs font-semibold text-[#7E6941] md:text-sm">
+                <p className="text-xs font-semibold text-[#816432] md:text-sm">
                   {String(index + 1).padStart(2, "0")}
                 </p>
                 <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
@@ -269,7 +269,7 @@ export default function AdministrativePracticePage() {
               key={item.title}
               className="rounded-lg border border-[#e8ddcb] bg-white p-5 shadow-sm md:border-accent/25 md:bg-white md:p-6 md:shadow-sm"
             >
-              <p className="text-xs font-semibold tracking-[0.16em] text-[#7E6941] md:text-sm">{item.label}</p>
+              <p className="text-xs font-semibold tracking-[0.16em] text-[#816432] md:text-sm">{item.label}</p>
               <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
                 {item.title}
               </h3>
@@ -320,7 +320,7 @@ export default function AdministrativePracticePage() {
               key={card.title}
               className="rounded-lg border border-[#e8ddcb] bg-white p-5 shadow-sm md:border-accent/25 md:bg-white md:p-6 md:shadow-sm"
             >
-              <p className="text-xs font-semibold tracking-[0.16em] text-[#7E6941] md:text-sm">{card.label}</p>
+              <p className="text-xs font-semibold tracking-[0.16em] text-[#816432] md:text-sm">{card.label}</p>
               <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
                 {card.title}
               </h3>
@@ -349,7 +349,7 @@ export default function AdministrativePracticePage() {
                 key={item.title}
                 className="rounded-lg border border-[#e8ddcb] bg-background p-5 shadow-sm md:border-accent/25 md:p-6 md:shadow-sm"
               >
-                <p className="text-xs font-semibold tracking-[0.16em] text-[#7E6941] md:text-sm">{item.label}</p>
+                <p className="text-xs font-semibold tracking-[0.16em] text-[#816432] md:text-sm">{item.label}</p>
                 <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
                   {item.title}
                 </h3>
@@ -372,7 +372,7 @@ export default function AdministrativePracticePage() {
 
       <section className="px-6 py-16 md:py-20">
         <div className="mx-auto max-w-[1160px] rounded-lg bg-primary px-6 py-12 text-background md:border md:border-accent/30 md:px-10">
-          <h2 className="font-serif max-w-3xl text-3xl font-semibold leading-tight md:text-4xl">
+          <h2 className="font-serif max-w-3xl text-3xl font-semibold leading-tight md:text-4xl break-keep [overflow-wrap:anywhere]">
             행정 사건은 처분서와 기한을 먼저 확인해야 합니다
           </h2>
           <p className="mt-5 max-w-3xl whitespace-pre-line leading-7 text-background/75 md:text-[17px] md:font-medium md:leading-8">
