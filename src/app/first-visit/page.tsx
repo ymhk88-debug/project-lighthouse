@@ -131,11 +131,11 @@ function SectionHeading({
 }) {
   return (
     <div className="max-w-2xl">
-      <h2 className="font-serif whitespace-pre-line text-2xl font-semibold leading-tight text-primary md:text-primary md:text-4xl md:leading-tight">
+      <h2 className="font-serif whitespace-pre-line text-2xl font-semibold leading-tight text-primary md:text-primary md:text-4xl md:leading-tight break-keep [overflow-wrap:anywhere]">
         {title}
       </h2>
       {description ? (
-        <p className="mt-6 max-w-2xl whitespace-pre-line text-base leading-8 text-muted md:text-[17px] md:font-medium md:leading-8 md:text-muted">
+        <p className="mt-6 max-w-2xl whitespace-pre-line text-base leading-8 text-[#625B52] md:text-[17px] md:font-medium md:leading-8 md:text-[#625B52]">
           {description}
         </p>
       ) : null}
@@ -150,7 +150,7 @@ export default function FirstVisitPage() {
       <section className="mx-auto grid w-full max-w-[1160px] gap-10 px-6 py-16 md:py-20 lg:grid-cols-[1fr_0.72fr] lg:items-center">
         <div>
           <p className="text-sm font-semibold tracking-[0.18em] text-accent md:text-[15px]">처음 오셨나요</p>
-          <h1 className="font-serif mt-5 max-w-3xl whitespace-pre-line text-3xl font-semibold leading-tight text-background sm:text-4xl md:text-background md:text-6xl">
+          <h1 className="font-serif mt-5 max-w-3xl whitespace-pre-line text-3xl font-semibold leading-tight text-background sm:text-4xl md:text-background md:text-6xl break-keep [overflow-wrap:anywhere]">
             {"막막한 상황을\n먼저 정리하는 곳입니다."}
           </h1>
           <p className="mt-6 max-w-2xl whitespace-pre-line text-lg leading-9 text-background/75 md:text-xl md:font-medium md:leading-9 md:text-background/75">
@@ -176,7 +176,7 @@ export default function FirstVisitPage() {
                 key={item}
                 className="flex gap-4 border-b border-border pb-4 last:border-b-0 last:pb-0"
               >
-                <span className="text-sm font-semibold text-accent md:text-[15px]">
+                <span className="text-sm font-semibold text-[#816432] md:text-[15px]">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <span className="text-sm font-semibold leading-6 text-primary md:text-lg md:leading-7">
@@ -234,7 +234,7 @@ export default function FirstVisitPage() {
               </article>
             ))}
           </div>
-          <p className="mt-6 max-w-3xl text-sm leading-7 text-muted md:text-[15px] md:font-medium md:leading-8 md:text-muted">
+          <p className="mt-6 max-w-3xl text-sm leading-7 text-[#625B52] md:text-[15px] md:font-medium md:leading-8 md:text-[#625B52]">
             자료가 전부 준비되지 않았더라도 상담은 가능합니다. 다만 현재 가지고 있는 자료를 기준으로 먼저 사실관계와 기한을 확인하고, 추가로 필요한 자료를 정리하는 방식으로 진행합니다.
           </p>
         </div>
@@ -252,7 +252,7 @@ export default function FirstVisitPage() {
                 key={item}
                 className="rounded-lg border border-[#e8ddcb] bg-white p-5 shadow-sm md:border-accent/25 md:bg-white md:p-6 md:shadow-sm"
               >
-                <p className="text-xs font-semibold text-[#7E6941] md:text-sm">
+                <p className="text-xs font-semibold text-[#816432] md:text-sm">
                   {String(index + 1).padStart(2, "0")}
                 </p>
                 <p className="mt-3 text-sm font-semibold leading-6 text-primary md:text-lg md:leading-7">
@@ -284,7 +284,7 @@ export default function FirstVisitPage() {
               className="rounded-lg border border-[#e8ddcb] bg-white p-6 shadow-sm md:border-accent/25 md:bg-white md:shadow-sm"
             >
               <p className="flex gap-3 text-sm font-semibold leading-7 text-primary md:text-lg">
-                <span className="shrink-0 font-bold text-[#7E6941]">✓</span>
+                <span className="shrink-0 font-bold text-[#816432]">✓</span>
                 <span>{item}</span>
               </p>
             </div>
@@ -305,7 +305,7 @@ export default function FirstVisitPage() {
 
       <section className="px-6 py-16 md:py-20">
         <div className="mx-auto max-w-[1160px] rounded-lg bg-primary px-6 py-12 text-background md:border md:border-accent/30 md:px-10">
-          <h2 className="font-serif max-w-2xl text-3xl font-semibold leading-tight md:text-4xl">
+          <h2 className="font-serif max-w-2xl text-3xl font-semibold leading-tight md:text-4xl break-keep [overflow-wrap:anywhere]">
             현재 상황부터 함께 정리해보겠습니다.
           </h2>
           <p className="mt-5 max-w-2xl whitespace-pre-line leading-7 text-background/75 md:text-[17px] md:font-medium md:leading-8">
