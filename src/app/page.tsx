@@ -8,10 +8,42 @@ const trustItems = [
 ];
 
 const situationCards = [
-  { title: "경찰서에서 연락을 받았습니다", href: "/issues" },
-  { title: "소장이나 지급명령을 받았습니다", href: "/practice/civil" },
-  { title: "돈을 받지 못했습니다", href: "/practice/civil" },
-  { title: "상속 문제로 가족과 다투고 있습니다", href: "/practice/inheritance-family" },
+  {
+    href: "/practice/civil",
+    label: "민사",
+    title: "차용증이 없는 돈 문제",
+    description: "계좌이체 내역, 문자, 일부 변제 내역을 함께 보며 돈의 성격과 반환 약속을 확인합니다.",
+  },
+  {
+    href: "/practice/civil",
+    label: "민사",
+    title: "소장이나 지급명령을 받은 상황",
+    description: "청구취지, 답변서 기한, 인정할 부분과 다툴 부분을 나누어 대응 방향을 정리합니다.",
+  },
+  {
+    href: "/practice/criminal",
+    label: "형사",
+    title: "경찰에서 연락을 받은 상황",
+    description: "사건명, 출석 요구, 조사 전 확인할 자료를 먼저 정리하고 진술 방향을 검토합니다.",
+  },
+  {
+    href: "/practice/civil",
+    label: "계약분쟁",
+    title: "계약서가 없는 거래",
+    description: "송금 내역, 견적서, 세금계산서, 대화 내용을 함께 확인해 거래 경위를 정리합니다.",
+  },
+  {
+    href: "/practice/inheritance-family",
+    label: "상속·가사",
+    title: "가족 간 상속 문제가 생긴 경우",
+    description: "가족관계, 재산 목록, 기존 협의 내용, 대화 자료를 나누어 쟁점을 확인합니다.",
+  },
+  {
+    href: "/issues",
+    label: "내용증명",
+    title: "내용증명을 보내기 전",
+    description: "표현, 청구 내용, 기한, 추후 소송 가능성을 함께 검토해 불필요한 분쟁 확대를 줄입니다.",
+  },
 ];
 
 const practiceAreas = [
@@ -31,10 +63,10 @@ const processSteps = [
 ];
 
 const faqItems = [
-  "상담 전에 어떤 자료를 준비해야 하나요?",
-  "전화나 메시지로 먼저 문의할 수 있나요?",
-  "사건 진행 방향은 언제 알 수 있나요?",
-  "비용은 상담 후에 안내받을 수 있나요?",
+  { question: "상담 전에 어떤 자료를 준비해야 하나요?", answer: "받은 서류, 정해진 기한, 대화 내역 등 현재 가지고 있는 자료부터 준비하시면 됩니다." },
+  { question: "전화나 메시지로 먼저 문의할 수 있나요?", answer: "사전 연락으로 상담 일정을 조율할 수 있습니다. 방문 상담은 예약제로 진행합니다." },
+  { question: "사건 진행 방향은 언제 알 수 있나요?", answer: "상담에서 사실관계와 자료를 확인한 후 가능한 대응 방향을 함께 검토합니다." },
+  { question: "상담료와 상담 시간은 어떻게 되나요?", answer: "상담료는 10만원이며, 평일 09:00~18:00 예약제로 운영합니다." },
 ];
 
 const noteCards = [
@@ -119,7 +151,7 @@ export default function Home() {
           <p className="text-sm font-semibold tracking-[0.18em] text-accent md:text-[15px]">
             유민환 변호사 법률 플랫폼
           </p>
-          <h1 className="mt-5 max-w-2xl text-3xl font-semibold leading-tight text-background sm:text-4xl md:text-6xl">
+          <h1 className="mt-5 max-w-2xl break-keep font-serif text-3xl font-semibold leading-tight text-background sm:text-4xl md:text-5xl lg:text-6xl">
             법률 문제는
             <br />
             결과만큼 과정도 중요합니다.
@@ -146,7 +178,7 @@ export default function Home() {
           className="w-full max-w-sm lg:justify-self-center"
           style={{ width: "100%", maxWidth: "380px" }}
         >
-          <div className="w-full overflow-hidden rounded-lg border border-[#e8ddcb] bg-white/40 p-3 shadow-[0_12px_30px_rgba(15,29,46,0.08)] md:border-accent/25 md:bg-background/95 md:shadow-[0_22px_50px_rgba(0,0,0,0.16)]">
+          <div className="w-full overflow-hidden rounded-lg border border-[#e8ddcb] bg-background p-3 shadow-[0_12px_30px_rgba(15,29,46,0.08)] md:border-accent/25 md:bg-background/95 md:shadow-[0_22px_50px_rgba(0,0,0,0.16)]">
             <div
               className="relative w-full overflow-hidden rounded-md border border-[#e7dcc8] bg-[#f2eadc] md:border-accent/20"
               style={{
@@ -191,23 +223,37 @@ export default function Home() {
 
       <section id="situations" className="mx-auto max-w-[1160px] px-6 py-16 md:py-20">
         <SectionHeading title="지금 어떤 상황이신가요?" />
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {situationCards.map((item) => (
             <Link
               key={item.title}
               href={item.href}
-              className="group min-h-36 rounded-lg border border-border bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-accent"
+              className="group flex min-h-48 flex-col rounded-lg border border-border bg-white p-6 transition-colors hover:border-accent"
             >
-              <p className="text-base font-semibold leading-7 text-primary md:text-lg">
-                {item.title}
-              </p>
-              <p className="mt-6 text-sm font-medium text-[#816432] group-hover:underline">관련 안내 보기 →</p>
+              <p className="text-xs font-semibold tracking-[0.14em] text-[#7E6941]">{item.label}</p>
+              <h3 className="mt-3 text-lg font-semibold leading-7 text-primary">{item.title}</h3>
+              <p className="mt-3 text-sm leading-7 text-muted">{item.description}</p>
+              <p className="mt-auto pt-5 text-sm font-semibold text-[#7E6941] group-hover:underline">관련 안내 보기 →</p>
             </Link>
           ))}
+        </div>
+        <div className="mt-7">
+          <TextLink href="/issues" variant="secondary">상황별 쟁점 더 보기</TextLink>
         </div>
       </section>
 
 
+
+      <section className="border-y border-border bg-[#F0EBE2]">
+        <div className="mx-auto grid max-w-[1160px] gap-8 px-6 py-16 md:grid-cols-[1fr_auto] md:items-end md:py-20">
+          <SectionHeading
+            eyebrow="처음 오신 분께"
+            title="막막한 상황을 먼저 정리하는 곳입니다."
+            description="문제가 시작된 시점, 받은 연락과 서류, 지금 가지고 있는 자료부터 확인합니다. 자료를 모두 준비하지 못해도 상담은 가능합니다."
+          />
+          <TextLink href="/first-visit" variant="secondary">첫 방문 준비 안내 보기</TextLink>
+        </div>
+      </section>
 
       <div className="bg-primary">
       <section className="mx-auto grid max-w-[1160px] gap-8 px-6 py-16 md:py-20 md:grid-cols-[1fr_auto] md:items-end">
@@ -294,6 +340,9 @@ export default function Home() {
               </a>
             </article>
           ))}
+          <div className="mt-6">
+            <Link href="/faq" className="inline-flex min-h-11 items-center font-semibold text-[#7E6941] underline decoration-accent underline-offset-4">자주 묻는 질문 전체 보기 →</Link>
+          </div>
         </div>
       </section>
 
@@ -301,12 +350,12 @@ export default function Home() {
         <SectionHeading title="자주 묻는 질문" />
         <div className="mt-8 divide-y divide-border rounded-lg border border-[#e8ddcb] bg-white/60 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:shadow-sm">
           {faqItems.map((item) => (
-            <div key={item} className="p-5">
-              <p className="font-semibold text-primary md:text-lg">{item}</p>
+            <div key={item.question} className="p-5 md:p-6">
+              <h3 className="font-semibold text-primary md:text-lg">{item.question}</h3>
+              <p className="mt-2 text-sm leading-7 text-muted">{item.answer}</p>
             </div>
           ))}
-        </div>
-      </section>
+        </div>      </section>
 
       <section className="px-6 pb-20">
         <div className="mx-auto max-w-[1160px] rounded-lg bg-primary px-6 py-12 text-background md:border md:border-accent/30 md:px-10">
