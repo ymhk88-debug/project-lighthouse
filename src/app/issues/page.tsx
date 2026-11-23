@@ -197,7 +197,7 @@ function SectionHeading({
       {eyebrow ? (
         <p className="text-sm font-semibold tracking-[0.18em] text-[#7E6941] md:text-[15px]">{eyebrow}</p>
       ) : null}
-      <h2 className="mt-3 whitespace-pre-line text-2xl font-semibold leading-tight text-primary md:text-primary md:text-4xl md:leading-tight">
+      <h2 className="font-serif mt-3 whitespace-pre-line text-2xl font-semibold leading-tight text-primary md:text-primary md:text-4xl md:leading-tight">
         {title}
       </h2>
       {description ? (
@@ -275,7 +275,7 @@ export default function IssuesPage() {
         <p className="text-sm font-semibold tracking-[0.18em] text-accent md:text-[15px]">
           Situational Issues
         </p>
-        <h1 className="mt-5 max-w-4xl text-3xl font-semibold leading-tight text-background sm:text-4xl md:text-background md:text-6xl md:leading-tight">
+        <h1 className="font-serif mt-5 max-w-4xl text-3xl font-semibold leading-tight text-background sm:text-4xl md:text-background md:text-6xl md:leading-tight">
           상담에서 자주 정리하는 상황
         </h1>
         <p className="mt-6 max-w-3xl whitespace-pre-line text-lg leading-9 text-background/75 md:text-xl md:font-medium md:leading-9 md:text-background/75">
