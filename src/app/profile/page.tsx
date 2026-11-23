@@ -87,7 +87,7 @@ export default function ProfilePage() {
           {principles.map((item) => (
             <article key={item.number} className="rounded-lg border border-border bg-white p-6 shadow-sm">
               <p className="text-sm font-semibold text-[#816432]">{item.number}</p>
-              <h3 className="mt-4 text-xl font-semibold leading-8 text-primary">{item.title}</h3>
+              <h3 className="mt-4 text-xl font-semibold leading-8 text-primary break-keep [overflow-wrap:anywhere]">{item.title}</h3>
               <p className="mt-4 text-sm leading-7 text-[#625B52]">{item.description}</p>
             </article>
           ))}
@@ -104,7 +104,7 @@ export default function ProfilePage() {
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {areas.map((area) => (
               <Link key={area.href} href={area.href} className="group rounded-lg border border-border bg-white p-6 transition-colors hover:border-accent">
-                <h3 className="text-xl font-semibold text-primary">{area.title}</h3>
+                <h3 className="text-xl font-semibold text-primary break-keep [overflow-wrap:anywhere]">{area.title}</h3>
                 <p className="mt-3 text-sm leading-7 text-[#625B52]">{area.desc}</p>
                 <p className="mt-6 text-sm font-semibold text-[#816432] group-hover:underline">분야 살펴보기 →</p>
               </Link>
