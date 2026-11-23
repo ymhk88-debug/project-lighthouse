@@ -73,7 +73,7 @@ export default function ProfilePage() {
               </div>
               <div className="px-1 pt-4 pb-2">
                 <p className="text-base font-semibold text-primary">유민환 변호사</p>
-                <p className="mt-1 text-sm leading-7 text-muted">법률사무소 해결</p>
+                <p className="mt-1 text-sm leading-7 text-muted">유민환법률사무소</p>
               </div>
             </div>
           </div>
