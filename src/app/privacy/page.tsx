@@ -93,7 +93,7 @@ export default function PrivacyPage() {
                     사무실{" "}
                     <a
                       href={`tel:${officePhone}`}
-                      className="font-semibold text-primary transition-colors hover:text-accent"
+                      className="font-semibold text-primary transition-colors hover:text-[#816432]"
                     >
                       {officePhone}
                     </a>
@@ -102,7 +102,7 @@ export default function PrivacyPage() {
                     휴대폰{" "}
                     <a
                       href={`tel:${mobilePhone}`}
-                      className="font-semibold text-primary transition-colors hover:text-accent"
+                      className="font-semibold text-primary transition-colors hover:text-[#816432]"
                     >
                       {mobilePhone}
                     </a>
