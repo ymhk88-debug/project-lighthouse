@@ -307,7 +307,7 @@ export default function ConsultationPage() {
 
       <section className="px-6 py-16 md:py-20">
         <div className="mx-auto max-w-[1160px] rounded-lg bg-primary px-6 py-12 text-background md:border md:border-accent/30 md:px-10">
-          <h2 className="font-serif max-w-2xl whitespace-pre-line text-3xl font-semibold leading-tight md:text-4xl break-keep [overflow-wrap:anywhere]">
+          <h2 className="font-serif max-w-2xl whitespace-pre-line text-[1.625rem] sm:text-3xl font-semibold leading-tight md:text-4xl break-keep [overflow-wrap:anywhere]">
             {"현재 상황부터\n함께 정리해보겠습니다."}
           </h2>
           <p className="mt-5 max-w-2xl whitespace-pre-line leading-7 text-background/75 md:text-[17px] md:font-medium md:leading-8">
