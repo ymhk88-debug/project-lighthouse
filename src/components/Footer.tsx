@@ -18,7 +18,7 @@ const navigation = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-accent/20 bg-primary pb-16 text-background md:pb-0">
+    <footer className="border-t border-accent/20 bg-primary pb-16 text-background md:pb-24">
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-10 px-6 py-10 md:flex-row md:items-start md:justify-between md:py-12">
         <div className="max-w-2xl">
           <p className="text-lg font-semibold md:text-xl">유민환법률사무소</p>
