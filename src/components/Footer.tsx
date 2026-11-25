@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { QuickContact } from "@/components/QuickContact";
 
 const officePhone = "055-263-5882";
 const mobilePhone = "010-5948-5158";
@@ -17,7 +18,7 @@ const navigation = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-accent/20 bg-primary text-background">
+    <footer className="border-t border-accent/20 bg-primary pb-16 text-background md:pb-0">
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-10 px-6 py-10 md:flex-row md:items-start md:justify-between md:py-12">
         <div className="max-w-2xl">
           <p className="text-lg font-semibold md:text-xl">유민환법률사무소</p>
@@ -54,6 +55,7 @@ export function Footer() {
           </p>
         </nav>
       </div>
+      <QuickContact />
     </footer>
   );
 }
