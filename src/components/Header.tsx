@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const navigation = [
   { label: "처음 오셨나요", href: "/first-visit" },
@@ -15,6 +15,21 @@ const navigation = [
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen]);
 
   return (
     <header className="sticky top-0 z-20 border-b border-accent/20 bg-primary/95 text-background backdrop-blur">
@@ -37,6 +52,7 @@ export function Header() {
           ))}
         </nav>
         <button
+          ref={menuButtonRef}
           type="button"
           className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-background/40 text-background xl:hidden"
           aria-label={isOpen ? "메뉴 닫기" : "메뉴 열기"}
