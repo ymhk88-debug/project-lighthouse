@@ -32,13 +32,10 @@ export function Header() {
   }, [isOpen]);
 
   return (
-    <header className="sticky top-0 z-20 border-b border-accent/20 bg-primary/95 text-background backdrop-blur">
+    <header className={`sticky top-0 ${isOpen ? "z-40" : "z-20"} border-b border-accent/20 bg-primary/95 text-background backdrop-blur`}>
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-6">
-        <Link
-          href="/"
-          className="shrink-0 whitespace-nowrap text-base font-bold text-background lg:text-lg"
-        >
-          유민환 변호사
+        <Link href="/" aria-label="유민환법률사무소" className="inline-flex min-w-0 shrink-0 items-center focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+          <img src="/logo-wordmark-light.svg" alt="유민환법률사무소" className="h-[26px] w-auto max-w-[calc(100vw-7.5rem)]" />
         </Link>
         <nav className="hidden items-center gap-4 whitespace-nowrap text-sm font-medium text-background/85 xl:gap-6 xl:text-base xl:flex">
           {navigation.map((item) => (
