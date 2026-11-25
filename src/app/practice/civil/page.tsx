@@ -374,7 +374,7 @@ export default function CivilPracticePage() {
                   href={step.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-2 inline-flex text-sm font-semibold leading-6 text-primary underline decoration-accent/45 underline-offset-4 transition-colors hover:text-accent md:text-[15px]"
+                  className="mt-2 inline-flex text-sm font-semibold leading-6 text-primary underline decoration-accent/45 underline-offset-4 transition-colors hover:text-[#816432] md:text-[15px]"
                 >
                   {step.articleTitle}
                 </a>
@@ -444,7 +444,7 @@ export default function CivilPracticePage() {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-5 inline-flex text-sm font-semibold text-primary underline decoration-accent/45 underline-offset-4 transition-colors hover:text-accent md:text-[15px]"
+                  className="mt-5 inline-flex text-sm font-semibold text-primary underline decoration-accent/45 underline-offset-4 transition-colors hover:text-[#816432] md:text-[15px]"
                 >
                   블로그에서 보기
                 </a>
