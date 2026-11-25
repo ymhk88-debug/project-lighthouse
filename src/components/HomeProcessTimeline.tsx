@@ -20,8 +20,8 @@ export function HomeProcessTimeline({ steps }: { steps: readonly string[] }) {
     if (!timeline) return;
 
     if (!("IntersectionObserver" in window)) {
-      setHasEntered(true);
-      return;
+      const frame = window.requestAnimationFrame(() => setHasEntered(true));
+      return () => window.cancelAnimationFrame(frame);
     }
 
     const observer = new IntersectionObserver(
