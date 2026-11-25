@@ -196,7 +196,7 @@ function PracticeCard({
           <Link
             key={link.href}
             href={link.href}
-            className="text-sm font-semibold leading-6 text-primary underline decoration-accent/45 underline-offset-4 transition-colors hover:text-accent"
+            className="text-sm font-semibold leading-6 text-primary underline decoration-accent/45 underline-offset-4 transition-colors hover:text-[#816432]"
           >
             {link.title}
           </Link>
