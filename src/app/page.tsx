@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ProfileImage } from "@/components/ProfileImage";
+import { HomeProcessTimeline } from "@/components/HomeProcessTimeline";
 
 const trustItems = [
   "의뢰인의 이야기를 충분히 듣겠습니다.",
@@ -279,58 +280,60 @@ export default function Home() {
 
       <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-background">
         <div className="mx-auto max-w-[1160px] px-6 py-16 md:py-20">
-          <SectionHeading title="주요 업무분야" />
+          <p className="text-xs font-semibold tracking-[0.18em] text-[#816432]">PRACTICE</p>
+          <div className="flex items-start gap-3">
+            <span aria-hidden="true" className="mt-6 h-0.5 w-8 shrink-0 bg-accent" />
+            <SectionHeading title="주요 업무분야" />
+          </div>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {practiceAreas.map((area) => (
+            {practiceAreas.map((area, index) => (
               <Link
                 key={area.href}
                 href={area.href}
-                className="group rounded-lg border border-border bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-accent"
+                className="group flex h-full flex-col rounded-lg border border-border border-t-2 border-t-accent bg-white p-6 motion-safe:transition-[transform,border-color] motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-0.5 motion-reduce:transform-none hover:border-accent focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#816432]"
               >
-                <p className="text-lg font-semibold text-primary md:text-xl">{area.title}</p>
+                <p className="text-3xl font-light tabular-nums text-[#816432]">
+                  {String(index + 1).padStart(2, "0")}
+                </p>
+                <p className="mt-4 text-lg font-semibold text-primary md:text-xl">{area.title}</p>
                 <p className="mt-3 text-sm leading-7 text-[#625B52]">{area.description}</p>
-                <p className="mt-7 text-sm font-semibold text-[#816432] group-hover:underline">분야 살펴보기 →</p>
+                <p className="mt-auto pt-7 text-sm font-semibold text-[#816432] group-hover:underline">분야 살펴보기 →</p>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1160px] px-6 py-16 md:py-20">
-        <SectionHeading title="사건 진행 흐름" />
-        <div className="mt-8 grid gap-3 md:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr_auto_1fr_auto_1fr] md:items-center">
-          {processSteps.map((step, index) => (
-            <div key={step} className="contents">
-              <div className="rounded-lg border border-[#e8ddcb] bg-white/60 p-4 text-center shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-5 md:shadow-sm">
-                <p className="text-xs font-semibold text-[#816432] md:text-sm">
-                  {String(index + 1).padStart(2, "0")}
-                </p>
-                <p className="mt-2 text-sm font-semibold text-primary md:text-lg">{step}</p>
-              </div>
-              {index < processSteps.length - 1 ? (
-                <span className="text-center text-[#816432] md:-rotate-90">↓</span>
-              ) : null}
-            </div>
-          ))}
+      <section className="bg-primary">
+        <div className="mx-auto max-w-[1160px] px-6 py-16 md:py-20">
+          <p className="text-xs font-semibold tracking-[0.18em] text-accent">PROCESS</p>
+          <div className="flex items-start gap-3">
+            <span aria-hidden="true" className="mt-6 h-0.5 w-8 shrink-0 bg-accent" />
+            <SectionHeading title="사건 진행 흐름" tone="dark" />
+          </div>
+          <HomeProcessTimeline steps={processSteps} />
         </div>
       </section>
 
-
       <section className="mx-auto max-w-[1160px] px-6 py-16 md:py-20">
-        <SectionHeading
-          title="법률 실무 노트"
-          description={
-            "상담 전 많이 궁금해하는 초기 대응 기준을 블로그 글로 정리해두었습니다.\n홈페이지에서는 대표 글만 안내하고, 전체 글은 네이버 블로그에서 확인할 수 있습니다."
-          }
-        />
+        <p className="text-xs font-semibold tracking-[0.18em] text-[#816432]">NOTES</p>
+        <div className="flex items-start gap-3">
+          <span aria-hidden="true" className="mt-6 h-0.5 w-8 shrink-0 bg-accent" />
+          <SectionHeading
+            title="법률 실무 노트"
+            description={
+              "상담 전 많이 궁금해하는 초기 대응 기준을 블로그 글로 정리해두었습니다.\n홈페이지에서는 대표 글만 안내하고, 전체 글은 네이버 블로그에서 확인할 수 있습니다."
+            }
+          />
+        </div>
         <div className="mt-8 grid gap-4 md:grid-cols-3">
           {noteCards.map((item) => (
             <article
               key={item.title}
-              className="rounded-lg border border-[#e8ddcb] bg-white/60 p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-6 md:shadow-sm"
+              className="group flex h-full flex-col rounded-lg border border-[#e8ddcb] border-t-2 border-t-accent bg-white p-5 shadow-sm motion-safe:transition-[transform,border-color] motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-0.5 motion-reduce:transform-none hover:border-accent md:p-6"
             >
-              <p className="text-xs font-semibold tracking-[0.16em] text-[#816432] md:text-sm">{item.label}</p>
-              <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8 break-keep [overflow-wrap:anywhere]">
+              <p className="inline-flex w-fit items-center rounded border border-[#816432]/60 px-2.5 py-1 text-xs font-semibold tracking-[0.12em] text-[#816432]">{item.label}</p>
+              <h3 className="mt-4 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8 break-keep [overflow-wrap:anywhere]">
                 {item.title}
               </h3>
               <p className="mt-3 text-sm leading-7 text-[#625B52] md:text-[15px] md:leading-7">
@@ -340,13 +343,12 @@ export default function Home() {
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-5 inline-flex text-sm font-semibold text-primary underline decoration-accent/45 underline-offset-4 transition-colors hover:text-[#816432] md:text-[15px]"
+                className="mt-auto inline-flex w-fit pt-5 text-sm font-semibold text-primary underline decoration-accent/45 underline-offset-4 transition-colors hover:text-[#816432] focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#816432] md:text-[15px]"
               >
-                블로그에서 보기
+                블로그에서 보기 <span aria-hidden="true" className="ml-1">↗</span>
               </a>
             </article>
           ))}
-
         </div>
       </section>
 
