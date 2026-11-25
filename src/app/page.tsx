@@ -166,7 +166,13 @@ export default function Home() {
             <br />
             가능한 해결 방향을 함께 찾겠습니다.
           </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row md:gap-4">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap md:gap-4">
+            <a
+              href="tel:055-263-5882"
+              className="inline-flex min-h-11 items-center justify-center rounded-md bg-accent px-5 text-sm font-semibold text-primary transition-colors hover:bg-accent/90 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent md:min-h-12 md:px-7 md:text-base"
+            >
+              전화 상담 055-263-5882
+            </a>
             <TextLink href="/consultation">상담 안내 보기</TextLink>
             <TextLink href="/first-visit" variant="secondary">
               처음 오셨나요?
