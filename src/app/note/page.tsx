@@ -340,19 +340,18 @@ export default function NotePage() {
                 </div>
               </div>
               <div className="mt-6 grid gap-3">
-                {cluster.posts.filter((post) => "href" in post).map((post) => (
+                {cluster.posts.filter((post): post is typeof post & { href: string } => "href" in post).map((post) => (
                   <div
                     key={post.title}
                     className="rounded-md border border-[#eadfce] bg-background/80 p-4 md:border-accent/20 md:bg-white"
                   >
-                    <h4 className="text-base font-semibold leading-7 text-primary">
+                    <h4 className="text-base font-semibold leading-7 text-primary break-keep [overflow-wrap:anywhere]">
                       {post.title}
                     </h4>
                     <p className="mt-2 text-sm leading-7 text-primary/70">
                       {post.description}
                     </p>
-                    {"href" in post && (
-                      <a
+                    <a
                         href={post.href}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -360,7 +359,6 @@ export default function NotePage() {
                       >
                         블로그에서 보기
                       </a>
-                    )}
                   </div>
                 ))}
               </div>
