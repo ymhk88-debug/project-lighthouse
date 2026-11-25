@@ -42,16 +42,8 @@ export function HomeProcessTimeline({ steps }: { steps: readonly string[] }) {
     <ol
       ref={timelineRef}
       aria-label="사건 진행 흐름"
-      className="relative mt-10 grid gap-5 md:grid-cols-6 md:gap-2"
+      className="relative mt-10 grid gap-5 before:pointer-events-none before:absolute before:bottom-5 before:left-5 before:top-5 before:w-px before:bg-accent/70 before:content-[''] md:grid-cols-6 md:gap-2 md:before:bottom-auto md:before:left-[8.333%] md:before:right-[8.333%] md:before:top-5 md:before:h-px md:before:w-auto"
     >
-      <span
-        aria-hidden="true"
-        className="absolute bottom-5 left-5 top-5 w-px bg-accent/70 md:hidden"
-      />
-      <span
-        aria-hidden="true"
-        className="absolute left-[8.333%] right-[8.333%] top-5 hidden h-px bg-accent/70 md:block"
-      />
       {steps.map((step, index) => (
         <li
           key={step}
