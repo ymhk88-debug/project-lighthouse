@@ -290,7 +290,7 @@ export default function Home() {
               <Link
                 key={area.href}
                 href={area.href}
-                className="group flex h-full flex-col rounded-lg border border-border border-t-2 border-t-accent bg-white p-6 motion-safe:transition-[transform,border-color] motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-0.5 motion-reduce:transform-none hover:border-accent focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#816432]"
+                className="group flex h-full flex-col rounded-lg border border-border border-t-2 border-t-accent bg-white p-6 motion-safe:transition-[translate,border-color] motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-0.5 motion-reduce:transform-none hover:border-accent focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#816432]"
               >
                 <p className="text-3xl font-light tabular-nums text-[#816432]">
                   {String(index + 1).padStart(2, "0")}
@@ -330,7 +330,7 @@ export default function Home() {
           {noteCards.map((item) => (
             <article
               key={item.title}
-              className="group flex h-full flex-col rounded-lg border border-[#e8ddcb] border-t-2 border-t-accent bg-white p-5 shadow-sm motion-safe:transition-[transform,border-color] motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-0.5 motion-reduce:transform-none hover:border-accent md:p-6"
+              className="group flex h-full flex-col rounded-lg border border-[#e8ddcb] border-t-2 border-t-accent bg-white p-5 shadow-sm motion-safe:transition-[translate,border-color] motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-0.5 motion-reduce:transform-none hover:border-accent md:p-6"
             >
               <p className="inline-flex w-fit items-center rounded border border-[#816432]/60 px-2.5 py-1 text-xs font-semibold tracking-[0.12em] text-[#816432]">{item.label}</p>
               <h3 className="mt-4 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8 break-keep [overflow-wrap:anywhere]">
