@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { OfficeCarousel } from "@/components/OfficeCarousel";
+import { KakaoRoughMap } from "@/components/KakaoRoughMap";
 
 const address = "경남 창원시 성산구 용지로169번길 7 한성빌딩 12층(용호동)";
 const officePhone = "055-263-5882";
 const mobilePhone = "010-5948-5158";
+const kakaoMapUrl = "https://place.map.kakao.com/132675957";
 const naverMapUrl =
   "https://map.naver.com/p/search/%EB%B3%80%ED%98%B8%EC%82%AC%20%EC%9C%A0%EB%AF%BC%ED%99%98%20%EB%B2%95%EB%A5%A0%EC%82%AC%EB%AC%B4%EC%86%8C/place/2076772014?c=15.00,0,0,0,dh&isCorrectAnswer=true&placePath=%2Fhome%3Ffrom%3Dmap%26fromPanelNum%3D1%26additionalHeight%3D76%26timestamp%3D202607011737%26locale%3Dko%26svcName%3Dmap_pcv5%26searchText%3D%EB%B3%80%ED%98%B8%EC%82%AC%20%EC%9C%A0%EB%AF%BC%ED%99%98%20%EB%B2%95%EB%A5%A0%EC%82%AC%EB%AC%B4%EC%86%8C";
 
@@ -114,7 +116,7 @@ export default function LocationPage() {
         <div className="mx-auto max-w-[1160px] px-6 py-16 md:py-20">
           <SectionHeading
             title="사무실 위치 및 연락처"
-            description="방문 상담은 사전 일정 조율 후 진행됩니다. 정확한 위치는 아래의 네이버지도 링크에서 확인하실 수 있습니다."
+            description="방문 상담은 사전 일정 조율 후 진행됩니다. 정확한 위치는 아래의 카카오맵 약도와 지도 링크에서 확인하실 수 있습니다."
           />
           <div className="mt-8 grid gap-5 lg:grid-cols-2 lg:items-stretch">
             <div className="flex h-full flex-col rounded-lg border border-border bg-white p-6 shadow-sm md:p-8">
@@ -133,18 +135,31 @@ export default function LocationPage() {
               </div>
               <p className="mt-auto pt-6 text-sm leading-7 text-[#625B52]">기일이나 외부 일정으로 부재중일 수 있으므로 방문 전 일정을 조율해 주세요.</p>
             </div>
-            <div className="flex h-full flex-col rounded-lg border border-border bg-white p-6 shadow-sm md:p-8">
+            <div className="flex h-full min-w-0 flex-col rounded-lg border border-border bg-white p-6 shadow-sm md:p-8">
               <p className="text-sm font-semibold tracking-[0.14em] text-[#816432]">MAP & DIRECTIONS</p>
-              <h3 className="mt-3 text-xl font-semibold text-primary md:text-2xl">네이버지도로 길 찾기</h3>
-              <div className="mt-6 flex min-h-48 flex-1 flex-col justify-center rounded-md border border-accent/20 bg-[#F7F2E8] px-6 py-8">
-                <div aria-hidden="true" className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-xl text-background">⌖</div>
-                <p className="mt-5 text-lg font-semibold text-primary">경남 창원시 성산구 용지로169번길 7 한성빌딩 12층(용호동)</p>
-                <p className="mt-1 text-sm text-[#625B52]">사무실 위치 및 이동 경로</p>
-                <p className="mt-5 text-sm leading-7 text-primary/75">정확한 경로와 이동 시간은 네이버지도에서 확인해 주세요.</p>
+              <h3 className="mt-3 text-xl font-semibold text-primary md:text-2xl">카카오맵으로 길 찾기</h3>
+              <p className="mt-3 text-sm leading-7 text-[#625B52]">{address}</p>
+              <div className="mt-6 w-full min-w-0 max-w-full overflow-hidden rounded-md border border-accent/20 bg-[#F7F2E8]">
+                <KakaoRoughMap />
               </div>
-              <a href={naverMapUrl} target="_blank" rel="noopener noreferrer"
-                className="mt-6 inline-flex min-h-12 items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-semibold text-background transition-colors hover:bg-primary/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
-                네이버지도에서 위치 확인하기 →
+              <p className="mt-3 text-sm leading-7 text-[#625B52]">
+                지도가 표시되지 않는 경우에도 아래 버튼으로 사무실 위치를 확인하실 수 있습니다.
+              </p>
+              <a
+                href={kakaoMapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex min-h-12 items-center justify-center rounded-md bg-primary px-6 py-3 text-center text-sm font-semibold text-background transition-colors hover:bg-primary/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+              >
+                카카오맵에서 크게 보기
+              </a>
+              <a
+                href={naverMapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 inline-flex min-h-11 items-center justify-center text-center text-sm font-semibold text-primary underline decoration-accent/40 underline-offset-4 transition-colors hover:text-[#816432]"
+              >
+                네이버지도에서 보기
               </a>
             </div>
           </div>
