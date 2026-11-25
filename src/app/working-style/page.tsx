@@ -34,8 +34,8 @@ function TextLink({
 }) {
   const className =
     variant === "primary"
-      ? "bg-primary text-background hover:bg-primary/90 md:bg-accent md:text-primary md:shadow-[0_10px_24px_rgba(184,155,94,0.16)] md:hover:bg-accent/90"
-      : "border border-border bg-background text-primary hover:border-accent md:border-accent/35 md:bg-background/95";
+      ? "bg-accent text-primary hover:bg-accent/90 md:bg-accent md:text-primary md:shadow-[0_10px_24px_rgba(184,155,94,0.16)] md:hover:bg-accent/90"
+      : "border border-border bg-background text-primary hover:border-accent md:border-accent/35 md:bg-white";
 
   return (
     <Link
@@ -58,22 +58,22 @@ function PrincipleSection({
 }) {
   const sectionClass =
     index % 2 === 0
-      ? "border-y border-border bg-white/35 md:border-accent/15 md:bg-primary"
-      : "bg-background md:bg-primary";
+      ? "border-y border-border bg-[#F0EBE2] md:border-accent/15 md:bg-[#F0EBE2]"
+      : "bg-background md:bg-[#F0EBE2]";
 
   return (
     <section className={sectionClass}>
-      <div className="mx-auto grid max-w-7xl gap-8 px-6 py-16 md:py-12 md:grid-cols-[0.75fr_1.25fr] md:items-start">
+      <div className="mx-auto grid max-w-[1160px] gap-8 px-6 py-16 md:py-20 md:grid-cols-[0.75fr_1.25fr] md:items-start">
         <div>
-          <p className="text-xs font-semibold text-accent md:text-sm">
+          <p className="text-xs font-semibold text-[#816432] md:text-sm">
             {String(index + 1).padStart(2, "0")}
           </p>
-          <h2 className="mt-4 text-2xl font-semibold leading-tight text-primary md:text-background md:text-4xl md:leading-tight">
+          <h2 className="font-serif mt-4 text-2xl font-semibold leading-tight text-primary md:text-primary md:text-4xl md:leading-tight break-keep [overflow-wrap:anywhere]">
             {title}
           </h2>
         </div>
-        <div className="rounded-lg border border-[#e8ddcb] bg-white/60 p-6 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-7 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]">
-          <p className="whitespace-pre-line text-base leading-8 text-muted md:text-[17px] md:font-medium md:leading-8 md:text-primary/70">
+        <div className="rounded-lg border border-[#e8ddcb] bg-white p-6 shadow-sm md:border-accent/25 md:bg-white md:p-7 md:shadow-sm">
+          <p className="whitespace-pre-line text-base leading-8 text-[#625B52] md:text-[17px] md:font-medium md:leading-8 md:text-primary/70">
             {description}
           </p>
         </div>
@@ -84,14 +84,15 @@ function PrincipleSection({
 
 export default function WorkingStylePage() {
   return (
-    <div className="bg-background md:bg-primary">
-      <section className="mx-auto grid w-full max-w-7xl gap-10 px-6 py-16 md:py-20 lg:grid-cols-[1fr_0.72fr] lg:items-center">
+    <div className="bg-background">
+      <div className="bg-primary">
+      <section className="mx-auto grid w-full max-w-[1160px] gap-10 px-6 py-16 md:py-20 lg:grid-cols-[1fr_0.72fr] lg:items-center">
         <div>
           <p className="text-sm font-semibold tracking-[0.18em] text-accent md:text-[15px]">일하는 방식</p>
-          <h1 className="mt-5 max-w-3xl whitespace-pre-line text-3xl font-semibold leading-tight text-primary sm:text-4xl md:text-background md:text-6xl">
+          <h1 className="font-serif mt-5 max-w-3xl whitespace-pre-line text-3xl font-semibold leading-tight text-background sm:text-4xl md:text-background md:text-6xl break-keep [overflow-wrap:anywhere]">
             {"결과를 장담하지 않습니다.\n과정을 끝까지 책임지겠습니다."}
           </h1>
-          <p className="mt-6 max-w-2xl whitespace-pre-line text-lg leading-9 text-muted md:text-xl md:font-medium md:leading-9 md:text-background/75">
+          <p className="mt-6 max-w-2xl whitespace-pre-line text-lg leading-9 text-background/75 md:text-xl md:font-medium md:leading-9 md:text-background/75">
             {
               "좋은 결과를 약속하는 것은 변호사가 할 수 있는 일이 아닙니다.\n\n하지만 의뢰인의 이야기를 충분히 듣고,\n사실관계를 확인하며,\n과정을 끝까지 책임지는 것은\n변호사가 해야 할 일이라고 생각합니다."
             }
@@ -104,7 +105,7 @@ export default function WorkingStylePage() {
           </div>
         </div>
 
-        <div className="rounded-lg border border-[#e8ddcb] bg-white/60 p-6 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]">
+        <div className="rounded-lg border border-[#e8ddcb] bg-white p-6 shadow-sm md:border-accent/25 md:bg-white md:shadow-sm">
           <p className="text-sm font-semibold text-primary md:text-lg">
             사건을 대하는 기준
           </p>
@@ -114,7 +115,7 @@ export default function WorkingStylePage() {
                 key={item}
                 className="flex gap-4 border-b border-border pb-4 last:border-b-0 last:pb-0"
               >
-                <span className="text-sm font-semibold text-accent md:text-[15px]">
+                <span className="text-sm font-semibold text-[#816432] md:text-[15px]">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <span className="text-sm font-semibold leading-6 text-primary md:text-lg md:leading-7">
@@ -125,6 +126,7 @@ export default function WorkingStylePage() {
           </ol>
         </div>
       </section>
+      </div>
 
       {workingPrinciples.map((item, index) => (
         <PrincipleSection
@@ -135,9 +137,9 @@ export default function WorkingStylePage() {
         />
       ))}
 
-      <section className="px-6 py-16 md:py-12">
-        <div className="mx-auto max-w-7xl rounded-lg bg-primary px-6 py-12 text-background md:border md:border-accent/30 md:px-10">
-          <h2 className="max-w-2xl text-3xl font-semibold leading-tight md:text-4xl">
+      <section className="px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-[1160px] rounded-lg bg-primary px-6 py-12 text-background md:border md:border-accent/30 md:px-10">
+          <h2 className="font-serif max-w-2xl text-[1.625rem] sm:text-3xl font-semibold leading-tight md:text-4xl break-keep [overflow-wrap:anywhere]">
             현재 상황을 함께 정리해보겠습니다.
           </h2>
           <p className="mt-5 max-w-2xl leading-7 text-background/75 md:text-[17px] md:font-medium md:leading-8">

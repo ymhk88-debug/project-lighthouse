@@ -131,8 +131,8 @@ function TextLink({
 }) {
   const className =
     variant === "primary"
-      ? "bg-primary text-background hover:bg-primary/90 md:bg-accent md:text-primary md:shadow-[0_10px_24px_rgba(184,155,94,0.16)] md:hover:bg-accent/90"
-      : "border border-border bg-background text-primary hover:border-accent md:border-accent/35 md:bg-background/95";
+      ? "bg-accent text-primary hover:bg-accent/90 md:bg-accent md:text-primary md:shadow-[0_10px_24px_rgba(184,155,94,0.16)] md:hover:bg-accent/90"
+      : "border border-border bg-background text-primary hover:border-accent md:border-accent/35 md:bg-white";
 
   return (
     <Link
@@ -153,11 +153,11 @@ function SectionHeading({
 }) {
   return (
     <div className="max-w-2xl">
-      <h2 className="whitespace-pre-line text-2xl font-semibold leading-tight text-primary md:text-background md:text-4xl md:leading-tight">
+      <h2 className="font-serif whitespace-pre-line text-2xl font-semibold leading-tight text-primary md:text-primary md:text-4xl md:leading-tight break-keep [overflow-wrap:anywhere]">
         {title}
       </h2>
       {description ? (
-        <p className="mt-6 whitespace-pre-line text-base leading-8 text-muted md:text-[17px] md:font-medium md:leading-8 md:text-background/75">
+        <p className="mt-6 whitespace-pre-line text-base leading-8 text-[#625B52] md:text-[17px] md:font-medium md:leading-8 md:text-[#625B52]">
           {description}
         </p>
       ) : null}
@@ -175,8 +175,8 @@ function ChecklistCard({
   items: string[];
 }) {
   return (
-    <article className="rounded-lg border border-[#e8ddcb] bg-white/60 p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]">
-      <h3 className="text-xl font-semibold leading-8 text-primary md:text-2xl">{title}</h3>
+    <article className="rounded-lg border border-[#e8ddcb] bg-white p-5 shadow-sm md:border-accent/25 md:bg-white md:p-6 md:shadow-sm">
+      <h3 className="text-xl font-semibold leading-8 text-primary md:text-2xl break-keep [overflow-wrap:anywhere]">{title}</h3>
       <p className="mt-4 text-sm leading-7 text-primary/70 md:text-[15px] md:leading-7">{description}</p>
       <ul className="mt-6 space-y-3">
         {items.map((item) => (
@@ -192,13 +192,14 @@ function ChecklistCard({
 
 export default function InheritanceFamilyPracticePage() {
   return (
-    <div className="bg-background md:bg-primary">
-      <section className="mx-auto w-full max-w-7xl px-6 py-16 md:py-20">
+    <div className="bg-background">
+      <div className="bg-primary">
+      <section className="mx-auto w-full max-w-[1160px] px-6 py-16 md:py-20">
         <p className="text-sm font-semibold tracking-[0.18em] text-accent md:text-[15px]">Inheritance & Family Practice</p>
-        <h1 className="mt-5 max-w-3xl text-3xl font-semibold leading-tight text-primary sm:text-4xl md:text-background md:text-6xl">
+        <h1 className="font-serif mt-5 max-w-3xl text-3xl font-semibold leading-tight text-background sm:text-4xl md:text-background md:text-6xl break-keep [overflow-wrap:anywhere]">
           상속·가사
         </h1>
-        <p className="mt-6 max-w-3xl whitespace-pre-line text-lg leading-9 text-muted md:text-xl md:font-medium md:leading-9 md:text-background/75">
+        <p className="mt-6 max-w-3xl whitespace-pre-line text-lg leading-9 text-background/75 md:text-xl md:font-medium md:leading-9 md:text-background/75">
           {
             "상속과 가사 문제는 가족관계, 재산관계, 기존 협의 내용, 남아 있는 자료를 차분히 나누어 보는 과정이 필요합니다.\n상담에서는 감정적인 문제와 법적인 쟁점을 구분하고, 현재 단계에서 필요한 대응 방향을 함께 확인합니다."
           }
@@ -210,9 +211,16 @@ export default function InheritanceFamilyPracticePage() {
           </TextLink>
         </div>
       </section>
+      </div>
+      <nav aria-label="사건별 안내 바로가기" className="border-b border-border bg-[#F7F2E8]">
+        <div className="mx-auto flex max-w-[1160px] flex-wrap gap-3 px-6 py-5">
+          <a href="#inheritance" className="inline-flex items-center rounded-md border border-border bg-white px-4 py-3 text-sm font-semibold text-primary transition-colors hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">상속 문제 안내 보기 →</a>
+          <a href="#family" className="inline-flex items-center rounded-md border border-border bg-white px-4 py-3 text-sm font-semibold text-primary transition-colors hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">가사 문제 안내 보기 →</a>
+        </div>
+      </nav>
 
-      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
-        <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="border-y border-border bg-[#F0EBE2] md:border-accent/15 md:bg-[#F0EBE2]">
+        <div className="mx-auto max-w-[1160px] px-6 py-16 md:py-20">
           <SectionHeading
             title="상속·가사 사건에서 먼저 확인하는 것"
             description="가족 간 문제는 감정적인 갈등과 법적인 쟁점이 함께 얽혀 있는 경우가 많습니다. 먼저 가족관계, 재산관계, 기한과 자료를 나누어 정리합니다."
@@ -221,12 +229,12 @@ export default function InheritanceFamilyPracticePage() {
             {firstCheckItems.map((item, index) => (
               <article
                 key={item.title}
-                className="rounded-lg border border-[#e8ddcb] bg-background p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+                className="rounded-lg border border-[#e8ddcb] bg-background p-5 shadow-sm md:border-accent/25 md:p-6 md:shadow-sm"
               >
-                <p className="text-xs font-semibold text-accent md:text-sm">
+                <p className="text-xs font-semibold text-[#816432] md:text-sm">
                   {String(index + 1).padStart(2, "0")}
                 </p>
-                <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
+                <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8 break-keep [overflow-wrap:anywhere]">
                   {item.title}
                 </h3>
                 <p className="mt-3 text-sm leading-7 text-primary/70 md:text-[15px] md:leading-7">
@@ -238,7 +246,7 @@ export default function InheritanceFamilyPracticePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="mx-auto max-w-[1160px] px-6 py-16 md:py-20">
         <SectionHeading
           title="자주 상담하는 상속·가사 상황"
           description="상속·가사 문제는 한 가지 주장만으로 판단하기보다, 가족관계와 재산자료, 기존 대화와 협의 내용을 함께 확인해야 합니다."
@@ -247,10 +255,10 @@ export default function InheritanceFamilyPracticePage() {
           {situationCards.map((item) => (
             <article
               key={item.title}
-              className="rounded-lg border border-[#e8ddcb] bg-white/60 p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+              className="rounded-lg border border-[#e8ddcb] bg-white p-5 shadow-sm md:border-accent/25 md:bg-white md:p-6 md:shadow-sm"
             >
-              <p className="text-xs font-semibold tracking-[0.16em] text-accent md:text-sm">{item.label}</p>
-              <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
+              <p className="text-xs font-semibold tracking-[0.16em] text-[#816432] md:text-sm">{item.label}</p>
+              <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8 break-keep [overflow-wrap:anywhere]">
                 {item.title}
               </h3>
               <p className="mt-3 text-sm leading-7 text-primary/70 md:text-[15px] md:leading-7">
@@ -261,22 +269,26 @@ export default function InheritanceFamilyPracticePage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
-        <div className="mx-auto grid max-w-7xl gap-4 px-6 py-16 md:py-12 lg:grid-cols-2">
-          <ChecklistCard
+      <section className="border-y border-border bg-[#F0EBE2] md:border-accent/15 md:bg-[#F0EBE2]">
+        <div className="mx-auto grid max-w-[1160px] gap-4 px-6 py-16 md:py-20 lg:grid-cols-2">
+          <div id="inheritance" className="scroll-mt-24">
+            <ChecklistCard
             title="상속 문제에서 정리할 것"
             description="상속 문제는 먼저 상속인 범위와 재산 목록을 확인하고, 생전 증여나 유언, 채무와 기한 문제를 나누어 정리해야 합니다."
             items={inheritanceChecklist}
           />
-          <ChecklistCard
+          </div>
+          <div id="family" className="scroll-mt-24">
+            <ChecklistCard
             title="가사 문제에서 정리할 것"
             description="이혼, 양육, 재산분할 문제는 혼인기간, 재산 형성 과정, 자녀의 생활환경, 기존 협의 내용을 나누어 정리하는 과정이 필요합니다."
             items={familyChecklist}
           />
+          </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="mx-auto max-w-[1160px] px-6 py-16 md:py-20">
         <SectionHeading
           title="상담 전 준비하면 좋은 자료"
           description={
@@ -287,10 +299,10 @@ export default function InheritanceFamilyPracticePage() {
           {preparationCards.map((card) => (
             <article
               key={card.title}
-              className="rounded-lg border border-[#e8ddcb] bg-white/60 p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:bg-background/95 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+              className="rounded-lg border border-[#e8ddcb] bg-white p-5 shadow-sm md:border-accent/25 md:bg-white md:p-6 md:shadow-sm"
             >
-              <p className="text-xs font-semibold tracking-[0.16em] text-accent md:text-sm">{card.label}</p>
-              <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
+              <p className="text-xs font-semibold tracking-[0.16em] text-[#816432] md:text-sm">{card.label}</p>
+              <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8 break-keep [overflow-wrap:anywhere]">
                 {card.title}
               </h3>
               <ul className="mt-5 space-y-3">
@@ -306,8 +318,8 @@ export default function InheritanceFamilyPracticePage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-white/35 md:border-accent/15 md:bg-primary">
-        <div className="mx-auto max-w-7xl px-6 py-16 md:py-12">
+      <section className="border-y border-border bg-[#F0EBE2] md:border-accent/15 md:bg-[#F0EBE2]">
+        <div className="mx-auto max-w-[1160px] px-6 py-16 md:py-20">
           <SectionHeading
             title="관련 법률 실무 노트"
             description="상속·가사 문제는 가족관계와 재산자료를 함께 정리해야 하므로, 관련 글을 참고해 상담 전 쟁점을 미리 살펴볼 수 있습니다."
@@ -316,10 +328,10 @@ export default function InheritanceFamilyPracticePage() {
             {noteCards.map((item) => (
               <article
                 key={item.title}
-                className="rounded-lg border border-[#e8ddcb] bg-background p-5 shadow-[0_8px_24px_rgba(15,29,46,0.05)] md:border-accent/25 md:p-6 md:shadow-[0_18px_45px_rgba(15,29,46,0.08)]"
+                className="rounded-lg border border-[#e8ddcb] bg-background p-5 shadow-sm md:border-accent/25 md:p-6 md:shadow-sm"
               >
-                <p className="text-xs font-semibold tracking-[0.16em] text-accent md:text-sm">{item.label}</p>
-                <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8">
+                <p className="text-xs font-semibold tracking-[0.16em] text-[#816432] md:text-sm">{item.label}</p>
+                <h3 className="mt-3 text-lg font-semibold leading-7 text-primary md:text-xl md:leading-8 break-keep [overflow-wrap:anywhere]">
                   {item.title}
                 </h3>
                 <p className="mt-3 text-sm leading-7 text-primary/70 md:text-[15px] md:leading-7">
@@ -329,7 +341,7 @@ export default function InheritanceFamilyPracticePage() {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-5 inline-flex text-sm font-semibold text-primary underline decoration-accent/45 underline-offset-4 transition-colors hover:text-accent md:text-[15px]"
+                  className="mt-5 inline-flex text-sm font-semibold text-primary underline decoration-accent/45 underline-offset-4 transition-colors hover:text-[#816432] md:text-[15px]"
                 >
                   블로그에서 보기
                 </a>
@@ -339,9 +351,9 @@ export default function InheritanceFamilyPracticePage() {
         </div>
       </section>
 
-      <section className="px-6 py-16 md:py-12">
-        <div className="mx-auto max-w-7xl rounded-lg bg-primary px-6 py-12 text-background md:border md:border-accent/30 md:px-10">
-          <h2 className="max-w-3xl text-3xl font-semibold leading-tight md:text-4xl">
+      <section className="px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-[1160px] rounded-lg bg-primary px-6 py-12 text-background md:border md:border-accent/30 md:px-10">
+          <h2 className="font-serif max-w-3xl text-3xl font-semibold leading-tight md:text-4xl break-keep [overflow-wrap:anywhere]">
             상속·가사 문제는 가족관계와 재산관계를 나누어 정리해야 합니다
           </h2>
           <p className="mt-5 max-w-3xl whitespace-pre-line leading-7 text-background/75 md:text-[17px] md:font-medium md:leading-8">

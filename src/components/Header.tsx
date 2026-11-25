@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const navigation = [
   { label: "처음 오셨나요", href: "/first-visit" },
@@ -15,31 +15,44 @@ const navigation = [
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen]);
 
   return (
-    <header className="sticky top-0 z-20 border-b border-border bg-background/95 backdrop-blur md:border-accent/15 md:bg-primary/95">
+    <header className={`sticky top-0 ${isOpen ? "z-40" : "z-20"} border-b border-accent/20 bg-primary/95 text-background backdrop-blur`}>
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-6">
-        <Link
-          href="/"
-          className="text-base font-bold text-primary md:text-lg md:text-background"
-        >
-          유민환 변호사
+        <Link href="/" aria-label="유민환법률사무소" className="inline-flex min-w-0 shrink-0 items-center focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+          <img src="/logo-wordmark-light.svg" alt="유민환법률사무소" className="h-[26px] w-auto max-w-[calc(100vw-7.5rem)]" />
         </Link>
-        <nav className="hidden items-center gap-7 text-sm font-medium text-primary md:flex md:text-base md:text-background/85">
+        <nav className="hidden items-center gap-4 whitespace-nowrap text-sm font-medium text-background/85 xl:gap-6 xl:text-base xl:flex">
           {navigation.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="transition-colors hover:text-accent"
+              className="whitespace-nowrap transition-colors hover:text-accent"
             >
               {item.label}
             </Link>
           ))}
         </nav>
         <button
+          ref={menuButtonRef}
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border text-primary md:hidden"
-          aria-label="메뉴 열기"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-background/40 text-background xl:hidden"
+          aria-label={isOpen ? "메뉴 닫기" : "메뉴 열기"}
           aria-expanded={isOpen}
           onClick={() => setIsOpen((current) => !current)}
         >
@@ -51,13 +64,13 @@ export function Header() {
         </button>
       </div>
       {isOpen ? (
-        <nav className="border-t border-border px-6 py-4 md:hidden">
-          <div className="mx-auto flex max-w-7xl flex-col gap-3 text-sm font-medium text-primary">
+        <nav className="border-t border-background/20 bg-primary px-6 py-4 xl:hidden">
+          <div className="mx-auto flex max-w-7xl flex-col gap-1 text-sm font-medium text-background">
             {navigation.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="py-1 transition-colors hover:text-accent"
+                className="flex min-h-11 items-center whitespace-nowrap py-2 transition-colors hover:text-accent"
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}
