@@ -352,13 +352,13 @@ export default function NotePage() {
                       {post.description}
                     </p>
                     <a
-                        href={post.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mt-4 inline-flex text-sm font-semibold text-primary underline decoration-accent/45 underline-offset-4 transition-colors hover:text-accent"
-                      >
-                        블로그에서 보기
-                      </a>
+                      href={post.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 inline-flex text-sm font-semibold text-primary underline decoration-accent/45 underline-offset-4 transition-colors hover:text-[#816432]"
+                    >
+                      블로그에서 보기
+                    </a>
                   </div>
                 ))}
               </div>
