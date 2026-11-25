@@ -19,7 +19,7 @@ export function HomeProcessTimeline({ steps }: { steps: readonly string[] }) {
     const timeline = timelineRef.current;
     if (!timeline) return;
 
-    if (!("IntersectionObserver" in window)) {
+    if (typeof IntersectionObserver === "undefined") {
       const frame = window.requestAnimationFrame(() => setHasEntered(true));
       return () => window.cancelAnimationFrame(frame);
     }
