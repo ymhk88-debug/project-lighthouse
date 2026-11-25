@@ -99,7 +99,7 @@ export function OfficeCarousel() {
           {index + 1} / {photos.length}
         </span>
       </div>
-      <div className="mt-3 flex items-center justify-center gap-5 sm:hidden" aria-label="사무실 사진 이동">
+      <div className="mt-3 flex items-center justify-center gap-5 sm:hidden" role="group" aria-label="사무실 사진 이동">
         <button
           type="button"
           aria-label="이전 사진"
